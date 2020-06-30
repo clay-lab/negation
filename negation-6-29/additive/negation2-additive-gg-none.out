@@ -1,0 +1,63 @@
+main.py:173: UserWarning: If you have Pandas 1.0 you must make the following change manually for cox to work: https://github.com/MadryLab/cox/pull/3/files
+  "If you have Pandas 1.0 you must make the following change manually for cox to work: https://github.com/MadryLab/cox/pull/3/files")
+Logging in: /gpfs/loomis/home.grace/sls248/transductions/logs/default/negation-results-6-30-20_3/24497e62-0e8e-4965-ad3c-d1d5044bc567
+Training epoch 1/100 on train data
+Evaluating epoch 1/100 on val data
+sentence-level-accuracy   97.34 %
+token-level-accuracy      98.958 %
+that-which-accuracy       99.227 %
+because-since-accuracy    99.279 %
+can-may-must-should-accuracy 99.016 %
+not-accuracy              98.441 %
+loss                      0.7265 
+Training epoch 2/100 on train data
+Evaluating epoch 2/100 on val data
+sentence-level-accuracy   99.802 %
+token-level-accuracy      99.959 %
+that-which-accuracy       99.996 %
+because-since-accuracy    99.99 %
+can-may-must-should-accuracy 99.971 %
+not-accuracy              99.936 %
+loss                      0.013772 
+Training epoch 3/100 on train data
+Evaluating epoch 3/100 on val data
+sentence-level-accuracy   99.928 %
+token-level-accuracy      99.991 %
+that-which-accuracy       100.0 %
+because-since-accuracy    99.997 %
+can-may-must-should-accuracy 99.994 %
+not-accuracy              99.996 %
+loss                      0.0046322 
+Training epoch 4/100 on train data
+Evaluating epoch 4/100 on val data
+sentence-level-accuracy   99.935 %
+token-level-accuracy      99.992 %
+that-which-accuracy       100.0 %
+because-since-accuracy    100.0 %
+can-may-must-should-accuracy 99.997 %
+not-accuracy              99.996 %
+loss                      0.0023388 
+EarlyStopping counter: 1 out of 3
+Training epoch 5/100 on train data
+Evaluating epoch 5/100 on val data
+sentence-level-accuracy   99.938 %
+token-level-accuracy      99.994 %
+that-which-accuracy       100.0 %
+because-since-accuracy    100.0 %
+can-may-must-should-accuracy 99.997 %
+not-accuracy              100.0 %
+loss                      0.001358 
+EarlyStopping counter: 2 out of 3
+Training epoch 6/100 on train data
+Evaluating epoch 6/100 on val data
+sentence-level-accuracy   99.938 %
+token-level-accuracy      99.994 %
+that-which-accuracy       100.0 %
+because-since-accuracy    100.0 %
+can-may-must-should-accuracy 99.997 %
+not-accuracy              99.998 %
+loss                      0.0010478 
+EarlyStopping counter: 3 out of 3
+Early stopping. Loading model from last saved checkoint.
+Testing on test data
+Closing remaining open files:logs/default/negation-results-6-30-20_3/24497e62-0e8e-4965-ad3c-d1d5044bc567/store.h5...done
