@@ -17,7 +17,8 @@ def read_file(filename):
         out_writer.writerow(['target', 'prediction'])
 
         for line in reader[1:]:
-            newline = [sentence.split()[:sentence.split().index('<eos>')] for sentence in line[1:]]
+            # print(line)
+            newline = [sentence.split()[:sentence.split().index('<eos>')] if '<eos>' in sentence.split() else sentence.split() for sentence in line[1:]]
             out_writer.writerow([' '.join(newline[0]), ' '.join(newline[1])])
 
 def results():
@@ -34,7 +35,7 @@ def results():
         len_list = [len(line[0].split()) for line in results_reader[1:]]
         max_len = max(len_list)
 
-        template = {length + 1:0 for length in list(range(max_len + 1))}
+        template = {length + 1:0 for length in list(range(max_len))}
         pcorrect_dict, ncorrect_dict, ptotal_dict, ntotal_dict = dict(template), dict(template), dict(template), dict(template)
 
         total_dict = {length + 1:len_list.count(length + 1) for length in list(range(max_len))}
@@ -155,7 +156,7 @@ def negate_main(predtrees):
     return boolList
 
 def pos_csv_writer(filename, bool0, bool1):
-    with open(filename + '.txt', 'r') as readfile, open(filename + 'BOOLS.txt', 'w') as writefile:
+    with open(filename + '.txt', 'r') as readfile, open(filename + 'BOOLS.csv', 'w') as writefile:
 
         reader = list(csv.reader(readfile, delimiter='\t'))
         reader = reader[1:]
@@ -166,7 +167,7 @@ def pos_csv_writer(filename, bool0, bool1):
             writer.writerow([reader[i][0], reader[i][1], bool0[i], bool1[i]])
 
 def neg_csv_writer(filename, bool0, bool1, bool2):
-    with open(filename + '.txt', 'r') as readfile, open(filename + 'BOOLS.txt', 'w') as writefile:
+    with open(filename + '.txt', 'r') as readfile, open(filename + 'BOOLS.csv', 'w') as writefile:
         
         reader = list(csv.reader(readfile, delimiter='\t'))
         reader = reader[1:]
@@ -183,7 +184,7 @@ def make_dicts(max_len, postext, negtext, PPequal_structsBOOL, PPclausalBOOL, PN
         negreader = list(csv.reader(negfile, delimiter='\t'))
         negreader = negreader[1:]
 
-        template = {length + 1:0 for length in list(range(max_len + 1))}
+        template = {length + 1:0 for length in list(range(max_len))}
         PPequal_structsDICT, PPclausalDICT, PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT = dict(template), dict(template), dict(template), dict(template), dict(template)
 
         poslen = range(len(posreader))
@@ -202,7 +203,27 @@ def make_dicts(max_len, postext, negtext, PPequal_structsBOOL, PPclausalBOOL, PN
             PNclausalDICT[targlen] += PNclausalBOOL[i]
             PNnegate_mainDICT[targlen] += PNnegate_mainBOOL[i]
         
+        return PPequal_structsDICT, PPclausalDICT, PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT
         
+def write_dicts(dictlist, dictnames, max_len):
+    with open('dicts.csv', 'w') as dictfile:
+
+        newdicts = [{'Dictionary Name':dictname} for dictname in dictnames]
+
+        for i in range(len(newdicts)):
+            newdicts[i].update(dictlist[i])
+        
+
+        lenlist = list(range(max_len + 1))
+        lenlist[0] = 'Dictionary Name'
+        
+
+        fieldnames = lenlist
+
+        writer = csv.DictWriter(dictfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(newdicts)
+
         
 # Main function
 def main():
@@ -228,14 +249,11 @@ def main():
     pos_csv_writer('pos_pos', PPequal_structsBOOL, PPclausalBOOL) # writes into a new CSV with 4 columns: targ, pred, boolean values
     neg_csv_writer('pos_neg', PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL) # writes into a new CSV with 5 columns: targ, pred, boolean values
 
-    # Creates 4 dictionaries
-    #  Key: sentence length, Values: sentences where equal_structs() == T
-    #  Key: sentence length, Values: sentences where clausal() == T
-    #  Key: sentence length, Values: sentences where negate_main() == T
-    #  Key: sentence length, Values: sentences where negate_targ() == T
-    boolDICTS = make_dicts(max_len, 'pos_pos.txt', 'pos_neg.txt', PPequal_structsBOOL, PPclausalBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL)
+    # Creates 4 dictionaries, key: sen length, value: bools
+    PPequal_structsDICT, PPclausalDICT, PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT = make_dicts(max_len, 'pos_pos.txt', 'pos_neg.txt', PPequal_structsBOOL, PPclausalBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL)
     
-    # use dictwriter to make dicts.txt easier to read
-    # import all results to google drive
-    # confirm that the functions work correctly
+    dictlist = [pcorrect_dict, ncorrect_dict, ptotal_dict, ntotal_dict, total_dict, PPequal_structsDICT, PPclausalDICT, PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT]
+    dictnames = ['pcorrect_dict', 'ncorrect_dict', 'ptotal_dict', 'ntotal_dict', 'total_dict', 'PPequal_structsDICT', 'PPclausesDICT', 'PNequal_structsDICT', 'PNclausalDICT', 'PNnegate_mainDICT']
+    write_dicts(dictlist, dictnames, max_len)
+
 main()
