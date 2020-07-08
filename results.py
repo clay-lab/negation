@@ -69,10 +69,8 @@ def make_trees(filename):
 
     with open(filename, 'r') as seqfile, open("no-parses.csv", 'w') as npfile:
         npwriter = csv.writer(npfile, delimiter='\t', lineterminator='\n', quotechar='/')
-        # np-writer = csv.writer(no-parsesfile, delimiter='\t', lineterminator='\n', quotechar='/')
         parser = BottomUpLeftCornerChartParser(not_grammar)
-        # np-writer.writerow('Target', 'Prediction')
-
+ 
         seq_list = list(csv.reader(seqfile, delimiter='\t'))
         seq_list = seq_list[1:]
 
@@ -93,16 +91,22 @@ def make_trees(filename):
         targsentlist = []
         predsentlist = []
 
+        npwriter.writerow(['target', 'prediction'])
         for i in range(len(pred_parses)):
-            if len_predparses[i] == 0:
-                npwriter.writerow([' '.join(targlist[i]), ' '.join(predlist[i])])
+            if len_predparses[i] == 0: 
+                npwriter.writerow(['target', 'prediction'])
+                npwriter.writerow(['targ', 'pred'])
+                npwriter.writerow(' '.join(predlist[i]))
+                npwriter.writerow(['targ', 'pred'])
+                print(npfile.closed)
+                print([' '.join(targlist[i]), ' '.join(predlist[i])])
             else:
                 targtreelist.append(next(targ_parses[i]))
                 predtreelist.append(next(pred_parses[i]))
 
                 targsentlist.append(' '.join(targlist[i]))
                 predsentlist.append(' '.join(predlist[i]))
-
+    
         return targtreelist, predtreelist, targsentlist, predsentlist
 
 def equal_structs(targtrees, predtrees):
@@ -211,50 +215,54 @@ def make_dicts(max_len, pcorrect_dict, ncorrect_dict, ptotal_dict, ntotal_dict, 
     PPesAvg, PPclausalAvg, PNesAvg, PNclausalAvg, PNnmAvg, PNntAvg = {}, {}, {}, {}, {}, {}
 
     # pos -> pos dicts
-    poslen_list = [len(line.split()) for line in possents[0]]
-    posmax_len = max(poslen_list)
+    poslen_list = [len(line.split()) for line in possents[0]] 
+    if len(poslen_list) > 0:
+        posmax_len = max(poslen_list)
 
-    pos_template = {length + 1:0 for length in list(range(posmax_len))}
-    PPequal_structsDICT, PPclausalDICT = dict(pos_template), dict(pos_template)
-    postotal_dict = {length + 1:poslen_list.count(length + 1) for length in list(range(posmax_len))}
+        pos_template = {length + 1:0 for length in list(range(posmax_len))}
+        PPequal_structsDICT, PPclausalDICT = dict(pos_template), dict(pos_template)
+        postotal_dict = {length + 1:poslen_list.count(length + 1) for length in list(range(posmax_len))}
 
-    poslen = range(len(possents))
+        poslen = range(len(possents))
 
-    for i in poslen:
-        targlen = len(possents[0][i].split())
+        for i in poslen:
+            targlen = len(possents[0][i].split())
 
-        PPequal_structsDICT[targlen] += PPequal_structsBOOL[i]
-        PPclausalDICT[targlen] += PPclausalBOOL[i]
-    
-    for i in range(posmax_len):
-        PPesAvg[i + 1] = round(PPequal_structsDICT[i + 1] / postotal_dict[i + 1], 3) if postotal_dict[i + 1] != 0 else 'N/A'
-        PPclausalAvg[i + 1] = round(PPclausalDICT[i + 1] / postotal_dict[i + 1], 3) if postotal_dict[i + 1] != 0 else 'N/A'
+            PPequal_structsDICT[targlen] += PPequal_structsBOOL[i]
+            PPclausalDICT[targlen] += PPclausalBOOL[i]
+        
+        for i in range(posmax_len):
+            PPesAvg[i + 1] = round(PPequal_structsDICT[i + 1] / postotal_dict[i + 1], 3) if postotal_dict[i + 1] != 0 else 'N/A'
+            PPclausalAvg[i + 1] = round(PPclausalDICT[i + 1] / postotal_dict[i + 1], 3) if postotal_dict[i + 1] != 0 else 'N/A'
 
     
     # pos -> neg dicts
 
     neglen_list = [len(line.split()) for line in negsents[0]]
-    negmax_len = max(neglen_list)
-    
-    neg_template = {length + 1:0 for length in list(range(negmax_len))}
-    PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT, PNnegate_targetDICT = dict(neg_template), dict(neg_template), dict(neg_template), dict(neg_template)
-    negtotal_dict = {length + 1:neglen_list.count(length + 1) for length in list(range(negmax_len))}
-    
-    neglen = range(len(negsents))
+    print(negsents)
+    exit()
+    if len(neglen_list) > 0:
+        negmax_len = max(neglen_list)
+        
+        neg_template = {length + 1:0 for length in list(range(negmax_len))}
+        PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT, PNnegate_targetDICT = dict(neg_template), dict(neg_template), dict(neg_template), dict(neg_template)
+        negtotal_dict = {length + 1:neglen_list.count(length + 1) for length in list(range(negmax_len))}
+        
+        neglen = range(len(negsents))
 
-    for i in neglen:
-        targlen = len(negsents[0][i].split())
+        for i in neglen:
+            targlen = len(negsents[0][i].split())
 
-        PNequal_structsDICT[targlen] += PNequal_structsBOOL[i]
-        PNclausalDICT[targlen] += PNclausalBOOL[i]
-        PNnegate_mainDICT[targlen] += PNnegate_mainBOOL[i]
-        PNnegate_targetDICT[targlen] += PNnegate_targetBOOL[i]
-    
-    for i in range(negmax_len):
-        PNesAvg[i + 1] = round(PNequal_structsDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
-        PNclausalAvg[i + 1] = round(PNclausalDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
-        PNnmAvg[i + 1] = round(PNnegate_mainDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
-        PNntAvg[i + 1] = round(PNnegate_targetDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
+            PNequal_structsDICT[targlen] += PNequal_structsBOOL[i]
+            PNclausalDICT[targlen] += PNclausalBOOL[i]
+            PNnegate_mainDICT[targlen] += PNnegate_mainBOOL[i]
+            PNnegate_targetDICT[targlen] += PNnegate_targetBOOL[i]
+        
+        for i in range(negmax_len):
+            PNesAvg[i + 1] = round(PNequal_structsDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
+            PNclausalAvg[i + 1] = round(PNclausalDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
+            PNnmAvg[i + 1] = round(PNnegate_mainDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
+            PNntAvg[i + 1] = round(PNnegate_targetDICT[i + 1] / negtotal_dict[i + 1], 3) if negtotal_dict[i + 1] != 0 else 'N/A'
 
     return avg_dict, posavg_dict, negavg_dict, PPesAvg, PPclausalAvg, PNesAvg, PNclausalAvg, PNnmAvg, PNntAvg
     # return avg_dict, pcorrectDICT, ncorrectDICT, PPequal_structsDICT, PPclausalDICT, PNequal_structsDICT, PNclausalDICT, PNnegate_mainDICT, PNnegate_targetDICT
