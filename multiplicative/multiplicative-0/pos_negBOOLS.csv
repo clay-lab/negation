@@ -1,0 +1,732 @@
+target	prediction	equal structures	equal S, AdvP, and RelP clauses	negates main clause	negates target verb
+vernon can not assemble many doughnuts	fred can not assemble many doughnuts	1	1	1	1
+the professor should not eat many pancakes	the professor should not eat the pancakes	1	1	1	1
+a witch may not sprinkle the croissant	a witch may not sprinkle a croissant	1	1	1	1
+petunia can not party because she should run	petunia can not run because she should run	1	1	1	0
+since draco should party she can not hiccup	since draco should hiccup she should not hiccup	1	1	1	0
+james may not jump since mcgonagall must smile	james may not smile since voldemort must smile	1	1	1	0
+snape should not laugh because petunia can swim	snape should not swim because petunia can swim	1	1	1	0
+since george can wiggle he can not run	since george can run he can not run	1	1	1	0
+lily can not wiggle since petunia should giggle	lily can not wiggle since petunia should eat the baklava	0	0	1	1
+because snape must party voldemort should not laugh	because snape must party she should not laugh	0	1	1	1
+lily should not hiccup because draco should laugh	lily should not laugh since she should laugh	0	1	1	0
+albus must not party because neville can swim	albus must not swim because hagrid can swim	1	1	1	0
+lupin can not party since he can jump	lupin can not jump since he can jump	1	1	1	0
+james can not swim since albus should party	james can not party since lupin should party	1	1	1	0
+james may not smile since he should run	james may not run since he should run	1	1	1	0
+hermione can not run because neville must wiggle	hermione can not wiggle because he must wiggle	0	1	1	0
+james can not jump because hermione must giggle	james can not giggle because james should giggle	1	1	1	0
+neville should not run since a professor should swim	neville should not assemble a croissant since a witch should hide a croissant	0	0	1	0
+a witch must not laugh because hermione may wiggle	a witch must not wiggle because vernon may wiggle	1	1	1	0
+because neville may hiccup a professor should not swim	because neville may hiccup a professor may not hiccup	1	1	1	0
+ron can not laugh because a student can giggle	ron can not giggle because a student can giggle	1	1	1	0
+ginny should not party since a professor should laugh	ginny should not party since a professor should party	1	1	1	1
+the student may not party because he should walk	the student may not walk because he should walk	1	1	1	0
+because he may party a wizard should not jump	because he may party a wizard should not party	1	1	1	0
+voldemort should not laugh since the professor can party	voldemort should not party since draco can party	0	1	1	0
+a professor should not swim because lupin should jump	a professor should not jump because lupin should jump	1	1	1	0
+she must not arrange the cookies that harry should chew	she must not arrange the cookies that ron must arrange	1	1	1	1
+voldemort can not make a souffle because george should laugh	voldemort can not make a souffle	0	0	1	1
+he should not make the chocolates that snape should make	he should not make the chocolates that james should make	1	1	1	1
+sirius must not gobble the baklava which draco can chew	sirius must not gobble the baklava which snape should gobble	1	1	1	1
+ron should not giggle since petunia may hide many cookies	ron should not hide many cookies since neville may hide many cookies	0	0	1	0
+petunia must not hide many cookies which neville should hide	petunia must not hide many cookies which hagrid must hide	1	1	1	1
+lily must not giggle since mcgonagall can sprinkle the pancakes	lily must not sprinkle the pancakes since mcgonagall can sprinkle the cookies	0	0	1	0
+ron should not eat the croissant which fred may chew	ron should not eat the croissant which the professor should eat	0	1	1	1
+because mcgonagall must giggle vernon should not assemble a croissant	because mcgonagall must assemble a pancake vernon should not assemble the pancake	0	0	1	0
+he must not eat the croissant that hermione should sprinkle	he must not eat the croissant that a professor must eat	0	1	1	1
+hagrid must not assemble the cookies that albus should make	hagrid must not assemble the cookies that ron must assemble	1	1	1	1
+hermione should not gobble many strudels which snape must arrange	hermione should not gobble many strudels which hagrid should gobble	1	1	1	1
+lupin must not gobble the cakes which hagrid may make	lupin must not gobble the cakes which he should gobble	0	1	1	1
+dobby can not sprinkle the cake because snape should hiccup	dobby can not hiccup because snape should hiccup	0	0	1	0
+james should not make the strudel since she should laugh	james should not make the strudel	0	0	1	1
+lupin should not assemble many cakes which vernon can assemble	lupin should not assemble many cakes which neville should assemble	1	1	1	1
+albus may not assemble the souffle which vernon should arrange	albus may not assemble the souffle which a student must assemble	0	1	1	1
+hagrid should not assemble the souffles that hermione must arrange	hagrid should not assemble the souffles that she should assemble	0	1	1	1
+vernon should not arrange the strudel that hermione can gobble	vernon should not arrange the strudel that a witch should arrange	0	1	1	1
+he must not hide the strudel which fred should gobble	he must not hide the strudel which snape must assemble	1	1	1	1
+hermione should not hide the cake that mcgonagall should make	hermione should not hide the cake that a professor should hide	0	1	1	1
+neville must not hide the chocolates because snape should jump	neville must not hide the chocolates	0	0	1	1
+vernon may not eat the cookies because harry must wiggle	vernon may not eat the cookies	0	0	1	1
+snape should not hide a croissant which fred must arrange	snape should not hide a croissant which a professor should hide	0	1	1	1
+snape can not create the souffles which mcgonagall may sprinkle	snape can not create the souffles which a student must create	0	1	1	1
+petunia should not gobble the croissant that mcgonagall can eat	petunia should not gobble the pancakes that voldemort can eat	0	1	1	1
+ron must not jump because sirius must eat many cookies	ron must not eat many cookies because neville must eat many cookies	0	0	1	0
+ron can not make a cake that mcgonagall should sprinkle	ron can not make a cake that a professor should make	0	1	1	1
+ron may not create the pancakes that george should make	ron may not create the pancakes that hagrid must create	1	1	1	1
+james may not prepare the croissant that neville should chew	james may not prepare the croissant that the professor should prepare	0	1	1	1
+hagrid must not smile because ron must arrange the strudels	hagrid must not arrange the strudels because neville must arrange the strudels	0	0	1	0
+lupin can not prepare the strudels that george may gobble	lupin can not prepare the strudels that hagrid can prepare	1	1	1	1
+harry must not make many chocolates that she may hide	harry must not make many chocolates that hagrid should make	0	1	1	1
+lupin may not sprinkle the chocolates that snape should eat	lupin may not sprinkle the chocolates that petunia must sprinkle	1	1	1	1
+lupin must not assemble the souffles that snape can gobble	lupin must not assemble the souffles that she should assemble	0	1	1	1
+he must not prepare the chocolates since james can party	he must not prepare the chocolates	0	0	1	1
+ron should not hide the baklava because albus should smile	ron should not smile since hagrid should smile	0	0	1	0
+hagrid must not arrange many doughnuts that draco should assemble	hagrid must not arrange many doughnuts that harry should arrange	1	1	1	1
+george should not eat the chocolates which albus should prepare	george should not eat the chocolates which hermione should eat	1	1	1	1
+ginny should not walk because ron can assemble a strudel	ginny should not assemble a strudel because a wizard should assemble a strudel	0	0	1	0
+fred must not assemble the pancake that she can chew	fred must not assemble the pancake that a student must assemble	0	1	1	1
+snape may not hide many doughnuts that dobby must assemble	snape may not hide many doughnuts that harry may hide	1	1	1	1
+he should not assemble a croissant which neville should hide	he should not assemble a croissant which a professor must assemble	0	1	1	1
+she should not assemble a chocolate which he can eat	she should not eat a chocolate which he can eat	1	1	1	0
+snape must not arrange the eclaires that mcgonagall may create	snape must not arrange the eclaires that lupin must arrange	1	1	1	1
+hagrid can not assemble the doughnuts that he can sprinkle	hagrid can not sprinkle the doughnuts that he can sprinkle	1	1	1	0
+lily may not create a chocolate that dobby can assemble	lily may not create a chocolate that a professor must create	0	1	1	1
+lily should not gobble the chocolate that fred can prepare	lily should not gobble the chocolate that he should gobble	0	1	1	1
+because sirius should hide a baklava petunia should not giggle	because sirius should hide a baklava petunia should not hide a baklava	0	0	1	0
+dobby must not sprinkle a cake that george may create	dobby must not sprinkle a cake that a professor should sprinkle	0	1	1	1
+mcgonagall must not sprinkle the strudels that hagrid can eat	mcgonagall must not sprinkle the strudels that hagrid must sprinkle	1	1	1	1
+snape should not sprinkle the cookies that hermione may arrange	snape should not sprinkle the cookies that a professor should sprinkle	0	1	1	1
+james should not create the strudels because ginny may swim	james should not swim because hagrid may swim	0	0	1	0
+fred can not prepare a chocolate that james must gobble	fred can not prepare a chocolate that a professor must prepare	0	1	1	1
+lupin must not gobble the cakes which ginny must make	lupin must not gobble the cakes which he should gobble	0	1	1	1
+hagrid should not make the cookies that he must make	hagrid should not make the cookies that ron should make	0	1	1	1
+ron must not make the strudels that ginny may assemble	ron must not make the strudels that james must make	1	1	1	1
+albus can not assemble a chocolate that albus should eat	albus can not assemble a chocolate that a professor should assemble	0	1	1	1
+ron can not chew the strudels which ginny should make	ron can not chew the strudels which a student can chew	0	1	1	1
+draco may not make the souffles that vernon may make	draco may not make the souffles that james must make	1	1	1	1
+vernon can not create many baklava which george must prepare	vernon can not create many baklava which hagrid should create	1	1	1	1
+ginny should not prepare the doughnut that ginny can create	ginny should not prepare the doughnut that she should prepare	0	1	1	1
+he may not party because vernon may make many doughnuts	he may not make a pancake because vernon may make the doughnuts	0	0	1	0
+petunia may not make the doughnut that snape must arrange	petunia may not make the doughnut that she should make	0	1	1	1
+neville should not giggle because james can arrange many strudels	neville should not arrange many strudels	0	0	1	0
+she must not assemble the chocolates that lily can make	she must not assemble the chocolates that james must assemble	1	1	1	1
+voldemort must not create the souffles that mcgonagall can arrange	voldemort must not create the souffles that a student must create	0	1	1	1
+snape should not assemble the baklava which he should create	snape should not assemble the baklava which snape should assemble	0	1	1	1
+lupin must not gobble the doughnuts that dobby may create	lupin must not gobble the doughnuts that snape should gobble	1	1	1	1
+hermione can not assemble the chocolate which sirius should sprinkle	hermione can not assemble the chocolate which he should assemble	0	1	1	1
+mcgonagall must not arrange many cakes which neville must gobble	mcgonagall must not arrange many cakes which draco should arrange	1	1	1	1
+voldemort should not arrange the baklava which she can hide	voldemort should not arrange the baklava which voldemort should arrange	0	1	1	1
+he should not eat the chocolates that ginny must assemble	he should not eat the chocolates that hermione should eat	1	1	1	1
+petunia should not assemble many pancakes which vernon should eat	petunia should not eat the pancakes which vernon should eat	1	1	1	0
+vernon should not make many eclaires that james can chew	vernon should not make many eclaires that she should make	0	1	1	1
+he must not run because dobby must prepare the doughnuts	he must not prepare the doughnuts because the professor may prepare the doughnuts	0	0	1	0
+lupin can not create the croissants that harry should assemble	lupin can not create the croissants that a student may create	0	1	1	1
+because mcgonagall should eat a chocolate james should not party	because mcgonagall should eat a chocolate james should not eat a chocolate	0	0	1	0
+petunia must not create many chocolates that draco may make	petunia must not create many chocolates that hagrid should create	1	1	1	1
+she can not assemble the souffles that harry must hide	she can not assemble the souffles that she should assemble	0	1	1	1
+petunia should not create the doughnuts that sirius may create	petunia should not create the doughnuts that she should create	0	1	1	1
+vernon must not chew many eclaires which albus must gobble	vernon must not chew many eclaires which she must chew	0	1	1	1
+lupin must not make the eclaires that ron must gobble	lupin must not make the eclaires that she must make	0	1	1	1
+sirius must not hide many doughnuts that she may sprinkle	sirius must not sprinkle many doughnuts that hagrid may sprinkle	0	1	1	0
+mcgonagall must not hide the eclaires that vernon must prepare	mcgonagall must not hide the eclaires that dobby must hide	1	1	1	1
+she may not make many baklava which she must assemble	she may not make many baklava which she should make	1	1	1	1
+hagrid must not make the doughnuts which petunia must make	hagrid must not make the doughnuts which snape should make	1	1	1	1
+because voldemort may sprinkle the baklava sirius may not jump	because voldemort may sprinkle the baklava sirius must not jump	1	1	1	1
+he can not assemble a cake that fred should chew	he can not assemble a cake that a professor should assemble	0	1	1	1
+albus may not laugh because dobby should gobble many cakes	albus may not gobble many cakes	0	0	1	0
+dobby may not make many eclaires that fred should arrange	dobby may not make many eclaires that she should create	0	1	1	1
+ginny may not assemble many doughnuts that albus should eat	ginny may not eat many doughnuts that voldemort should eat	1	1	1	0
+petunia can not gobble many baklava that she can sprinkle	petunia can not gobble many baklava that she should gobble	1	1	1	1
+hermione must not hide the souffles that george can create	hermione must not hide the souffles that she must hide	0	1	1	1
+vernon must not prepare many chocolates which hagrid should gobble	vernon must not prepare many chocolates which hagrid should prepare	1	1	1	1
+petunia should not hide the eclaires that voldemort must arrange	petunia should not hide the eclaires that dobby must hide	1	1	1	1
+hermione must not eat the chocolates which vernon may make	hermione must not eat the chocolates which hermione must eat	1	1	1	1
+mcgonagall can not gobble a cake that dobby should arrange	mcgonagall can not gobble a cake that a professor should gobble	0	1	1	1
+petunia must not assemble the cakes which mcgonagall can arrange	petunia must not assemble the cakes which he must assemble	0	1	1	1
+he can not make the doughnuts which fred must make	he can not make the doughnuts which snape should make	1	1	1	1
+neville should not gobble many cookies which ginny must sprinkle	neville should not gobble many cookies which she should gobble	0	1	1	1
+hagrid should not gobble the doughnut that vernon must sprinkle	hagrid should not gobble the doughnut that she should gobble	0	1	1	1
+she can not eat the doughnuts that draco should sprinkle	she can not eat the doughnuts that a professor should eat	0	1	1	1
+she should not chew the souffles that he must arrange	she should not chew the souffles that she should chew	1	1	1	1
+albus should not create the pancakes that hermione must create	albus should not create the pancakes that hagrid should create	1	1	1	1
+voldemort must not eat the cake that hermione should eat	voldemort must not eat the cake that a professor should eat	0	1	1	1
+hagrid must not prepare many cookies that he can hide	hagrid must not prepare many cookies that hagrid should prepare	0	1	1	1
+harry may not assemble the eclaires which james can sprinkle	harry may not sprinkle the eclaires which she should assemble	0	1	1	0
+petunia may not create the pancake since albus should walk	petunia may not walk since voldemort should walk	0	0	1	0
+neville should not arrange the doughnuts which he must arrange	neville should not arrange the doughnuts which snape should arrange	0	1	1	1
+ron can not assemble many baklava that george must eat	ron can not assemble many baklava that neville should assemble	1	1	1	1
+mcgonagall should not make many strudels which she may arrange	mcgonagall should not make many strudels which hagrid should make	0	1	1	1
+voldemort must not arrange the chocolates since hagrid should walk	voldemort must not arrange the chocolates	0	0	1	1
+ginny can not make the souffles that lily can arrange	ginny can not make the souffles that james must make	1	1	1	1
+neville must not chew the cookie which dobby can chew	neville must not chew the cookie which a student can chew	0	1	1	1
+draco should not create the strudels which hermione may sprinkle	draco should not create the strudels which hagrid should create	1	1	1	1
+snape may not chew the doughnuts that snape must eat	snape may not chew the doughnuts that snape must chew	1	1	1	1
+she must not hide the eclaires that she should make	she must not hide the eclaires that dobby must hide	0	1	1	1
+vernon may not chew a chocolate which harry must hide	vernon may not chew a chocolate which a professor may chew	0	1	1	1
+draco may not hiccup since draco can make the doughnut	draco may not make the doughnut since she can make the doughnut	0	0	1	0
+harry should not create the souffles that hagrid should eat	harry should not create the souffles that she should create	0	1	1	1
+vernon must not hide the pancake that he may make	vernon must not hide the pancake that dobby must hide	0	1	1	1
+she may not arrange many cakes which hermione should prepare	she may not arrange many cakes which neville should arrange	1	1	1	1
+voldemort must not eat the cakes that fred should hide	voldemort must not eat the cakes that a professor should eat	0	1	1	1
+mcgonagall should not eat many chocolates which fred should sprinkle	mcgonagall should not eat many chocolates which hermione should eat	1	1	1	1
+voldemort can not giggle because ron should make the croissant	voldemort can not make the eclaire because ron should make the doughnuts	0	0	1	0
+james should not eat the pancakes that dobby may make	james should not eat the pancakes that a professor should eat	0	1	1	1
+lupin should not hide many strudels which voldemort should sprinkle	lupin should not hide many strudels which neville should hide	1	1	1	1
+she can not eat the cakes which draco can assemble	she can not eat the cakes which he should eat	0	1	1	1
+george must not sprinkle the pancake that sirius must chew	george must not sprinkle the pancake that petunia must sprinkle	1	1	1	1
+she can not eat a strudel that albus can chew	she can not eat a strudel that a professor should eat	0	1	1	1
+george can not assemble the baklava which fred may create	george can not assemble the baklava which she should assemble	0	1	1	1
+draco can not sprinkle a cake that dobby may create	draco can not sprinkle a cake that a professor should sprinkle	0	1	1	1
+snape should not arrange the strudels which harry can gobble	snape should not arrange the strudels which neville should arrange	1	1	1	1
+vernon should not assemble the strudel that james should hide	vernon should not assemble the strudel that neville should assemble	1	1	1	1
+ron must not arrange many chocolates which voldemort may create	ron must not arrange many chocolates which neville should arrange	1	1	1	1
+snape should not hide the eclaires that fred should create	snape should not hide the eclaires that dobby must hide	1	1	1	1
+she must not create a strudel since she may smile	she must not smile since she may smile since she may smile	0	0	1	0
+harry should not assemble the cookie that hagrid may sprinkle	harry should not assemble the cookie that she should assemble	0	1	1	1
+vernon may not arrange many souffles that james may assemble	vernon may not arrange many souffles that neville should arrange	1	1	1	1
+albus must not eat the strudel which lupin must assemble	albus must not eat the strudel which a professor must eat	0	1	1	1
+albus can not hiccup because harry should assemble the pancakes	albus can not assemble the pancakes	0	0	1	0
+dobby must not gobble the eclaire that george may sprinkle	dobby must not gobble the eclaire that a student should gobble	0	1	1	1
+voldemort can not arrange the strudels that harry can gobble	voldemort can not arrange the strudels that neville may arrange	1	1	1	1
+ginny should not hide the cakes since dobby may giggle	ginny should not giggle since sirius may giggle because sirius may giggle	0	0	1	0
+harry must not arrange the cookie that mcgonagall should sprinkle	harry must not arrange the cookie that a student should arrange	0	1	1	1
+harry must not assemble the croissants that dobby can arrange	harry must not assemble the croissants that a student must assemble	0	1	1	1
+lupin must not gobble the croissant that harry should hide	lupin must not gobble the croissant that a professor must gobble	0	1	1	1
+lily must not assemble the souffles which he should create	lily must not assemble the souffles which she should assemble	1	1	1	1
+mcgonagall may not giggle since george should sprinkle the souffle	mcgonagall may not sprinkle the souffle since a student should sprinkle the souffle	0	0	1	0
+ron can not eat a chocolate that lupin can make	ron can not eat a chocolate that a professor must eat	0	1	1	1
+albus should not chew a baklava because she should wiggle	albus should not chew a doughnut	0	0	1	1
+voldemort must not gobble the eclaires which ginny must hide	voldemort must not gobble the eclaires which james must gobble	1	1	1	1
+george may not arrange the pancakes since hagrid should jump	george may not arrange the baklava	0	0	1	1
+harry can not arrange the strudels which mcgonagall should prepare	harry can not arrange the strudels which draco should arrange	1	1	1	1
+draco must not eat a croissant that voldemort should assemble	draco must not eat a croissant that a professor must eat	0	1	1	1
+she may not make many cookies that albus can prepare	she may not make many cookies that ron should make	1	1	1	1
+albus must not hiccup because lupin should arrange the souffles	albus must not arrange the souffles	0	0	1	0
+mcgonagall should not arrange the eclaires that sirius can sprinkle	mcgonagall should not arrange the eclaires that lupin should arrange	1	1	1	1
+vernon may not eat a cake that lupin can make	vernon may not eat a cake that a professor should eat	0	1	1	1
+sirius can not make the cookie that albus should make	sirius can not make the cookie that she can make	0	1	1	1
+voldemort should not jump since hagrid should make the souffles	voldemort should not make the souffles since he should make the souffles	0	0	1	0
+draco must not assemble the doughnuts that petunia should eat	draco must not eat the doughnuts that petunia should eat	1	1	1	0
+james should not make the pancakes which fred can eat	james should not eat the pancakes which fred can eat	1	1	1	0
+because james should prepare the baklava she can not party	because james should party she can not party	0	0	1	0
+lupin must not hide many strudels which fred must gobble	lupin must not hide many strudels which hagrid must hide	1	1	1	1
+harry can not create the chocolates that ginny must create	harry can not create the chocolates that hagrid can create	1	1	1	1
+lily must not sprinkle the doughnuts that ron should sprinkle	lily must not sprinkle the doughnuts that a professor should sprinkle	0	1	1	1
+fred should not assemble the souffles that ron can chew	fred should not assemble the souffles that she should assemble	0	1	1	1
+petunia must not create the doughnuts that voldemort must assemble	petunia must not create the doughnuts that a professor should create	0	1	1	1
+hagrid may not sprinkle many cookies that snape must assemble	hagrid may not sprinkle many cookies that hagrid should sprinkle	1	1	1	1
+fred can not wiggle since mcgonagall can sprinkle the strudels	fred can not sprinkle the strudels since the student can sprinkle the strudels	0	0	1	0
+george should not sprinkle many eclaires that vernon can eat	george should not sprinkle many eclaires that hagrid can sprinkle	1	1	1	1
+voldemort should not prepare the cookies that lily can eat	voldemort should not prepare the cookies that a professor can prepare	0	1	1	1
+he may not eat a croissant which vernon may sprinkle	he may not eat a croissant which a professor must eat	0	1	1	1
+draco should not assemble many cookies that fred must sprinkle	draco should not assemble many cookies that ron should assemble	1	1	1	1
+sirius should not eat a cake that hagrid may make	sirius should not eat a cake that a professor should eat	0	1	1	1
+ron should not hide a croissant which ginny should prepare	ron should not hide a croissant which a professor should hide	0	1	1	1
+he should not giggle because hagrid may prepare a chocolate	he should not prepare a chocolate because a professor may prepare a chocolate	0	0	1	0
+petunia may not chew the strudels which snape may make	petunia may not chew the strudels which draco may chew	1	1	1	1
+hermione should not gobble the eclaires because petunia should laugh	hermione should not laugh because petunia should laugh	0	0	1	0
+albus should not create the cookies which harry should make	albus should not create the cookies which hagrid can create	1	1	1	1
+she should not prepare a croissant which james must eat	she should not eat a croissant which he must eat	0	1	1	0
+harry can not arrange many doughnuts which lupin must prepare	harry can not arrange many doughnuts which harry should arrange	1	1	1	1
+george must not assemble the souffles that vernon should assemble	george must not assemble the souffles that she should assemble	0	1	1	1
+draco must not prepare the cookies because she must swim	draco must not prepare the eclaires	0	0	1	1
+petunia must not assemble the cakes which fred can arrange	petunia must not assemble the cakes which he must assemble	0	1	1	1
+snape can not hiccup since lily can assemble the doughnut	snape can not assemble the doughnut since he can assemble the doughnut	0	0	1	0
+lupin can not make the pancake that vernon must gobble	lupin can not make the pancake that james must make	1	1	1	1
+james must not gobble the chocolate that ginny must gobble	james must not gobble the chocolate that he must gobble	0	1	1	1
+since draco must assemble the strudel fred can not run	since draco must run fred can not run	0	0	1	0
+ginny should not eat many cookies that hermione should make	ginny should not eat many cookies that ron should eat	1	1	1	1
+she may not chew a croissant which draco may assemble	she may not chew a croissant which a professor may chew	0	1	1	1
+hagrid should not hide the strudel which neville can gobble	hagrid should not hide the strudel which snape should hide	1	1	1	1
+vernon should not hide many cookies which hermione may arrange	vernon should not hide many cookies which neville should hide	1	1	1	1
+ginny can not eat a cake which harry must arrange	ginny can not eat a cake which a professor should eat	0	1	1	1
+petunia can not gobble a chocolate that neville can chew	petunia can not gobble a chocolate that a professor must gobble	0	1	1	1
+vernon must not eat the cakes that hagrid must arrange	vernon must not eat the cakes that a professor should eat	0	1	1	1
+george may not arrange the doughnuts which vernon may hide	george may not arrange the doughnuts which snape should arrange	1	1	1	1
+harry can not make the croissant that hagrid should eat	harry can not eat the croissant that hagrid should eat	1	1	1	0
+albus can not gobble the baklava that lupin may prepare	albus can not gobble the baklava that snape can gobble	1	1	1	1
+fred may not create the croissants which hermione must prepare	fred may not create the croissants which a student may create	0	1	1	1
+mcgonagall must not assemble many croissants which neville must hide	mcgonagall must not assemble many croissants which he should assemble	0	1	1	1
+draco should not assemble the chocolate that fred may sprinkle	draco should not assemble the chocolate that he may sprinkle	0	1	1	1
+sirius may not gobble the souffles that hagrid can prepare	sirius may not gobble the souffles that she should gobble	0	1	1	1
+ginny can not gobble the doughnut which albus should assemble	ginny can not gobble the doughnut which she can gobble	0	1	1	1
+she must not assemble the cakes which she may prepare	she must not assemble the cakes which he must assemble	1	1	1	1
+james can not make the chocolates that dobby should create	james can not make the chocolates that james can make	1	1	1	1
+sirius must not prepare many cookies which albus must assemble	sirius must not prepare many cookies which hagrid should prepare	1	1	1	1
+lily must not assemble the strudels that albus must gobble	lily must not assemble the strudels that neville must assemble	1	1	1	1
+hermione must not eat the eclaires that snape can chew	hermione must not eat the eclaires that a student should eat	0	1	1	1
+draco may not hiccup because neville must eat the eclaires	draco may not eat the eclaires because neville must eat the eclaires	0	0	1	0
+ginny can not make the doughnut that hagrid should create	ginny can not make the doughnut that she can make	0	1	1	1
+draco must not eat the croissant because harry may giggle	draco must not giggle because sirius may giggle	0	0	1	0
+he may not create the chocolates that snape may assemble	he may not create the chocolates that hagrid must create	1	1	1	1
+james may not hiccup because snape must assemble a doughnut	james may not assemble a doughnut	0	0	1	0
+lupin should not assemble many eclaires which albus should sprinkle	lupin should not assemble many eclaires which neville should assemble	1	1	1	1
+james should not create the eclaires that draco may prepare	james should not create the eclaires that she should create	0	1	1	1
+lily may not walk because neville must arrange the cookies	lily may not arrange the cookies since ron may arrange the cookies	0	0	1	0
+ginny should not assemble the baklava which hermione may assemble	ginny should not assemble the baklava which she should assemble	0	1	1	1
+he should not prepare the strudel that voldemort should assemble	he should not prepare the strudel that a wizard should prepare	0	1	1	1
+lupin can not assemble many eclaires that draco can sprinkle	lupin can not assemble many eclaires that neville should assemble	1	1	1	1
+voldemort may not eat the cookies since james must smile	voldemort may not smile since james must smile	0	0	1	0
+harry must not create the strudel which fred can eat	harry must not eat the strudel which fred can eat	1	1	1	0
+draco should not hide many strudels that george must hide	draco should not hide many strudels that harry should hide	1	1	1	1
+dobby must not eat the strudels that harry should gobble	dobby must not eat the strudels that hagrid must eat	1	1	1	1
+voldemort must not assemble the cookies that sirius may arrange	voldemort must not assemble the cookies that ron must assemble	1	1	1	1
+vernon may not arrange the eclaires that hagrid must make	vernon may not arrange the eclaires that neville may arrange	1	1	1	1
+petunia can not arrange the strudels that vernon can chew	petunia can not arrange the strudels that neville may arrange	1	1	1	1
+hermione may not assemble the eclaires that voldemort must arrange	hermione may not assemble the eclaires that neville may assemble	1	1	1	1
+hermione must not assemble the cookie that ron must sprinkle	hermione must not assemble the cookie that she should assemble	0	1	1	1
+james must not create the strudels that draco can prepare	james must not create the strudels that hagrid must create	1	1	1	1
+draco should not prepare a baklava since he must walk	draco should not prepare a baklava	0	0	1	1
+fred may not eat the souffle which lupin can create	fred may not eat the souffle which a professor must eat	0	1	1	1
+fred should not hide the strudel that sirius should hide	fred should not hide the strudel that a witch should hide	0	1	1	1
+harry may not arrange the strudels that she should make	harry may not arrange the strudels that neville may arrange	0	1	1	1
+he should not prepare the cakes because mcgonagall can wiggle	he should not wiggle because mcgonagall should wiggle	0	0	1	0
+draco must not chew the eclaire that fred must gobble	draco must not chew the eclaire that a student should chew	0	1	1	1
+hermione can not arrange the chocolates since draco should laugh	hermione can not arrange the chocolates	0	0	1	1
+george may not chew the chocolates which sirius should prepare	george may not chew the chocolates which petunia can chew	1	1	1	1
+because mcgonagall may prepare the souffle james must not swim	because mcgonagall may prepare the souffle james must not prepare the souffle	0	0	1	0
+mcgonagall should not assemble many souffles that vernon must sprinkle	mcgonagall should not assemble many souffles that she should assemble	0	1	1	1
+albus should not assemble the cookie that he must gobble	albus should not assemble the cookie that she should assemble	1	1	1	1
+ginny can not hiccup because hermione must eat the chocolates	ginny can not eat the chocolates	0	0	1	0
+mcgonagall may not create the souffles which she must create	mcgonagall may not create the souffles which a student must create	0	1	1	1
+mcgonagall must not arrange the cookies that ginny should gobble	mcgonagall must not arrange the cookies that ron must arrange	1	1	1	1
+petunia should not prepare many eclaires which albus should prepare	petunia should not prepare many eclaires which dobby should prepare	1	1	1	1
+she should not gobble the chocolates that draco should sprinkle	she should not gobble the chocolates that james must gobble	1	1	1	1
+james must not sprinkle the cake which hagrid can arrange	james must not sprinkle the cake which he must sprinkle	0	1	1	1
+a professor should not swim because a student should party	a professor should not party because a student should party	1	1	1	0
+draco may not hide a croissant that hermione can chew	draco may not hide a croissant that a professor must hide	0	1	1	1
+harry can not create many souffles that ginny must sprinkle	harry can not create many souffles that hagrid should create	1	1	1	1
+he may not party since lily should prepare the doughnuts	he may not prepare the baklava because hermione should prepare the doughnuts	0	0	1	0
+voldemort must not sprinkle many strudels that draco can hide	voldemort must not sprinkle many strudels that hagrid should sprinkle	1	1	1	1
+dobby must not make the cookies that she may assemble	dobby must not make the cookies that ron must make	0	1	1	1
+ron can not eat the cakes which lupin can gobble	ron can not eat the cakes which he should eat	0	1	1	1
+neville must not gobble the strudels which she may gobble	neville must not gobble the strudels which she should gobble	1	1	1	1
+albus should not chew the doughnut which she should gobble	albus should not chew the doughnut which she can chew	1	1	1	1
+ron must not sprinkle the strudels which fred should make	ron must not sprinkle the strudels which james must sprinkle	1	1	1	1
+harry should not gobble the souffles that lupin must make	harry should not gobble the souffles that she should gobble	0	1	1	1
+ginny should not assemble many souffles which dobby must chew	ginny should not assemble many souffles which she should assemble	0	1	1	1
+george must not create a doughnut since mcgonagall can giggle	george must not giggle because mcgonagall can giggle	0	0	1	0
+sirius should not gobble the doughnuts that she can sprinkle	sirius should not sprinkle the doughnuts that hagrid can sprinkle	0	1	1	0
+sirius may not sprinkle the chocolate that harry should sprinkle	sirius may not sprinkle the chocolate that a student should sprinkle	0	1	1	1
+vernon can not gobble many baklava that hagrid may prepare	mcgonagall can not gobble many baklava that voldemort should gobble	1	1	1	1
+he should not create many cookies that petunia may chew	he should not create many cookies that hagrid should create	1	1	1	1
+lupin should not make the baklava which dobby must prepare	lupin should not make the baklava which she should make	0	1	1	1
+she may not sprinkle the doughnut which voldemort must eat	she may not sprinkle the doughnut which hagrid must sprinkle	1	1	1	1
+since sirius can gobble many cookies ginny should not walk	since sirius can gobble many cookies ginny can not gobble many cookies	0	0	1	0
+lupin should not sprinkle the cookies that neville must arrange	lupin should not sprinkle the cookies that a professor should sprinkle	0	1	1	1
+ron may not gobble the cakes that snape must hide	ron may not gobble the cakes that a professor should gobble	0	1	1	1
+fred may not create the chocolates that ron may hide	fred may not create the chocolates that hagrid must create	1	1	1	1
+albus should not make many pancakes which draco must assemble	albus should not make many pancakes which hagrid should make	1	1	1	1
+draco must not make the cake that ron may make	draco must not make the cake that a professor should make	0	1	1	1
+lily must not assemble the cakes which she must eat	lily must not eat the cakes which she must eat	1	1	1	0
+fred must not create the chocolate that she should arrange	fred must not create the chocolate that a student must create	0	1	1	1
+snape should not make the souffles that vernon can create	snape should not make the souffles that james should make	1	1	1	1
+dobby may not prepare the croissant which neville should make	dobby may not prepare the croissant which the professor should prepare	0	1	1	1
+harry may not make the doughnuts which dobby can sprinkle	harry may not make the doughnuts which snape should sprinkle	1	1	1	1
+fred can not create the strudels that ron should prepare	fred can not create the strudels that hagrid must create	1	1	1	1
+draco may not arrange a strudel which sirius can assemble	draco may not arrange a strudel which a wizard should arrange	0	1	1	1
+hagrid should not hide the pancakes since draco should run	hagrid should not hide the doughnuts since she should run	0	1	1	1
+george may not create the chocolate that petunia should arrange	george may not create the chocolate that a student should create	0	1	1	1
+she must not arrange many eclaires which vernon can prepare	she must not arrange many eclaires which neville should arrange	1	1	1	1
+he should not arrange the croissants that ginny should eat	he should not arrange the croissants that a student should arrange	0	1	1	1
+james should not gobble the souffle that neville can sprinkle	james should not gobble the souffle that a student should gobble	0	1	1	1
+hagrid should not smile because lupin may sprinkle a chocolate	hagrid should not sprinkle a chocolate because a student should gobble a chocolate	0	0	1	0
+lupin may not arrange many cakes which she must assemble	lupin may not arrange many cakes which neville should arrange	0	1	1	1
+george can not gobble the strudel which voldemort may create	george can not gobble the strudel which snape should gobble	1	1	1	1
+sirius should not gobble many cakes which george should hide	sirius should not gobble many cakes which draco should gobble	1	1	1	1
+harry should not chew many pancakes which vernon can eat	harry should not eat many pancakes which harry can eat	1	1	1	0
+lily can not hide the doughnuts that he can create	lily can not hide the doughnuts that a professor may hide	0	1	1	1
+she must not chew many doughnuts that james should arrange	she must not chew many doughnuts that she should chew	0	1	1	1
+she can not assemble many cakes that he should create	she can not assemble many cakes that neville should assemble	0	1	1	1
+ginny may not gobble many baklava which ron should eat	ginny may not gobble many baklava which voldemort should gobble	1	1	1	1
+lupin must not assemble a cake that mcgonagall can arrange	lupin must not assemble a cake that a professor must assemble	0	1	1	1
+ron must not make the cookie that ginny may gobble	ron must not make the cookie that she should make	0	1	1	1
+lupin must not create many pancakes which she must gobble	lupin must not create many pancakes which hagrid should create	0	1	1	1
+dobby must not hide the cookie which petunia should assemble	dobby must not hide the cookie which dobby must hide	1	1	1	1
+dobby may not eat a cake that james may make	dobby may not eat a cake that a professor should eat	0	1	1	1
+vernon must not hide many souffles which george may create	vernon must not hide many souffles which fred should hide	1	1	1	1
+ginny should not gobble the baklava which lily must sprinkle	ginny should not gobble the baklava which snape should gobble	1	1	1	1
+lily must not arrange the strudels since he should giggle	lily must not arrange the strudels	0	0	1	1
+harry can not eat the cakes that hermione may make	harry can not eat the cakes that a professor should eat	0	1	1	1
+petunia should not create the strudel that draco should arrange	petunia should not create the strudel that a wizard should create	0	1	1	1
+she should not swim since she can sprinkle the croissant	she should not sprinkle the baklava since she can sprinkle the baklava	0	0	1	0
+voldemort may not hiccup because petunia should chew the doughnut	voldemort may not chew the doughnut because hermione should chew the doughnut	0	0	1	0
+neville may not hide a croissant that lily should hide	neville may not hide a croissant that a professor may hide	0	1	1	1
+ron may not gobble many strudels that mcgonagall can arrange	ron may not gobble many strudels that neville may gobble	1	1	1	1
+lupin must not make many chocolates because lupin may walk	lupin must not make many doughnuts	0	0	1	1
+vernon should not party since ron should gobble the cookies	vernon should not gobble the cookies since ron should gobble the cookies	0	0	1	0
+she must not assemble the eclaire which voldemort can assemble	she must not assemble the eclaire which she should assemble	0	1	1	1
+petunia must not create many doughnuts that petunia must hide	petunia must not create many doughnuts that hagrid should create	1	1	1	1
+hermione may not assemble the eclaires that ron must make	hermione may not assemble the eclaires that neville may assemble	1	1	1	1
+she should not hide the eclaires which draco should sprinkle	she should not hide the eclaires which dobby should hide	1	1	1	1
+james must not eat a pancake since hermione should smile	james must not eat a eclaire	0	0	1	1
+she can not gobble the doughnuts that she must gobble	she can not gobble the doughnuts that snape should gobble	0	1	1	1
+ron can not hide the doughnuts which voldemort should assemble	ron can not hide the doughnuts which snape should hide	1	1	1	1
+hermione can not assemble the souffle which hagrid must prepare	hermione can not assemble the souffle which a student can assemble	0	1	1	1
+draco must not wiggle since mcgonagall may sprinkle a chocolate	draco must not sprinkle a chocolate since a student must sprinkle a chocolate	0	0	1	0
+ron should not chew the baklava since harry can walk	ron should not hide the baklava since the student can prepare the baklava	0	0	1	0
+ron must not hide the cakes which she should sprinkle	ron must not hide the cakes which he must hide	1	1	1	1
+ginny must not chew the doughnuts which fred must make	ginny must not chew the doughnuts which draco should chew	1	1	1	1
+draco may not sprinkle a cake that harry should sprinkle	draco may not sprinkle a cake that a professor should sprinkle	0	1	1	1
+hagrid can not create the pancakes which hermione may assemble	hagrid can not create the pancakes which hagrid can create	1	1	1	1
+draco can not hide the pancake which snape should make	draco can not hide the pancake which dobby must hide	1	1	1	1
+snape may not eat the strudels that voldemort can chew	snape may not eat the strudels that a student should eat	0	1	1	1
+hagrid should not eat the pancake that james should hide	hagrid should not eat the pancake that petunia must eat	1	1	1	1
+she can not assemble the souffles which george should gobble	she can not assemble the souffles which she should assemble	0	1	1	1
+hagrid can not assemble the cookies that snape should make	hagrid can not assemble the cookies that ron can assemble	1	1	1	1
+neville should not gobble the eclaire that fred may create	neville should not gobble the eclaire that james should gobble	1	1	1	1
+petunia should not laugh because draco should create the chocolate	petunia should not create the cakes	0	0	1	0
+voldemort must not chew a cake that george should create	voldemort must not chew a cake that a professor should chew	0	1	1	1
+she can not make the doughnuts which harry can arrange	she can not make the doughnuts which snape should make	1	1	1	1
+hermione may not create the pancakes that george may create	hermione may not create the pancakes that hagrid should create	1	1	1	1
+petunia must not gobble the strudel which mcgonagall may hide	petunia must not gobble the strudel which snape should gobble	1	1	1	1
+voldemort may not assemble the strudels that neville should eat	voldemort may not assemble the strudels that neville may assemble	1	1	1	1
+james should not hide the cake that george should create	james should not hide the cake that a professor should hide	0	1	1	1
+ron must not hiccup because hagrid should create the cakes	ron must not create the cakes because hagrid should create the cakes	0	0	1	0
+harry may not create the souffles that hagrid should prepare	harry may not create the souffles that a student must create	0	1	1	1
+ginny should not create many baklava that dobby must prepare	ginny should not create many baklava that hagrid should create	1	1	1	1
+neville can not make the strudels that lily can gobble	neville can not make the strudels that james must make	1	1	1	1
+dobby may not assemble the eclaires which george may hide	dobby may not hide the eclaires which neville should assemble	1	1	1	0
+draco must not sprinkle the souffles that she must eat	draco must not sprinkle the souffles that james must sprinkle	0	1	1	1
+snape can not hide the strudel that george must sprinkle	snape can not hide the strudel that a witch should hide	0	1	1	1
+a student can not assemble the doughnuts that dobby must hide	a student can not assemble the doughnuts that ron should assemble	1	1	1	1
+the student may not eat the chocolates that dobby should hide	the student may not eat the chocolates that a professor should eat	0	1	1	1
+vernon may not gobble the souffles which a professor can chew	vernon may not gobble the souffles which she should gobble	0	1	1	1
+the witch must not hide a cake which sirius should make	the witch must not hide a cake which a professor may hide	0	1	1	1
+hermione can not make the doughnuts which the student should make	hermione can not make the doughnuts which snape should make	0	1	1	1
+the student can not arrange many doughnuts that james may create	the student can not arrange many doughnuts that harry should arrange	1	1	1	1
+hermione may not make the souffles that a wizard can eat	hermione may not make the souffles that james must make	0	1	1	1
+a professor should not hide the eclaires since ginny may walk	a professor should not hide the doughnuts since ginny may hide the doughnuts	0	0	1	1
+a student can not create the doughnuts that fred must sprinkle	a student can not create the doughnuts that a student may create	0	1	1	1
+a professor must not hide the doughnuts that he can eat	a professor must not eat the pancakes that fred can eat	0	1	1	0
+a wizard may not eat a cake that he may make	a wizard may not eat a cake that a professor may eat	0	1	1	1
+neville can not sprinkle the pancake that the wizard may assemble	neville can not sprinkle the pancake that petunia can sprinkle	0	1	1	1
+the wizard must not assemble the doughnuts that fred may sprinkle	the wizard must not sprinkle the doughnuts that hagrid may sprinkle	1	1	1	0
+hermione should not sprinkle the croissants that a student should arrange	hermione should not sprinkle the croissants that a student should sprinkle	1	1	1	1
+a student must not arrange the eclaires that snape must hide	a student must not arrange the eclaires that a student should arrange	0	1	1	1
+a wizard should not make many croissants because hermione should swim	a wizard should not make many eclaires	0	0	1	1
+the student can not create the croissant since lily can smile	the student can not smile since a professor can create the doughnuts	0	0	1	0
+a witch must not sprinkle the cake that ginny may gobble	a witch must not sprinkle the cake that a professor should sprinkle	0	1	1	1
+ginny may not walk since the student should eat the croissants	ginny may not eat the baklava	0	0	1	0
+petunia must not arrange the cookies that the professor must create	petunia must not arrange the cookies that ron must arrange	0	1	1	1
+snape must not eat the doughnuts that the student may chew	snape must not eat the doughnuts that sirius may eat	0	1	1	1
+snape can not create the pancake that the student must create	snape can not create the pancake that petunia can create	0	1	1	1
+snape must not sprinkle the doughnuts that the wizard may gobble	snape must not sprinkle the doughnuts that a professor should sprinkle	1	1	1	1
+dobby may not hide many doughnuts that the wizard should sprinkle	dobby may not hide many doughnuts that harry may hide	0	1	1	1
+snape may not hide a strudel which a witch may eat	snape may not eat a strudel which a witch may eat	1	1	1	0
+neville should not make the doughnuts which the professor must sprinkle	neville should not make the doughnuts which snape should make	0	1	1	1
+the witch can not hide the doughnuts which george must chew	the witch can not hide the doughnuts which snape should hide	1	1	1	1
+fred should not hide the croissant which a professor should create	fred should not hide the croissant which the professor should hide	1	1	1	1
+because he can hiccup a student should not create the cake	because he can hiccup a student can not gobble a cookie	1	1	1	0
+a professor must not gobble the eclaire since fred may walk	a professor must not walk	0	0	1	0
+voldemort should not eat a cake that a witch can arrange	voldemort should not eat a cake that a professor should eat	1	1	1	1
+a student can not gobble many cookies that harry should create	a student can not gobble many cookies that a professor should gobble	0	1	1	1
+the witch must not eat a strudel which albus can prepare	the witch must not eat the strudel which a professor must eat	0	1	1	1
+the witch should not laugh because she can eat a croissant	the witch should not eat the pancakes because fred can eat the pancakes	0	0	1	0
+the professor must not assemble the chocolates that lily must assemble	the professor must not assemble the chocolates that james must assemble	1	1	1	1
+vernon must not jump since the student should arrange the souffles	vernon must not arrange the souffles since the student should arrange the souffles	0	0	1	0
+the witch may not eat the pancake that he should assemble	the witch may not eat the pancake that a professor should eat	0	1	1	1
+mcgonagall should not create the pancakes which a wizard must hide	mcgonagall should not create the pancakes which hagrid should create	0	1	1	1
+the witch can not chew a chocolate that sirius must create	the witch can not chew a chocolate that a professor can chew	0	1	1	1
+fred can not create the eclaires that a student may make	fred can not create the eclaires that a student should create	1	1	1	1
+the student should not assemble many chocolates which she may gobble	the student should not assemble many chocolates which hagrid should assemble	0	1	1	1
+draco can not chew the doughnuts which the professor may sprinkle	draco can not sprinkle the doughnuts which draco can chew	0	1	1	0
+a student may not make the pancakes that lupin should arrange	a student may not make the pancakes that a student should make	0	1	1	1
+a student may not eat the croissants which she should chew	a student may not eat the croissants which a student should eat	0	1	1	1
+sirius must not arrange the croissants that a wizard may make	sirius must not arrange the croissants that a student should arrange	1	1	1	1
+a wizard may not assemble a doughnut because he can party	a wizard may not party because he can party	0	0	1	0
+the professor may not prepare the cake which vernon must hide	the professor may not prepare the cake which the professor may prepare	0	1	1	1
+james must not assemble a cake that the professor can prepare	james must not assemble a cake that a professor must assemble	1	1	1	1
+lupin should not gobble the souffles which a wizard can hide	lupin should not gobble the souffles which she should gobble	0	1	1	1
+a wizard may not arrange a croissant that vernon must create	a wizard may not arrange a croissant that a professor may arrange	0	1	1	1
+hagrid should not eat the chocolates which the professor should gobble	hagrid should not eat the chocolates which hermione should eat	0	1	1	1
+he may not arrange the cookies that a wizard should create	he may not arrange the cookies that ron may arrange	0	1	1	1
+the wizard can not sprinkle the strudels which neville can create	the wizard can not sprinkle the strudels which hagrid can sprinkle	1	1	1	1
+a witch can not arrange a cake that albus should make	a witch can not arrange a cake that a professor should arrange	0	1	1	1
+a professor can not hide the cakes that she can hide	a professor can not hide the cakes that a professor should hide	0	1	1	1
+the professor should not chew the cake that lupin can chew	the professor should not chew the cake that a professor should chew	0	1	1	1
+a student should not make the strudels which dobby must prepare	a student should not make the strudels which she should make	0	1	1	1
+a student can not chew the croissants which lily must hide	a student can not chew the croissants which a student can chew	0	1	1	1
+the student can not chew the strudels that hagrid may assemble	the student can not chew the strudels that a student can chew	0	1	1	1
+a witch can not arrange the strudel which voldemort may arrange	a witch can not arrange the strudel which a witch should arrange	0	1	1	1
+draco can not sprinkle the doughnuts that a professor may eat	draco can not sprinkle the doughnuts that vernon may eat	0	1	1	1
+the wizard can not sprinkle a croissant that harry should assemble	the wizard can not sprinkle a croissant that a professor should sprinkle	0	1	1	1
+snape can not create the strudels that the professor must chew	snape can not create the strudels that hagrid should create	0	1	1	1
+draco can not make the baklava because the professor should wiggle	draco can not make the baklava	0	0	1	1
+george should not arrange the strudels that the witch may gobble	george should not arrange the strudels that neville should arrange	0	1	1	1
+fred can not assemble the cookie that a wizard should make	fred can not assemble the cookie that she can assemble	0	1	1	1
+harry can not create a chocolate that the student may chew	harry can not create a chocolate that a professor must create	1	1	1	1
+lily must not chew a croissant since the wizard can party	lily must not party since a wizard can party	0	0	1	0
+he should not create the cake that a professor may eat	he should not eat the cake that a professor may eat	1	1	1	0
+the student must not create the cookie that she must sprinkle	the student must not create the cookie that a student can create	0	1	1	1
+hermione must not hide the croissant that a witch must arrange	hermione must not hide the croissant that a professor must hide	1	1	1	1
+hagrid can not prepare many strudels which the professor must arrange	hagrid can not prepare many strudels which hagrid must prepare	0	1	1	1
+hermione should not prepare many baklava which the witch can create	hermione should not prepare many baklava which hagrid should prepare	0	1	1	1
+hagrid can not make the strudels which the student should sprinkle	hagrid can not make the strudels which hagrid can make	0	1	1	1
+the wizard must not gobble the eclaires which lupin must eat	the wizard must not eat the eclaires which he must eat	0	1	1	0
+the student should not hide many souffles that draco must make	the student should not hide many souffles that neville should hide	1	1	1	1
+fred should not assemble many chocolates that the professor must arrange	fred should not assemble many chocolates that neville should assemble	0	1	1	1
+the professor can not hide the doughnuts which petunia should prepare	the professor can not hide the doughnuts which snape should hide	1	1	1	1
+the student may not arrange many pancakes that fred should make	the student may not arrange many pancakes that neville should arrange	1	1	1	1
+a student can not eat many souffles which mcgonagall may hide	a student can not eat many souffles which a student can eat	0	1	1	1
+the wizard may not eat many chocolates that albus must eat	the wizard may not eat many chocolates that a professor should eat	0	1	1	1
+the witch may not arrange a croissant that dobby can prepare	the witch may not arrange a croissant that a professor may arrange	0	1	1	1
+a professor can not chew the souffles that sirius should eat	a professor can not chew the souffles that a professor must chew	0	1	1	1
+he may not arrange the eclaires that the student can make	he may not arrange the eclaires that neville should arrange	0	1	1	1
+albus should not create the chocolates that a professor must sprinkle	albus should not create the chocolates that hagrid should create	0	1	1	1
+snape may not make many pancakes which the professor should create	snape may not make many pancakes which hagrid should make	0	1	1	1
+draco should not assemble the eclaires which a witch must create	draco should not assemble the eclaires which she should assemble	0	1	1	1
+voldemort should not arrange many chocolates that the witch may sprinkle	voldemort should not arrange many chocolates that neville should arrange	0	1	1	1
+the witch should not arrange many strudels that fred must hide	the witch should not arrange many strudels that neville should arrange	1	1	1	1
+the student should not walk since fred may chew the chocolates	the student should not chew the chocolates since hermione may chew the chocolates	0	0	1	0
+draco should not assemble the baklava that a student should prepare	draco should not assemble the baklava that a student should assemble	1	1	1	1
+the student may not sprinkle the doughnuts that she must sprinkle	the student may not sprinkle the doughnuts that a student should sprinkle	0	1	1	1
+the professor must not hide the chocolate which snape should gobble	the professor must not hide the chocolate which petunia must hide	1	1	1	1
+a student can not chew the cakes that dobby may arrange	a student can not chew the cakes that a witch should chew	0	1	1	1
+the wizard can not prepare the strudel which snape must arrange	the wizard can not prepare the strudel which the wizard should prepare	0	1	1	1
+the student should not make a croissant because ron can wiggle	the student should not wiggle because he can wiggle	0	0	1	0
+the student should not gobble the strudels that she must hide	the student should not gobble the strudels that james should gobble	0	1	1	1
+a witch should not sprinkle the croissants which ginny can prepare	a witch should not sprinkle the croissants which a witch should sprinkle	0	1	1	1
+ron should not hide the cake that the student must assemble	ron should not hide the cake that a professor should hide	1	1	1	1
+petunia may not sprinkle the chocolates that a witch may arrange	petunia may not sprinkle the chocolates that petunia must sprinkle	0	1	1	1
+fred must not make the pancake that a witch must assemble	fred must not make the pancake that james must make	0	1	1	1
+mcgonagall can not create the souffles that a witch should eat	mcgonagall can not create the souffles that a student must create	1	1	1	1
+fred should not sprinkle many strudels which the wizard may assemble	fred should not sprinkle many strudels which hagrid should sprinkle	0	1	1	1
+ginny may not sprinkle many strudels that a wizard can chew	ginny may not sprinkle many strudels that hagrid should sprinkle	0	1	1	1
+a student may not chew the souffles which voldemort should make	a student may not chew the souffles which the student must chew	0	1	1	1
+dobby should not create the pancake which a wizard should hide	dobby should not hide the pancake which dobby should create	0	1	1	0
+draco must not assemble the baklava which the student should sprinkle	draco must not assemble the baklava which she must assemble	0	1	1	1
+the student should not eat the chocolates that voldemort should create	the student should not eat the chocolates that a professor should eat	0	1	1	1
+the student must not eat many souffles which petunia must gobble	the student must not eat many souffles which fred should eat	1	1	1	1
+a professor can not gobble the strudels which lily must make	a professor can not gobble the strudels which a student can gobble	0	1	1	1
+ginny can not hide many souffles that the witch should eat	ginny can not hide many souffles that neville may hide	0	1	1	1
+albus must not sprinkle many croissants which a professor should arrange	albus must not sprinkle many croissants which he must sprinkle	0	1	1	1
+she must not chew the souffles which a student must hide	she must not chew the souffles which she must chew	0	1	1	1
+voldemort may not hide the baklava which a witch can arrange	voldemort may not hide the baklava which snape must hide	0	1	1	1
+the student can not walk because fred must make a cake	the student can not make a cake because a professor must make a cake	0	0	1	0
+lily may not sprinkle the cakes that the witch should arrange	lily may not sprinkle the cakes that a professor should sprinkle	1	1	1	1
+the wizard may not giggle since draco can chew many souffles	the wizard may not chew many souffles	0	0	1	0
+james must not assemble many cakes that the witch can make	james must not assemble many cakes that neville should assemble	0	1	1	1
+draco should not make the chocolates that a professor must hide	draco should not make the chocolates that james should make	0	1	1	1
+a witch should not arrange the souffle that voldemort should chew	a witch should not arrange the souffle that a student should arrange	0	1	1	1
+a student should not assemble a croissant which harry should make	a student should not assemble a croissant which a professor must assemble	0	1	1	1
+albus may not make the doughnut which a professor should arrange	albus may not make the doughnut which she can make	0	1	1	1
+she may not arrange the doughnuts which the student must hide	she may not arrange the doughnuts which snape should arrange	0	1	1	1
+the professor must not eat a cake which harry must hide	the professor must not eat a cake which a professor must eat	0	1	1	1
+vernon must not assemble the chocolates that a professor must sprinkle	vernon must not assemble the chocolates that james must assemble	0	1	1	1
+a professor must not assemble many cakes which vernon must gobble	a professor must not assemble many cakes which he should assemble	0	1	1	1
+she can not gobble the strudels which a witch can chew	she can not gobble the strudels which she should gobble	0	1	1	1
+the wizard can not hide a souffle that hagrid should create	the wizard can not hide a souffle that a witch should hide	0	1	1	1
+the witch should not assemble a doughnut that fred should prepare	the witch should not assemble a doughnut that a student should assemble	0	1	1	1
+ron should not hide many chocolates which a professor may gobble	ron should not hide many chocolates which petunia should hide	0	1	1	1
+hagrid must not gobble the souffles which the student should assemble	hagrid must not gobble the souffles which she should gobble	0	1	1	1
+a professor must not make the chocolates that dobby must chew	a professor must not make the chocolates that a professor should make	0	1	1	1
+hermione should not hide the croissants because the student must run	hermione should not run because fred must run because fred must run	0	0	1	0
+a wizard can not make many doughnuts which mcgonagall must prepare	a wizard can not make many doughnuts which hagrid should make	1	1	1	1
+the wizard should not prepare many doughnuts which he may chew	the wizard should not prepare many doughnuts which harry should prepare	0	1	1	1
+neville should not create the strudel which a witch may make	neville should not create the strudel which voldemort should create	0	1	1	1
+james should not hide the doughnuts which a professor must hide	james should not hide the doughnuts that snape must hide	0	1	1	1
+the witch must not assemble the cookies that petunia must create	the witch must not assemble the cookies that ron must assemble	1	1	1	1
+a wizard must not make a strudel that snape should chew	a wizard must not make a strudel that a wizard should make	0	1	1	1
+a wizard may not eat the chocolates since james must smile	a wizard may not eat the chocolates	0	0	1	1
+the student may not gobble the strudels that hermione can chew	the student may not gobble the strudels that a student may gobble	0	1	1	1
+a witch should not arrange the croissants that vernon may make	a witch should not arrange the croissants that a student should arrange	0	1	1	1
+the student must not hide the eclaires that james may arrange	the student must not hide the eclaires that dobby must hide	1	1	1	1
+a witch can not gobble many souffles that hermione may arrange	a witch can not gobble many souffles that a student should gobble	0	1	1	1
+dobby can not gobble the cake that a witch may eat	dobby can not eat the cake that a witch may eat	1	1	1	0
+vernon can not assemble a cake that the student must gobble	vernon can not assemble a cake that a professor should assemble	1	1	1	1
+voldemort may not assemble the eclaires that the witch may assemble	voldemort may not assemble the eclaires that neville may assemble	0	1	1	1
+mcgonagall must not hide the doughnut which a student can gobble	mcgonagall must not hide the doughnut which he must hide	0	1	1	1
+petunia should not chew the chocolates that a student may prepare	petunia should not chew the chocolates that petunia should chew	0	1	1	1
+he must not eat a croissant that a student should make	he must not eat a croissant that a professor must eat	1	1	1	1
+he must not assemble many cookies which a professor can hide	he must not assemble many cookies which neville should assemble	0	1	1	1
+the student may not make the cookie that lupin should create	the student may not make the cookie that a student should eat	0	1	1	1
+a student must not hide the baklava which dobby should prepare	a student must not hide the baklava which snape must hide	1	1	1	1
+snape can not smile because a professor must eat a croissant	snape can not eat the croissant because a professor must eat a pancake	0	0	1	0
+the student can not sprinkle the strudels which snape may chew	the student can not sprinkle the strudels which hagrid can sprinkle	1	1	1	1
+vernon should not make the strudels that a witch should assemble	vernon should not make the strudels that james should make	0	1	1	1
+the student must not make the doughnuts that ron should eat	the student must not make the doughnuts that she should make	0	1	1	1
+a witch must not eat the strudel that fred can sprinkle	a witch must not eat the strudel that a professor should eat	0	1	1	1
+a professor should not create the pancake that she may sprinkle	a professor should not sprinkle the pancake that hagrid may sprinkle	0	1	1	0
+fred should not prepare many chocolates that the witch must arrange	fred should not prepare many chocolates that harry should prepare	0	1	1	1
+sirius should not create many baklava which the wizard should arrange	sirius should not create many baklava which hagrid should create	0	1	1	1
+lupin must not hide the doughnuts which the wizard should prepare	lupin must not hide the doughnuts which snape should hide	0	1	1	1
+she must not sprinkle the pancake which the professor must chew	she must not sprinkle the pancake which petunia must sprinkle	0	1	1	1
+a student can not sprinkle the chocolate that neville should make	a student can not sprinkle the chocolate that a student should sprinkle	0	1	1	1
+since snape should chew the pancakes he can not sprinkle the eclaires	since snape should sprinkle the eclaires lupin must not sprinkle the eclaires	0	1	1	0
+fred may not hide the croissants because he must prepare a strudel	fred may not prepare a strudel because a wizard must prepare a strudel	0	1	1	0
+hermione may not arrange the croissants since ron may create the strudels	hermione may not create the strudels because ginny may create the strudels	1	1	1	0
+vernon should not make a cake since ginny may sprinkle a baklava	vernon should not sprinkle the baklava since a student may sprinkle a baklava	0	1	1	0
+a wizard may not gobble the croissant that the professor must assemble	a wizard may not gobble the croissant that a professor should gobble	1	1	1	1
+a student may not assemble the eclaire that the student must assemble	a student may not assemble the eclaire that a student should assemble	1	1	1	1
+the wizard should not gobble the baklava that a student may prepare	the wizard should not gobble the baklava that snape should gobble	0	1	1	1
+she may not chew the doughnut because petunia can create the cakes	she may not chew the doughnut	0	0	1	1
+harry may not prepare the strudel because ginny should prepare the croissant	harry may not prepare the cakes because ginny should prepare the cakes	0	1	1	1
+hagrid can not arrange the cakes since she should make many cakes	hagrid can not make the cakes since she should make many cakes	1	1	1	0
+snape should not sprinkle the doughnuts because hagrid can create the souffle	snape should not create the souffle because hagrid can create the souffle	0	1	1	0
+the witch must not gobble the strudels which a witch should eat	the witch must not eat the strudels which she should gobble	0	1	1	0
+voldemort may not sprinkle a eclaire because fred must create the cake	voldemort may not sprinkle a eclaire	0	0	1	1
+he may not prepare many pancakes because lily should sprinkle a pancake	he may not sprinkle a pancake since a professor should sprinkle a pancake	0	1	1	0
+a witch may not sprinkle the chocolates that a professor should create	a witch may not sprinkle the chocolates that a witch should sprinkle	1	1	1	1
+hermione can not hide the baklava since vernon must hide the souffle	hermione can not hide the souffle since vernon must hide the souffle	0	1	1	1
+vernon must not assemble a doughnut because hagrid should make the chocolates	vernon must not make a chocolate because hermione should make the chocolates	1	1	1	0
+a student can not arrange a souffle that the student should sprinkle	a student can not arrange a souffle that a student should arrange	1	1	1	1
+mcgonagall must not sprinkle the cake because neville can assemble a strudel	mcgonagall must not assemble a strudel because a wizard should assemble a strudel	0	1	1	0
+the witch may not eat a cake that a student can sprinkle	the witch may not eat a cake that a professor should eat	1	1	1	1
+sirius can not sprinkle many doughnuts because sirius can arrange the cakes	sirius can not arrange the cakes because neville can arrange the cakes	1	1	1	0
+a professor must not eat the strudels that a witch can create	a professor must not eat the strudels that a student must eat	1	1	1	1
+lily should not chew a pancake since voldemort can make many baklava	lily should not make many baklava	0	0	1	0
+draco should not gobble a cake because fred may make many cakes	draco should not make a cake because neville should make many cakes	1	1	1	0
+she should not assemble the chocolate since hermione can gobble the eclaires	she should not gobble the eclaires since she can gobble the eclaires	0	1	1	0
+sirius may not arrange the strudels since ron should create the strudel	sirius may not arrange the strudels	0	0	1	1
+the student should not gobble the souffle that the professor must hide	the student should not gobble the souffle that a student should gobble	1	1	1	1
+a professor should not assemble the strudel that the witch must hide	a professor should not assemble the strudel that a professor should assemble	1	1	1	1
+ron may not prepare a eclaire because dobby should gobble a chocolate	ron may not prepare a eclaire	0	0	1	1
+george should not gobble the chocolate because ron should arrange a doughnut	george should not arrange a doughnut because a student should arrange a doughnut	0	1	1	0
+voldemort must not gobble the strudels since george should prepare the croissant	voldemort must not assemble the strudels	0	0	1	0
+lily must not create the pancake since mcgonagall should eat many chocolates	lily must not eat many chocolates since vernon should eat many chocolates	0	1	1	0
+the professor can not gobble the doughnuts which the student can make	the professor can not make the doughnuts which snape can make	0	1	1	0
+neville should not sprinkle the cakes because she should make the croissants	neville should not make the cakes because he should make the croissants	1	1	1	0
+since neville must sprinkle the croissants she must not hide the baklava	since neville must sprinkle the baklava she must not hide the baklava	1	1	1	1
+a professor should not arrange the croissant that the professor must chew	a professor should not arrange the croissant that a professor should arrange	1	1	1	1
+sirius can not eat the croissants since harry should create the cake	sirius can not eat the croissants	0	0	1	1
+she may not hide the croissant since snape may make the chocolates	she may not make the chocolates since vernon may make the chocolates	0	1	1	0
+she should not create a cookie since he can hide a chocolate	she should not hide a chocolate since a professor can hide a chocolate	0	1	1	0
+ginny can not chew a croissant since george should assemble the souffles	ginny can not assemble the souffles	0	0	1	0
+the professor should not assemble the doughnuts which a student should arrange	the professor should not assemble a croissant which a student can assemble	0	1	1	1
+because she may create the baklava james must not make a croissant	because she may create the baklava james must not make a souffle	1	1	1	1
+vernon can not assemble the strudels because neville can chew the cookie	fred can not chew the cookie because the student can chew the cookie	0	1	1	0
+lily should not create the souffles because draco may prepare the doughnut	lily should not prepare the doughnut because hermione may prepare the doughnut because hermione may prepare the doughnut	0	0	1	0
+the professor should not gobble the souffles which the wizard should sprinkle	the professor should not gobble the souffles which she should gobble	0	1	1	1
+neville should not assemble the cookies because albus should assemble the doughnuts	neville should not assemble the cookies	0	0	1	1
+a professor must not chew a cake that the student should create	a professor must not chew a cake that a professor must chew	1	1	1	1
+mcgonagall must not gobble the cookie because fred may make many strudels	mcgonagall must not make many strudels because vernon may make many strudels	0	1	1	0
+neville must not eat the souffle because neville can eat the croissants	neville must not eat the pancakes because fred can eat the pancakes	0	1	1	1
+because he must chew a cake dobby should not sprinkle the chocolates	because he must chew a cake the professor should sprinkle the chocolates	0	0	0	0
+neville should not hide the cakes since she must sprinkle the souffles	neville should not sprinkle the souffles since he must sprinkle the souffles	1	1	1	0
+a student should not hide the doughnuts that a wizard can hide	a student should not hide the doughnuts that a professor should hide	1	1	1	1
+draco must not chew the baklava since hagrid should eat the doughnuts	draco must not eat the baklava	0	0	1	0
+the wizard may not make many doughnuts that the wizard can prepare	the wizard may not make many doughnuts that harry should make	0	1	1	1
+dobby may not hide a croissant since albus may gobble the eclaire	dobby may not gobble the eclaire since a student can gobble the eclaire	0	1	1	0
+hagrid should not chew a doughnut since lily may make the strudel	hagrid should not make a cake since mcgonagall may make a cake	1	1	1	0
+lupin may not prepare the cakes since ron may make the souffles	lupin may not make the souffles since ron must make the souffles	1	1	1	0
+the student can not create the strudels that a professor may prepare	the student can not create the strudels that hagrid can create	0	1	1	1
+fred must not make many croissants because voldemort may prepare the cakes	fred must not prepare the cakes because neville may prepare the cakes	1	1	1	0
+she should not sprinkle a croissant since snape may assemble the cookies	she should not assemble the cookies since ron may assemble the cookies	0	1	1	0
+a professor can not sprinkle a strudel which a wizard must create	a professor can not sprinkle a strudel which a professor must sprinkle	1	1	1	1
+hagrid should not make the chocolates because albus can assemble a cake	hagrid should not assemble a cake because a professor can assemble a cake	0	1	1	0
+ginny can not make the croissants since ron may sprinkle the cookies	ginny can not sprinkle the cookies since ron may sprinkle the cookies	1	1	1	0
+a wizard can not create many baklava that a student must hide	a wizard can not create many baklava that hagrid should create	0	1	1	1
+the student can not eat the croissants that the wizard should chew	the student can not eat the croissants that a student should eat	1	1	1	1
+hagrid may not chew a croissant because lupin can hide the strudels	hagrid may not hide a pancake because the student can hide the strudels	0	1	1	0
+lily should not create a baklava since neville must eat many eclaires	lily should not eat the baklava since petunia must eat many pancakes	0	1	1	0
+james must not sprinkle the chocolates since vernon may create many eclaires	james must not sprinkle the chocolates	0	0	1	1
+snape should not sprinkle a eclaire since he may hide many cookies	snape should not hide many cookies since neville may hide many cookies	0	1	1	0
+the professor must not assemble the souffles that a wizard may arrange	the professor must not assemble the souffles that she should assemble	0	1	1	1
+a student must not arrange many strudels which the student should sprinkle	a student must not arrange many strudels which neville must arrange	0	1	1	1
+a witch may not eat a chocolate that a professor must hide	a witch may not eat a chocolate that a professor must eat	1	1	1	1
+she must not create the cake since lupin must hide the eclaires	she must not hide the cakes since lupin must hide the eclaires	0	1	1	0
+snape should not arrange the doughnuts because ginny must create a pancake	snape should not create the pancake because a student must create a pancake	0	1	1	0
+a wizard can not make many souffles that a professor should arrange	a wizard can not make many souffles that a student should make	1	1	1	1
+voldemort must not eat the doughnuts because the professor can prepare many cookies	voldemort must not prepare the cookies since lily can prepare the cookies	0	1	1	0
+draco may not sprinkle a souffle since the wizard must prepare a cake	draco may not prepare a cake since a professor must prepare a cake	1	1	1	0
+a witch can not hide the chocolate because vernon can make the cookies	a witch can not make the cookies because ron can make the cookies	0	1	1	0
+lupin may not gobble a eclaire because a student should prepare the strudels	lupin may not gobble the eclaire because hermione should prepare the strudels	0	1	1	1
+because a professor must create the souffle sirius should not assemble a croissant	because a professor must assemble the souffle sirius must not create the souffle	1	1	1	0
+hagrid must not make the cakes since the professor should gobble the pancakes	hagrid must not make the cakes since the professor must make the croissant	0	1	1	1
+the professor may not assemble the strudels because harry can sprinkle the doughnut	the professor may not sprinkle the doughnut since hagrid can sprinkle the doughnut	0	1	1	0
+since a student must create a strudel lily should not chew many baklava	since a student must chew many baklava lily should not chew many baklava	0	1	1	0
+because she should eat the eclaires a professor must not prepare the baklava	because she should eat the baklava a professor must prepare the baklava	0	0	0	0
+a witch may not chew the croissants because albus must create a souffle	a witch may not create the croissants because a student must create a souffle	0	1	1	0
+since a professor can prepare the souffle draco should not sprinkle a croissant	since a professor can prepare the souffle draco must not prepare the souffle	1	1	1	0
+since a professor must gobble the chocolate vernon can not chew the baklava	since a professor must chew the baklava the student can not chew the baklava	0	1	1	0
+the witch must not arrange many cakes since hagrid should chew many eclaires	the witch must not arrange many cakes because she should arrange many eclaires	0	1	1	1
+vernon should not arrange the eclaire because the student may arrange a chocolate	vernon should not arrange the chocolate because a student may arrange a chocolate	1	1	1	1
+the witch should not chew the strudels because harry must sprinkle the souffles	the witch should not sprinkle the souffles because he must sprinkle the souffles	0	1	1	0
+harry must not prepare the pancake because the professor should chew the chocolate	harry must not chew the chocolate	0	0	1	0
+since harry may create the cakes a professor should not prepare a eclaire	since harry may prepare a eclaire a professor should prepare a eclaire	0	0	0	0
+lily can not hide the eclaires because a witch may prepare the eclaires	lily can not prepare the cakes because the student may prepare the eclaires	1	1	1	0
+the professor can not assemble the cake because snape must sprinkle many cookies	the professor can not assemble the cookies since ron can sprinkle many cookies	0	1	1	1
+hermione can not gobble the cookies since the professor can sprinkle a doughnut	hermione can not sprinkle the doughnut since a professor can sprinkle a doughnut	0	1	1	0
+ginny should not hide the eclaires because a student can hide the eclaires	ginny should not hide the croissant because dobby can hide the eclaires	0	1	1	1
+since draco must sprinkle a souffle a wizard must not make the eclaires	since draco must sprinkle a souffle a student must make a chocolate	0	0	0	0
+a student can not prepare the chocolates since he must hide the doughnut	a student can not hide the doughnut since he must hide the doughnut	0	1	1	0
+hagrid should not make many strudels since a student should sprinkle a doughnut	hagrid should not sprinkle a doughnut since a student should sprinkle a doughnut	0	1	1	0
+albus may not gobble the eclaires because a wizard should hide a croissant	albus may not hide a eclaire because a wizard should hide a souffle	0	1	1	0
+since the student should assemble the souffle he must not hide the croissant	since the student should hide the baklava he must not hide the baklava	0	1	1	0
+snape may not sprinkle the souffles since the student must chew a doughnut	snape may not chew a doughnut since a student can chew a doughnut	0	1	1	0
+since lupin can make the pancake a wizard should not prepare the cake	since lupin can prepare the cake the wizard should not prepare the cake	1	1	1	0
+dobby should not swim because neville can make the doughnuts which fred must assemble	dobby should not make the doughnuts which she can make because hagrid can make the doughnuts which james can make	0	0	1	0
+he may not hiccup since mcgonagall should arrange many doughnuts which she must hide	he may not arrange many doughnuts which harry should arrange	0	0	1	0
+because james should hide the croissants which ginny can prepare she may not party	because james should party the wizard may not party	0	0	1	0
+sirius should not arrange the eclaires that lily can gobble since harry may giggle	sirius should not arrange the eclaires that lupin should gobble	0	0	1	1
+petunia must not make the doughnuts that neville should eat since neville can smile	petunia must not smile since she can smile since she can smile	0	0	1	0
+a student must not assemble the chocolates since a student must create the croissants	a student must not assemble the croissant since a student must create the croissant	0	1	1	1
+fred must not hide the doughnuts that ginny should make because lupin must hiccup	fred must not hide the doughnuts that snape must make	0	0	1	1
+harry must not assemble many pancakes that draco should eat since petunia must jump	harry must not assemble many pancakes that neville should assemble	0	0	1	1
+harry must not smile because fred must chew the souffles because hermione can giggle	harry must not chew the souffles	0	0	1	0
+because the professor must arrange a souffle a student must not assemble a croissant	because the professor must arrange a souffle a student must not arrange a souffle	1	1	1	0
+the student may not prepare the pancakes because the wizard should arrange the chocolate	the student may not arrange the chocolate	0	0	1	0
+draco should not eat the pancakes that mcgonagall should assemble because she can run	draco should not eat the pancakes that a professor should eat	0	0	1	1
+since hermione should swim she may not chew a pancake since she can jump	since hermione should jump a student can not jump	0	0	1	0
+since snape can arrange the croissant which fred should prepare he can not swim	since snape can swim the professor can not swim	0	0	1	0
+a professor can not hiccup because hermione can giggle because a wizard should party	a professor can not party because a wizard should party because lupin should party	0	1	1	0
+george may not arrange a baklava which george may eat because mcgonagall may giggle	george may not arrange a baklava which a student may arrange	0	0	1	1
+the professor may not create the strudels which he should arrange because ginny can run	the professor may not run because she can run because she can run	0	0	1	0
+the witch may not laugh since neville may assemble the doughnuts that dobby should hide	the witch may not assemble the doughnuts that ron may assemble	0	0	1	0
+she should not giggle since a wizard must sprinkle the croissant which harry should chew	she should not sprinkle a croissant which the professor must sprinkle	0	0	1	0
+the professor must not make the baklava that voldemort can arrange since voldemort must smile	the professor must not make the baklava that a professor must make	0	0	1	1
+a student should not sprinkle the cookie that dobby can make since george must swim	a student should not sprinkle the cookie that a student should sprinkle	0	0	1	1
+she should not make the baklava that harry must eat because the wizard should run	she should not make the baklava that she should make	0	0	1	1
+neville must not sprinkle the eclaires that hagrid should hide because a professor may smile	neville must not sprinkle the eclaires because a professor may smile	0	0	1	1
+since he may prepare the chocolate which a witch must sprinkle vernon may not run	since he may run the professor may not run because vernon may run	0	0	1	0
+a student should not gobble the baklava which she can prepare since mcgonagall should giggle	a student should not gobble the baklava which snape should assemble	0	0	1	1
+since hagrid should assemble the croissants that a witch may sprinkle harry may not party	since hagrid should party the student may not party because he may party	0	0	1	0
+ginny should not party because mcgonagall should gobble the doughnut that a professor can prepare	ginny should not gobble the doughnut that he should gobble because he should gobble the doughnut that james should gobble	0	0	1	0
+the wizard must not jump since fred must wiggle since he may create the chocolates	the wizard must not create the chocolates since vernon may create the chocolates	0	0	1	0
+he must not create the doughnut since neville must gobble the chocolate that lily should gobble	he must not gobble the chocolate that he must gobble since he must gobble the chocolate that he must gobble	0	0	1	0
+she can not jump since hagrid may gobble the cookies since fred may arrange the strudels	she can not gobble the strudels because neville may arrange the strudels	0	0	1	0
+snape may not make a baklava that dobby can assemble since he must chew the cakes	snape may not make a baklava	0	0	1	1
+the professor can not sprinkle the cake that a witch can gobble because lily must hiccup	the professor can not sprinkle the cake that a professor should sprinkle	0	0	1	1
+draco must not swim because vernon should make the chocolates because voldemort should arrange the pancakes	draco must not make the chocolates because hermione should make the chocolates	0	0	1	0
+hagrid may not sprinkle a chocolate that petunia must gobble since lupin must make the chocolates	hagrid may not sprinkle a chocolate that a professor must sprinkle	0	0	1	1
+because neville can gobble a chocolate which he must sprinkle vernon can not chew the souffle	because neville can chew a souffle the professor must not chew the souffle	0	0	1	0
+ginny must not hide the baklava that neville must chew because vernon should hide the souffles	ginny must not hide the baklava that snape must hide	0	0	1	1
+mcgonagall can not party since draco must chew the baklava since hermione may hide the strudels	mcgonagall can not chew the baklava since draco must chew the baklava	0	0	1	0
+lupin should not gobble the baklava which fred must create since vernon must eat the doughnuts	lupin should not eat the baklava which vernon must eat	0	0	1	0
+vernon must not eat many croissants that a professor can arrange because a professor may smile	vernon must not smile	0	0	1	0
+lupin can not make the chocolate because snape should assemble the doughnut which ginny must sprinkle	lupin can not assemble the doughnut which she should assemble because hagrid should assemble the doughnut which she should assemble	0	0	1	0
+harry should not hide the doughnut since petunia should make many cookies that lily must chew	harry should not make many cookies that ron should make since neville should make many cookies that neville should make	0	0	1	0
+james should not sprinkle a cake since voldemort can laugh because james should chew the chocolates	james should not chew the chocolates because hermione should chew the chocolates	0	0	1	0
+since lily can hide the croissants snape must not gobble the pancakes since snape must jump	since lily can hide the croissants snape must not jump	0	0	1	0
+harry must not hide many baklava that ron should gobble since he can gobble the souffle	harry must not hide many baklava that neville should hide	0	0	1	1
+neville must not prepare the strudels that lily must assemble since he should create the strudel	neville must not prepare the strudels that hagrid must prepare	0	0	1	1
+a witch may not prepare the eclaire since he must jump because a professor can run	a witch may not prepare the eclaire because fred can run	0	0	1	1
+fred must not arrange many souffles that ron should chew because lupin may assemble a cake	fred must not arrange many souffles that neville should arrange	0	0	1	1
+hermione may not hide the chocolates that draco should sprinkle since petunia can chew the cakes	hermione may not hide the chocolates that petunia may hide	0	0	1	1
+a student can not smile since draco should gobble the doughnuts which the student should make	a student can not prepare the croissant which voldemort should gobble	0	0	1	0
+snape must not arrange a croissant that the professor can prepare since a wizard must walk	snape must not prepare a croissant that a wizard must arrange	0	0	1	0
+harry may not arrange the croissant which snape must chew because neville can make the chocolate	harry may not make the doughnuts which mcgonagall can make	0	0	1	0
+since he must hide many chocolates vernon should not eat a souffle since hagrid may party	since he must eat many pancakes vernon should not eat a souffle	0	0	1	0
+draco can not eat the souffle that george can eat since a student can arrange the croissants	draco can not eat the souffle that a professor must eat	0	0	1	1
+she may not hide many baklava that the professor must arrange because mcgonagall must hide a pancake	she may not hide many baklava that neville should hide	0	0	1	1
+lily must not chew the cookies because the professor must hide the doughnuts which albus must arrange	lily must not chew the cookies which a professor must hide	0	0	1	1
+james must not create the baklava which ron should prepare because a professor can make many chocolates	james must not make the chocolates which a professor should make	0	0	1	0
+the professor may not assemble the eclaires that draco should gobble because lupin must make a chocolate	the professor may not assemble the eclaires that neville may assemble	0	0	1	1
+hermione can not prepare the cookies that fred can arrange because a professor should eat the cookies	hermione can not prepare the cookies that a professor should prepare	0	0	1	1
+because fred must gobble a souffle the professor can not chew the strudels that draco must sprinkle	because fred must chew the strudels that a professor must chew the professor must not chew the strudels	0	0	1	0
+hagrid should not arrange a cookie which the student may assemble because voldemort can create many souffles	hagrid should not assemble a cookie which a student can create	0	0	1	0
+a wizard must not prepare a cookie which fred can sprinkle because vernon may sprinkle the doughnut	a wizard must not prepare a doughnut because hermione must sprinkle the doughnut	0	0	1	1
+vernon should not sprinkle many chocolates because he should assemble the chocolate that a student should assemble	vernon should not assemble the chocolate that he should assemble	0	0	1	0
+harry may not prepare a cake which a professor must hide since ron should make a pancake	harry may not prepare a cake which a professor may prepare	0	0	1	1
+a professor should not eat many chocolates because ginny can gobble the croissant that he may make	a professor should not eat many doughnuts that a professor can gobble	0	0	1	1
+the student must not gobble the eclaires because snape may jump because hermione can assemble the souffle	the student must not assemble the souffle because the student can assemble the souffle	0	0	1	0
+since hagrid must sprinkle a croissant petunia can not assemble a strudel because the student can wiggle	since hagrid must wiggle a student can not wiggle because voldemort can wiggle	0	0	1	0
+petunia may not arrange many doughnuts that a student should prepare since ron must make the eclaires	petunia may not arrange many doughnuts that harry must arrange	0	0	1	1
+the student should not arrange many cookies which hermione must hide because petunia can gobble many pancakes	the student should not arrange many cookies which neville should arrange	0	0	1	1
+harry should not gobble the souffles which a professor may make because harry should create the chocolate	harry should not gobble the souffles which she should gobble	0	0	1	1
+a professor should not prepare a cake that fred must chew since the student may create the croissants	a professor should not prepare a cake that a professor should prepare	0	0	1	1
+ron should not arrange many cookies which snape can make because ron must run since albus must laugh	ron should not arrange many cookies which neville should arrange	0	0	1	1
+the student should not gobble many eclaires since lily must giggle because the professor should create the pancakes	the student should not giggle since sirius must giggle	0	0	1	0
+because neville may swim hagrid can not prepare the chocolates which she may gobble since a professor should jump	because neville may prepare the chocolates which a professor may prepare the professor may not prepare the chocolates which hagrid should prepare	0	0	1	0
+snape may not prepare many cookies because a professor must eat the strudels since he may eat the croissant	snape may not eat many strudels because vernon may eat the pancakes	0	0	1	0
+a professor should not hide the chocolates that a student should arrange because a professor should prepare a souffle	a professor should not hide the chocolates that a professor should hide	0	0	1	1
+the witch must not sprinkle a cake that he can make because james should laugh since harry may giggle	the witch must not sprinkle a cake that a professor should sprinkle	0	0	1	1
+neville should not sprinkle the cookies which hagrid may prepare because he can run since a professor must smile	neville should not smile since a professor must smile since a professor must smile	0	0	1	0
+a professor may not sprinkle the strudels because hermione may arrange a croissant since vernon should chew many eclaires	a professor may not arrange the strudels because a student may arrange a croissant	0	0	1	0
+since hermione must arrange the cakes because the professor must eat the eclaire vernon must not prepare the doughnuts	since hermione must eat the eclaire the student can not eat the eclaire	0	0	1	0
+the student should not chew the cookie that a professor should make since a witch must prepare the chocolate	the student should not chew the cookie that a student should chew	0	0	1	1
+lupin can not prepare many souffles since he may smile because she must make many doughnuts that draco must make	lupin can not smile since harry should make many doughnuts that she may make because she may make many doughnuts	0	0	1	0
+since ron may assemble a baklava which vernon may chew james can not run since fred should gobble the strudels	since ron may run a witch can not run	0	0	1	0
+sirius should not sprinkle the pancake since the witch should gobble many cakes because a wizard can create the pancakes	sirius should not gobble a eclaire because a wizard can gobble the cakes	0	0	1	0
+since the professor may create a strudel a student must not create the chocolates since ron must create the eclaires	since the professor may create the chocolates a professor must create the chocolates	0	0	0	0
+vernon must not prepare the strudel which the professor must prepare since george should wiggle since the witch must smile	vernon must not smile	0	0	1	0
+since neville should create the strudel which a student should sprinkle vernon may not chew a souffle since mcgonagall may party	since neville should chew a souffle a professor may chew a souffle	0	0	0	0
+fred can not assemble a eclaire which vernon should sprinkle since the professor should hide a pancake which james may chew	fred can not assemble a pancake which a professor should hide	0	0	1	1
+since lupin may party a professor should not assemble the pancake that neville must assemble since vernon can assemble the croissants	since lupin may party a witch may not assemble the pancake that a professor should assemble	0	0	1	1
+petunia should not create the cookie which she should prepare because the wizard should gobble the croissant which snape must chew	petunia should not create the cookie which dobby should gobble	0	0	1	1
+a wizard may not make many eclaires that fred must create since lupin must make many eclaires that ron must gobble	a wizard may not make many eclaires that neville must make since she must make many eclaires that neville must make	0	1	1	1
+a professor should not hide the cookies that lupin may sprinkle since a student can chew many eclaires that she must eat	a professor should not chew the eclaires that a student can chew	0	0	1	0
+fred may not giggle since lupin must arrange a eclaire because dobby may eat the strudels because voldemort should sprinkle a pancake	fred may not arrange a eclaire because a student should arrange a eclaire	0	0	1	0
+snape must not make the doughnut that she can eat since harry may smile since he may arrange the cookie which she should sprinkle	snape must not smile since he can smile since he can smile	0	0	1	0
