@@ -283,14 +283,3 @@ EarlyStopping counter: 3 out of 3
 Early stopping. Loading model from last saved checkoint.
 Testing on test data
 Closing remaining open files:logs/default/negation-results-6-28-20_0/1ccf0ca0-ff88-4037-a590-949ee7955e30/store.h5...done
-
-
-TARGET: because hagrid must prepare the baklava that snape should assemble since neville can wiggle fred can not hiccup,
-PREDICTION: because hagrid must prepare the baklava that fred should assemble neville can not wiggle since snape can hiccup
-
-TARGET: because the witch can wiggle because petunia may hide a cake james must not swim because james should wiggle,
-PREDICTION: because the witch can wiggle petunia may not hide a doughnut because james must laugh because hermione should wiggle
-
-TARGET: since draco may sprinkle the baklava since a witch should assemble the eclaire which petunia must arrange dobby should not laugh	
-PREDICTION: since draco may sprinkle the baklava since a witch should assemble the eclaire dobby must not arrange the eclaires
-
