@@ -1,0 +1,164 @@
+Logging in: /gpfs/loomis/home.grace/sls248/transductions/logs/negation-12-07-20-0/c114ab8a-9d74-4054-96a5-4b31e657aedb
+models/negation-12-07-20-0/SRC.vocab
+Training epoch 1/100 on train data
+Evaluating epoch 1/100 on val data
+sentence-level-accuracy   0.355 %
+token-level-accuracy      26.546 %
+loss                      2.7415 
+Training epoch 2/100 on train data
+Evaluating epoch 2/100 on val data
+sentence-level-accuracy   9.318 %
+token-level-accuracy      48.34 %
+loss                      1.6717 
+Training epoch 3/100 on train data
+Evaluating epoch 3/100 on val data
+sentence-level-accuracy   41.28 %
+token-level-accuracy      65.862 %
+loss                      1.0041 
+Training epoch 4/100 on train data
+Evaluating epoch 4/100 on val data
+sentence-level-accuracy   52.484 %
+token-level-accuracy      74.474 %
+loss                      0.64355 
+Training epoch 5/100 on train data
+Evaluating epoch 5/100 on val data
+sentence-level-accuracy   66.04 %
+token-level-accuracy      80.158 %
+loss                      0.4539 
+Training epoch 6/100 on train data
+Evaluating epoch 6/100 on val data
+sentence-level-accuracy   72.024 %
+token-level-accuracy      83.948 %
+loss                      0.33938 
+Training epoch 7/100 on train data
+Evaluating epoch 7/100 on val data
+sentence-level-accuracy   75.171 %
+token-level-accuracy      86.739 %
+loss                      0.27802 
+Training epoch 8/100 on train data
+Evaluating epoch 8/100 on val data
+sentence-level-accuracy   77.147 %
+token-level-accuracy      88.985 %
+loss                      0.22264 
+Training epoch 9/100 on train data
+Evaluating epoch 9/100 on val data
+sentence-level-accuracy   79.779 %
+token-level-accuracy      90.449 %
+loss                      0.19502 
+Training epoch 10/100 on train data
+Evaluating epoch 10/100 on val data
+sentence-level-accuracy   80.973 %
+token-level-accuracy      90.882 %
+loss                      0.18124 
+Training epoch 11/100 on train data
+Evaluating epoch 11/100 on val data
+sentence-level-accuracy   81.914 %
+token-level-accuracy      92.048 %
+loss                      0.15483 
+Training epoch 12/100 on train data
+Evaluating epoch 12/100 on val data
+sentence-level-accuracy   84.611 %
+token-level-accuracy      93.627 %
+loss                      0.1271 
+Training epoch 13/100 on train data
+Evaluating epoch 13/100 on val data
+sentence-level-accuracy   86.211 %
+token-level-accuracy      94.348 %
+loss                      0.11431 
+Training epoch 14/100 on train data
+Evaluating epoch 14/100 on val data
+sentence-level-accuracy   85.894 %
+token-level-accuracy      94.25 %
+loss                      0.11003 
+EarlyStopping counter: 1 out of 3
+Training epoch 15/100 on train data
+Evaluating epoch 15/100 on val data
+sentence-level-accuracy   88.231 %
+token-level-accuracy      95.314 %
+loss                      0.093442 
+Training epoch 16/100 on train data
+Evaluating epoch 16/100 on val data
+sentence-level-accuracy   88.876 %
+token-level-accuracy      95.496 %
+loss                      0.090028 
+EarlyStopping counter: 1 out of 3
+Training epoch 17/100 on train data
+Evaluating epoch 17/100 on val data
+sentence-level-accuracy   89.13 %
+token-level-accuracy      95.865 %
+loss                      0.081193 
+Training epoch 18/100 on train data
+Evaluating epoch 18/100 on val data
+sentence-level-accuracy   90.457 %
+token-level-accuracy      96.464 %
+loss                      0.072504 
+Training epoch 19/100 on train data
+Evaluating epoch 19/100 on val data
+sentence-level-accuracy   90.421 %
+token-level-accuracy      96.494 %
+loss                      0.069405 
+EarlyStopping counter: 1 out of 3
+Training epoch 20/100 on train data
+Evaluating epoch 20/100 on val data
+sentence-level-accuracy   91.771 %
+token-level-accuracy      97.034 %
+loss                      0.060128 
+Training epoch 21/100 on train data
+Evaluating epoch 21/100 on val data
+sentence-level-accuracy   90.804 %
+token-level-accuracy      96.738 %
+loss                      0.062299 
+EarlyStopping counter: 1 out of 3
+Training epoch 22/100 on train data
+Evaluating epoch 22/100 on val data
+sentence-level-accuracy   91.781 %
+token-level-accuracy      97.057 %
+loss                      0.057453 
+EarlyStopping counter: 2 out of 3
+Training epoch 23/100 on train data
+Evaluating epoch 23/100 on val data
+sentence-level-accuracy   92.833 %
+token-level-accuracy      97.389 %
+loss                      0.052958 
+Training epoch 24/100 on train data
+Evaluating epoch 24/100 on val data
+sentence-level-accuracy   93.299 %
+token-level-accuracy      97.681 %
+loss                      0.048053 
+EarlyStopping counter: 1 out of 3
+Training epoch 25/100 on train data
+Evaluating epoch 25/100 on val data
+sentence-level-accuracy   92.449 %
+token-level-accuracy      97.322 %
+loss                      0.053006 
+EarlyStopping counter: 2 out of 3
+Training epoch 26/100 on train data
+Evaluating epoch 26/100 on val data
+sentence-level-accuracy   93.401 %
+token-level-accuracy      97.671 %
+loss                      0.047179 
+Training epoch 27/100 on train data
+Evaluating epoch 27/100 on val data
+sentence-level-accuracy   93.795 %
+token-level-accuracy      97.959 %
+loss                      0.041399 
+Training epoch 28/100 on train data
+Evaluating epoch 28/100 on val data
+sentence-level-accuracy   94.298 %
+token-level-accuracy      98.097 %
+loss                      0.038929 
+EarlyStopping counter: 1 out of 3
+Training epoch 29/100 on train data
+Evaluating epoch 29/100 on val data
+sentence-level-accuracy   94.624 %
+token-level-accuracy      98.236 %
+loss                      0.037362 
+EarlyStopping counter: 2 out of 3
+Training epoch 30/100 on train data
+Evaluating epoch 30/100 on val data
+sentence-level-accuracy   94.28 %
+token-level-accuracy      98.103 %
+loss                      0.038077 
+EarlyStopping counter: 3 out of 3
+Early stopping, resetting to last checkpoint.
+Closing remaining open files:logs/negation-12-07-20-0/c114ab8a-9d74-4054-96a5-4b31e657aedb/store.h5...done
