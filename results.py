@@ -12,69 +12,79 @@ import nltk
 def read_file(filename):
     path = os.getcwd()
     print(path)
-    with open(filename, newline='') as rfile, open("newresults.csv", mode='w') as new_file:
+    with open(filename, newline='') as rfile, open("pos_pos.csv", 'w') as pos_file, open("pos_neg.csv", 'w') as neg_file:
 
         reader = list(csv.reader(rfile, delimiter='\t', lineterminator='\n'))
-        out_writer = csv.writer(new_file, delimiter=',', lineterminator='\n', quotechar='/')
+        neg_writer = csv.writer(neg_file, delimiter=',', lineterminator='\n', quotechar='/')
+        pos_writer = csv.writer(pos_file, delimiter=',', lineterminator='\n', quotechar='/')
 
-        out_writer.writerow(['target', 'prediction', 'target length', 'correct'])
+        neg_writer.writerow(['target', 'prediction', 'target length', 'prediction length', 'correct'])
+        pos_writer.writerow(['target', 'prediction', 'target length', 'prediction length', 'correct'])
 
         for line in reader[1:]:
             newline = [sentence.split()[:sentence.split().index('<eos>')] if '<eos>' in sentence.split() else sentence.split() for sentence in line[1:]]
             targlen = len(newline[0])
+            predlen = len(newline[1])
             correct = 1 if newline[0] == newline[1] else 0
-            out_writer.writerow([' '.join(newline[0]), ' '.join(newline[1]), targlen, correct])
-        return "newresults.csv"
+            if 'not' in newline[0]:
+                neg_writer.writerow([' '.join(newline[0]), ' '.join(newline[1]), targlen, predlen, correct])
+            else:
+                pos_writer.writerow([' '.join(newline[0]), ' '.join(newline[1]), targlen, predlen, correct])
+        return "pos_pos.csv", "pos_neg.csv"
  
-def incorrect_files():
+def incorrect_files(pos_pos, pos_neg):
 
-    with open("newresults.csv", 'r') as results_file, open("pos_neg.csv", 'w') as neg_file, open("pos_pos.csv", 'w') as pos_file:
+    with open(pos_pos, 'r') as pos_posfile, open(pos_neg, 'r') as pos_negfile, open("neg_incorrect.csv", 'w') as neg_file, open("pos_incorrect.csv", 'w') as pos_file:
         
-        results_reader = csv.reader(results_file, delimiter=',')
+        pos_reader = csv.reader(pos_posfile, delimiter=',')
+        neg_reader = csv.reader(pos_negfile, delimiter=',')
         neg_writer = csv.writer(neg_file, delimiter=',', lineterminator='\n', quotechar='/')
         pos_writer = csv.writer(pos_file, delimiter=',', lineterminator='\n', quotechar='/')
 
-        boolList = []
-        for row in results_reader:
+        for row in pos_reader:
             if row[0] == 'target':
-                neg_writer.writerow(row)
                 pos_writer.writerow(row)
             else:
                 if row[0] != row[1]:             
-                    # pos -> neg transforms
-                    if 'not' in row[0]:
-                        neg_writer.writerow(row)
-                    # pos -> pos transforms
-                    elif 'not' not in row[0]:
-                        pos_writer.writerow(row)
-
-        return 'pos_pos.csv', 'pos_neg.csv'
+                    pos_writer.writerow(row)
+        for row in neg_reader:
+            if row[0] == 'target':
+                neg_writer.writerow(row)
+            else:
+                if row[0] != row[1]:
+                    neg_writer.writerow(row)
+                
+        return 'pos_incorrect.csv', 'neg_incorrect.csv'
 
 def negate_target(neg_file):
     with open(neg_file, 'r') as neg_read:
 
-        neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
+        neg_reader = list(csv.reader(neg_read, delimiter=','))
         boolList = []
 
         for line in neg_reader:
+            print(line)
+            exit()
             targsent = line[0].split()
             predsent = line[1].split()
+            targlen = line[2]
 
-            not_index = targsent.index('not')
+            # print(targsent)
+            not_index = targsent.index('not') 
             targverb = targsent[not_index + 1]
 
             if 'not' in predsent and targverb in predsent:
                 verb_index = predsent.index(targverb)
                 if predsent[verb_index - 1] == 'not':
-                    boolList.append(1)
+                    boolList.append([targlen, 1])
                 else: 
-                    boolList.append(0)
+                    boolList.append([targlen, 0])
             else:
-                boolList.append(0)
+                boolList.append([targlen, 0])
 
         return boolList
-
-def preserve_category(posfile, negfile):
+#TODO: resolve ambiguity with 'the'
+# def preserve_category(posfile, negfile):
 
     with open(posfile, 'r') as pos_read, open(negfile, 'r') as neg_read:
         pos_reader = list(csv.reader(pos_read, delimiter=','))[1:]
@@ -86,6 +96,7 @@ def preserve_category(posfile, negfile):
         for production in not_grammar.productions():
             if isinstance(production.rhs()[0], str):
                 prod_dict.update({production.rhs()[0]: production.lhs()})
+
 
         for line in pos_reader:
             targ = line[0].split()
@@ -322,7 +333,7 @@ def make_dicts(pos_file, neg_file, newresults):
         
         avg_dict = {i + 1: (str(round((total_correctDICT[i + 1]/ total_template[i + 1]) * 100, 2))) + '%' if total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_len))}
 
-        return max_len, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict
+        return max_len, pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict
 
 def write_dicts(dictlist, dictnames, max_len):
     with open('dicts.csv', 'w') as dictfile:
@@ -351,29 +362,34 @@ def main():
 
     '''
     # Files
-    newresults = read_file(argv[1]) # Reads raw results, turns it into new results by taking off <eos> token
-    pos_file, neg_file = incorrect_files() # pos_neg.txt, pos_pos.txt
+    pos_pos, pos_neg = read_file(argv[1]) # Reads raw results, turns it into new results by taking off <eos> token
+    pos_incorrect, neg_incorrect = incorrect_files(pos_pos, pos_neg) # pos_neg.txt, pos_pos.txt
 
     # Strings
-    PNnegate_targetBOOL = negate_target(neg_file) # returns a list of booleans for negating the target verb
-    pos_catBOOL, neg_catBOOL = preserve_category(pos_file, neg_file) # returns a list of booleans for perserving grammatical categories
+    PNnegate_targetBOOL = negate_target(neg_incorrect) # returns a list of booleans for negating the target verb
+    # pos_catBOOL, neg_catBOOL = preserve_category(pos_incorrect, neg_incorrect) # returns a list of booleans for perserving grammatical categories
 
     # Trees
-    PPtargtrees, PPpredtrees, PNtargtrees, PNpredtrees = make_trees(pos_file, neg_file) # create trees for all transformations
+    PPtargtrees, PPpredtrees, PNtargtrees, PNpredtrees = make_trees(pos_incorrect, neg_incorrect) # create trees for all transformations
 
     PPequal_structsBOOL, PPclausalBOOL = equal_structs(PPtargtrees, PPpredtrees), clausal(PPtargtrees, PPpredtrees)
     PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL = equal_structs(PNtargtrees, PNpredtrees), clausal(PNtargtrees, PNpredtrees), negate_main(PNpredtrees)
 
-    posBOOLS = pos_csv_writer(pos_file, pos_catBOOL, PPequal_structsBOOL, PPclausalBOOL) # writes into a new CSV with 4 columns: targ, pred, boolean values
-    negBOOLS = neg_csv_writer(neg_file, neg_catBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL, PNnegate_targetBOOL) # writes into a new CSV with 5 columns: targ, pred, boolean values
+    # posBOOLS = pos_csv_writer(pos_incorrect, pos_catBOOL, PPequal_structsBOOL, PPclausalBOOL) # writes into a new CSV with 4 columns: targ, pred, boolean values
+    posBOOLS = pos_csv_writer(pos_incorrect, PPequal_structsBOOL, PPclausalBOOL)
+    # negBOOLS = neg_csv_writer(neg_incorrect, neg_catBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL, PNnegate_targetBOOL)
+    negBOOLS = neg_csv_writer(neg_incorrect, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL, PNnegate_targetBOOL)  # writes into a new CSV with 5 columns: targ, pred, boolean values
 
     # Creates dictionaries, key: sen length, value: bools
-    max_len, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict = make_dicts(posBOOLS, negBOOLS, newresults)
-    # list of all dictionaries
-    dictlist = [pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict]
     
+    # max_len, pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict = make_dicts(posBOOLS, negBOOLS, newresults)
+    max_len, pos_total_template, neg_total_template, pos_structsAVG, pos_clausalAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict = make_dicts(posBOOLS, negBOOLS, newresults)
+
+    # list of all dictionaries
+    # dictlist = [pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict]
+    dictlist = [pos_total_template, neg_total_template, pos_structsAVG, pos_clausalAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict]
     # dictionary names
-    dictnames = ['pos_catAVG', 'pos_structsAVG', 'pos_clausalAVG', 'neg_catAVG', 'neg_structsAVG', 'neg_clausalAVG', 'neg_mainAVG', 'neg_targAVG', 'avg_dict']
+    dictnames = ["pos_total_template", "neg_total_template", 'pos_structsAVG', 'pos_clausalAVG', 'neg_structsAVG', 'neg_clausalAVG', 'neg_mainAVG', 'neg_targAVG', 'avg_dict']
     
     # write dictionaries to files
     write_dicts(dictlist, dictnames, max_len)
