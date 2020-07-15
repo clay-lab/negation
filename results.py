@@ -14,6 +14,8 @@ def read_file(filename):
     print(path)
     with open(filename, newline='') as rfile, open("pos_pos.csv", 'w') as pos_file, open("pos_neg.csv", 'w') as neg_file:
 
+        boolLIST = []
+
         reader = list(csv.reader(rfile, delimiter='\t', lineterminator='\n'))
         neg_writer = csv.writer(neg_file, delimiter=',', lineterminator='\n', quotechar='/')
         pos_writer = csv.writer(pos_file, delimiter=',', lineterminator='\n', quotechar='/')
@@ -28,11 +30,15 @@ def read_file(filename):
             correct = 1 if newline[0] == newline[1] else 0
             if 'not' in newline[0]:
                 neg_writer.writerow([' '.join(newline[0]), ' '.join(newline[1]), targlen, predlen, correct])
+                pos = 0
             else:
                 pos_writer.writerow([' '.join(newline[0]), ' '.join(newline[1]), targlen, predlen, correct])
-        return "pos_pos.csv", "pos_neg.csv"
+                pos = 1
+            boolLIST.append([targlen, predlen, correct, pos])
+
+        return "pos_pos.csv", "pos_neg.csv", boolLIST
  
-def incorrect_files(pos_pos, pos_neg):
+# def incorrect_files(pos_pos, pos_neg):
 
     with open(pos_pos, 'r') as pos_posfile, open(pos_neg, 'r') as pos_negfile, open("neg_incorrect.csv", 'w') as neg_file, open("pos_incorrect.csv", 'w') as pos_file:
         
@@ -59,28 +65,32 @@ def incorrect_files(pos_pos, pos_neg):
 def negate_target(neg_file):
     with open(neg_file, 'r') as neg_read:
 
-        neg_reader = list(csv.reader(neg_read, delimiter=','))
+        neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
         boolList = []
 
         for line in neg_reader:
-            print(line)
-            exit()
-            targsent = line[0].split()
-            predsent = line[1].split()
-            targlen = line[2]
-
-            # print(targsent)
-            not_index = targsent.index('not') 
-            targverb = targsent[not_index + 1]
-
-            if 'not' in predsent and targverb in predsent:
-                verb_index = predsent.index(targverb)
-                if predsent[verb_index - 1] == 'not':
-                    boolList.append([targlen, 1])
-                else: 
-                    boolList.append([targlen, 0])
+            correct = int(line[4])
+            targlen = int(line[2])
+            predlen = int(line[3])
+            if correct == 1:
+                boolList.append([targlen, predlen, 1])
             else:
-                boolList.append([targlen, 0])
+                targsent = line[0].split()
+                predsent = line[1].split()
+                
+
+                # print(targsent)
+                not_index = targsent.index('not') 
+                targverb = targsent[not_index + 1]
+
+                if 'not' in predsent and targverb in predsent:
+                    verb_index = predsent.index(targverb)
+                    if predsent[verb_index - 1] == 'not':
+                        boolList.append([targlen, predlen, 1])
+                    else: 
+                        boolList.append([targlen, predlen, 0])
+                else:
+                    boolList.append([targlen, predlen, 0])
 
         return boolList
 #TODO: resolve ambiguity with 'the'
@@ -129,60 +139,65 @@ def make_trees(pos_file, neg_file):
         pos_reader = list(csv.reader(pos_read, delimiter=','))[1:]
         neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
         readerlist = [pos_reader, neg_reader]
-
-        PPtargtrees, PPpredtrees, PNtargtrees, PNpredtrees = [], [], [], []
+        postrees = [[], []]
+        negtrees = [[], []]
+        treeslist = [postrees, negtrees]
 
         for i in range(len(readerlist)):
             # get each sentence
             targlist = [line[0].split() for line in readerlist[i]]
             predlist = [line[1].split() for line in readerlist[i]]
+            targlen = [int(line[2]) for line in readerlist[i]]
+            predlen = [int(line[3]) for line in readerlist[i]]
+            correctlist = [int(line[4]) for line in readerlist[i]]
 
             # return list of generators for parses
-            targ_parses = [parser.parse(targ) for targ in targlist]
-            pred_parses = [parser.parse(pred) for pred in predlist]
+            targ_parses = [parser.parse(targlist[j]) if correctlist[j] != 1 else "correct" for j in range(len(targlist))]
+            pred_parses = [parser.parse(predlist[j]) if correctlist[j] != 1 else "correct" for j in range(len(predlist))]
 
             # returns number of parses in each generator
             len_predparses = [len(list(parser.parse(pred))) for pred in predlist]
  
             npwriter.writerow(['target', 'prediction'])
             for j in range(len(pred_parses)):
-                if len_predparses[j] == 0: 
-                    npwriter.writerow([' '.join(targlist[j]), ' '.join(predlist[j])])
-                    if i == 0:
-                        PPtargtrees.append('N/A')
-                        PPpredtrees.append('N/A')
-                    else:
-                        PNtargtrees.append('N/A')
-                        PNpredtrees.append('N/A')
+                if pred_parses[j] == "correct":
+                    treeslist[i][0].append([targlen[j], "correct"])
+                    treeslist[i][1].append([predlen[j], "correct"])
                 else:
-                    if i == 0:
-                        PPtargtrees.append(next(targ_parses[j]))
-                        PPpredtrees.append(next(pred_parses[j]))
+                    if len_predparses[j] == 0: 
+                        npwriter.writerow([' '.join(targlist[j]), ' '.join(predlist[j])])
+                        treeslist[i][0].append([targlen[j], 'N/A'])
+                        treeslist[i][1].append([predlen[j], 'N/A'])
                     else:
-                        PNtargtrees.append(next(targ_parses[j]))
-                        PNpredtrees.append(next(pred_parses[j]))
+                            treeslist[i][0].append([targlen[j], next(targ_parses[j])])
+                            treeslist[i][1].append([predlen[j], next(pred_parses[j])])
 
-        return PPtargtrees, PPpredtrees, PNtargtrees, PNpredtrees
+        return treeslist[0][0], treeslist[0][1], treeslist[1][0], treeslist[1][1]
+
 
 def equal_structs(targtrees, predtrees):
     
     boolList = []
     length = range(len(targtrees))
     for tree in length:
-        if targtrees[tree] == 'N/A':
-            boolList.append('N/A')
-        elif len(targtrees[tree].leaves()) != len(predtrees[tree].leaves()):
-            boolList.append(0)
+        targlen = targtrees[tree][0]
+        predlen = predtrees[tree][0]
+        if targtrees[tree][1] == 'correct':
+            boolList.append([targlen, predlen, 1])
+        elif targtrees[tree][1] == 'N/A':
+            boolList.append([targlen, predlen, 'N/A'])
+        elif (targlen != predlen):
+            boolList.append([targlen, predlen, 0])
         else:
-            targprods = targtrees[tree].productions()
-            predprods = predtrees[tree].productions()
+            targprods = (targtrees[tree][1]).productions()
+            predprods = (predtrees[tree][1]).productions()
             targNodes = [production.lhs() for production in targprods]
             predNodes = [production.lhs() for production in predprods]
 
             if targNodes == predNodes:
-                boolList.append(1)
+                boolList.append([targlen, predlen, 1])
             else:
-                boolList.append(0)
+                boolList.append([targlen, predlen, 0])
 
     return boolList
 
@@ -191,149 +206,140 @@ def clausal(targtrees, predtrees):
     boolList = []
     length = range(len(targtrees))
     for tree in length:
-        if targtrees[tree] == 'N/A':
-            boolList.append('N/A')
+        targlen = targtrees[tree][0]
+        predlen = predtrees[tree][0]
+        if targtrees[tree][1] == 'correct':
+            boolList.append([targlen, predlen, 1])
+        elif targtrees[tree][1] == 'N/A':
+            boolList.append([targlen, predlen,'N/A'])
         else:
-            targNodes = [prod for prod in targtrees[tree].productions() if (str(prod.lhs()) == 'S' or str(prod.lhs()) == 'AdvP' or str(prod.lhs()) == 'RelP') or ('S' in str(prod.rhs()) or 'AdvP' in str(prod.rhs()) or 'RelP' in str(prod.rhs())) or 'VP' in str(prod.rhs())]
-            predNodes = [prod for prod in predtrees[tree].productions() if (str(prod.lhs()) == 'S' or str(prod.lhs()) == 'AdvP' or str(prod.lhs()) == 'RelP') or ('S' in str(prod.rhs()) or 'AdvP' in str(prod.rhs()) or 'RelP' in str(prod.rhs())) or 'VP' in str(prod.rhs())]
+            targNodes = [prod for prod in targtrees[tree][1].productions() if (str(prod.lhs()) == 'S' or str(prod.lhs()) == 'AdvP' or str(prod.lhs()) == 'RelP') or ('S' in str(prod.rhs()) or 'AdvP' in str(prod.rhs()) or 'RelP' in str(prod.rhs())) or 'VP' in str(prod.rhs())]
+            predNodes = [prod for prod in predtrees[tree][1].productions() if (str(prod.lhs()) == 'S' or str(prod.lhs()) == 'AdvP' or str(prod.lhs()) == 'RelP') or ('S' in str(prod.rhs()) or 'AdvP' in str(prod.rhs()) or 'RelP' in str(prod.rhs())) or 'VP' in str(prod.rhs())]
 
             if targNodes == predNodes:
-                boolList.append(1)
+                boolList.append([targlen, predlen, 1])
             else:
-                boolList.append(0)
+                boolList.append([targlen, predlen, 0])
 
     return boolList
 
-def negate_main(predtrees):
+def negate_main(targtrees, predtrees):
     boolList = []
     length = range(len(predtrees))
     for tree in length:
-        if predtrees[tree] == 'N/A':
-            boolList.append('N/A')
+        targlen = targtrees[tree][0]
+        predlen = predtrees[tree][0]
+        if predtrees[tree][1] == 'correct':
+            boolList.append([targlen, predlen, 1])
+        elif predtrees[tree][1] == 'N/A':
+            boolList.append([targlen, predlen, 'N/A'])
         else:
-            for subtree in predtrees[tree].subtrees(filter=lambda t: t.label() == 'S'):
+            for subtree in predtrees[tree][1].subtrees(filter=lambda t: t.label() == 'S'):
                 subtree
             if 'not' in subtree.leaves():
-                boolList.append(1)
+                boolList.append([targlen, predlen, 1])
             else:
-                boolList.append(0)
+                boolList.append([targlen, predlen, 0])
     
     return boolList
 
-def pos_csv_writer(pos_file, pos_catBOOL, PPequal_structsBOOL, PPclausalBOOL):
+def pos_csv_writer(pos_file, structsBOOL, clausalBOOL):
 
     with open(pos_file, 'r') as read_file, open('pos_posBOOLS.csv', 'w') as boolsfile:
 
         reader = list(csv.reader(read_file, delimiter=','))
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
 
-        reader[0].extend(["Preserves grammatical categories", "Preserves Tree Structure", "Preserves Significant Clauses"])
+        reader[0].extend(["Preserves Tree Structure", "Preserves Significant Clauses"])
         writer.writerow(reader[0])
 
         reader = reader[1:]
         lenreader = range(len(reader))
 
         for i in lenreader:
-            reader[i].extend([pos_catBOOL[i], PPequal_structsBOOL[i], PPclausalBOOL[i]])
+            reader[i].extend([structsBOOL[i][2], clausalBOOL[i][2]])
             writer.writerow(reader[i])
     
     return 'pos_posBOOLS.csv'
 
-def neg_csv_writer(neg_file, neg_catBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL, PNnegate_targetBOOL):
+def neg_csv_writer(neg_file, structsBOOL, clausalBOOL, neg_mainBOOL, neg_targBOOL):
     
     with open(neg_file, 'r') as read_file, open('pos_negBOOLS.csv', 'w') as boolsfile:
 
         reader = list(csv.reader(read_file, delimiter=','))
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
 
-        reader[0].extend(["Preserves grammatical categories", "Preserves Tree Structure", "Preserves Significant Clauses", "Negates Main Verb", "Negates Target Verb"])
+        reader[0].extend(["Preserves Tree Structure", "Preserves Significant Clauses", "Negates Main Verb", "Negates Target Verb"])
         writer.writerow(reader[0])
 
         reader = reader[1:]
         length = range(len(reader))
         for i in length:
-            reader[i].extend([neg_catBOOL[i], PNequal_structsBOOL[i], PNclausalBOOL[i], PNnegate_mainBOOL[i], PNnegate_targetBOOL[i]])
+            reader[i].extend([structsBOOL[i][2], clausalBOOL[i][2], neg_mainBOOL[i][2], neg_targBOOL[i][2]])
             writer.writerow(reader[i])
     
     return 'pos_negBOOLS.csv'
 
-def make_dicts(pos_file, neg_file, newresults):
-    with open(pos_file, 'r') as pos_read, open(neg_file, 'r') as neg_read, open(newresults, 'r') as nr_file:
-        pos_reader = list(csv.reader(pos_read, delimiter=','))[1:]
-        neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
-        nr_reader = list(csv.reader(nr_file, delimiter=','))[1:]
+def make_dicts(posBOOLS, negBOOLS, correctBOOL):
 
-        pos_lenlist = [int(row[2]) for row in pos_reader]
-        neg_lenlist = [int(row[2]) for row in neg_reader]
-        nr_lenlist = [int(row[2]) for row in nr_reader]
+    pos_lenlist = [posBOOLS[0][i][0] for i in range(len(posBOOLS[0]))] 
+    neg_lenlist = [negBOOLS[0][i][0] for i in range(len(negBOOLS[0]))]
+    total_lenlist = [correctBOOL[i][0] for i in range(len(correctBOOL))]
+    max_poslen, max_neglen, max_len = max(pos_lenlist), max(neg_lenlist), max(total_lenlist)
+
+    # Create Templates
+    pos_total_template = {length + 1:pos_lenlist.count(length + 1) if pos_lenlist.count(length + 1) > 0 else 'N/A' for length in list(range(max_poslen))}
+    pos_template = {length + 1:0  if pos_total_template[length + 1] != 'N/A' else 'N/A' for length in list(range(max_poslen))}
+
+    neg_total_template = {length + 1:neg_lenlist.count(length + 1)  if neg_lenlist.count(length + 1) > 0 else 'N/A' for length in list(range(max_neglen))}
+    neg_template = {length + 1:0 if neg_total_template[length + 1] != 'N/A' else 'N/A' for length in list(range(max_neglen))}
+
+    total_template = {length + 1:total_lenlist.count(length + 1) if total_lenlist.count(length + 1) > 0 else 'N/A' for length in list(range(max_len))}
+    total_correctDICT = {length + 1:0 if total_template[length + 1] != 'N/A' else 'N/A' for length in list(range(max_len))}
+
+    # Initialize pos and neg dicts
+    pos_structsDICT, pos_clausalDICT, pos_correctDICT = dict(pos_template), dict(pos_template), dict(pos_template)
+    pos_dicts = [pos_structsDICT, pos_clausalDICT]
+
+    neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT, neg_correctDICT  = dict(neg_template), dict(neg_template), dict(neg_template), dict(neg_template), dict(neg_template)
+    neg_dicts = [neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT]
+    # pos_boolLIST = [pos_structsBOOL, pos_clausalBOOL]
+    # neg_boolLIST = [neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL]
+
+    # Fill dictionaries
+    for i in range(len(posBOOLS)):
+        for sent in posBOOLS[i]:
+            targlen = sent[0]
+            linebool = 0 if sent[2] == 'N/A' else sent[2]
+            pos_dicts[i][targlen] += linebool
+
+    for i in range(len(negBOOLS)):
+        for sent in negBOOLS[i]:
+            targlen = sent[0]
+            linebool = 0 if sent[2] == 'N/A' else sent[2]
+            neg_dicts[i][targlen] += linebool
+
+    for i in range(len(correctBOOL)):
+        targlen = correctBOOL[i][0]
+        correct = correctBOOL[i][2]
+        total_correctDICT[targlen] += correct
+        if correctBOOL[i][3] == 1 and correct == 1:
+            pos_correctDICT[targlen] += 1
+        elif correctBOOL[i][3] == 0 and correct == 1:
+            neg_correctDICT[targlen] += 1
         
-        max_poslen = max(pos_lenlist)
-        max_neglen = max(neg_lenlist)
-        max_len = max(nr_lenlist)
+    pos_structsAVG = {i + 1: (str(round(((pos_structsDICT[i + 1] + pos_correctDICT[i + 1]) / pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
+    pos_clausalAVG = {i + 1: (str(round(((pos_clausalDICT[i + 1] + pos_correctDICT[i + 1]) / pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
 
-        # Create Templates
-        pos_total_template = {length + 1:pos_lenlist.count(length + 1) if pos_lenlist.count(length + 1) > 0 else 'N/A' for length in list(range(max_poslen))}
-        pos_template = {length + 1:0  if pos_total_template[length + 1] != 'N/A' else 'N/A' for length in list(range(max_poslen))}
-
-        neg_total_template = {length + 1:neg_lenlist.count(length + 1)  if neg_lenlist.count(length + 1) > 0 else 'N/A' for length in list(range(max_neglen))}
-        neg_template = {length + 1:0 if neg_total_template[length + 1] != 'N/A' else 'N/A' for length in list(range(max_neglen))}
-
-        total_template = {length + 1:nr_lenlist.count(length + 1) if nr_lenlist.count(length + 1) > 0 else 'N/A' for length in list(range(max_len))}
-        total_correctDICT = {length + 1:0 if total_template[length + 1] != 'N/A' else 'N/A' for length in list(range(max_len))}
-
-        # Initialize pos and neg dicts
-        pos_catDICT, pos_structsDICT, pos_clausalDICT = dict(pos_template), dict(pos_template), dict(pos_template)
-        neg_catDICT, neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT = dict(neg_template), dict(neg_template), dict(neg_template), dict(neg_template), dict(neg_template)
-
-        # Fill dictionaries
-        len_pos = range(len(pos_reader))
-
-        for i in len_pos:
-            linelen = int(pos_reader[i][2])
-            
-            catBOOL = 0 if pos_reader[i][4] == 'N/A' else int(pos_reader[i][4])
-            structsBOOL = 0 if pos_reader[i][5] == 'N/A' else int(pos_reader[i][5])
-            clausalBOOL = 0  if pos_reader[i][6] == 'N/A' else int(pos_reader[i][6])   
-
-            pos_catDICT[linelen] += catBOOL
-            pos_structsDICT[linelen] += structsBOOL
-            pos_clausalDICT[linelen] += clausalBOOL
-
-        pos_catAVG = {i + 1: (str(round((pos_catDICT[i + 1]/ pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
-        pos_structsAVG = {i + 1: (str(round((pos_structsDICT[i + 1]/ pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
-        pos_clausalAVG = {i + 1: (str(round((pos_clausalDICT[i + 1]/ pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
-
-        len_neg = range(len(neg_reader))
-        for i in len_neg:
-            linelen = int(neg_reader[i][2])
-
-            catBOOL = neg_reader[i][4] if neg_reader[i][4] != 'N/A' else 0
-            structsBOOL = neg_reader[i][5] if neg_reader[i][5] != 'N/A' else 0
-            clausalBOOL = neg_reader[i][6] if neg_reader[i][6] != 'N/A' else 0
-            negate_mainBOOL = neg_reader[i][7] if neg_reader[i][7] != 'N/A' else 0
-            negate_targetBOOL = neg_reader[i][8] if neg_reader[i][8] != 'N/A' else 0
-
-            neg_catDICT[linelen] += int(catBOOL) if neg_catDICT[linelen] != 'N/A' else 'N/A' 
-            neg_structsDICT[linelen] += int(structsBOOL) if neg_structsDICT[linelen] != 'N/A' else 'N/A'
-            neg_clausalDICT[linelen] += int(clausalBOOL) if neg_clausalDICT[linelen] != 'N/A' else 'N/A'
-            negates_mainDICT[linelen] += int(negate_mainBOOL) if negates_mainDICT[linelen] != 'N/A' else 'N/A'
-            negates_targDICT[linelen] += int(negate_targetBOOL) if negates_targDICT[linelen] != 'N/A' else 'N/A'
-
-        neg_catAVG = {i + 1: (str(round((neg_catDICT[i + 1]/ neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-        neg_structsAVG = {i + 1: (str(round((neg_structsDICT[i + 1]/ neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-        neg_clausalAVG = {i + 1: (str(round((neg_clausalDICT[i + 1]/ neg_total_template[i + 1])* 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-        neg_mainAVG = {i + 1: (str(round((negates_mainDICT[i + 1]/ neg_total_template[i + 1])* 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-        neg_targAVG = {i + 1: (str(round((negates_targDICT[i + 1]/ neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-
-        
-        total_len = range(len(nr_reader))
-        for i in total_len:
-            linelen = int(nr_reader[i][2])
-            total_correctDICT[linelen] += int(nr_reader[i][3])
-        
-        avg_dict = {i + 1: (str(round((total_correctDICT[i + 1]/ total_template[i + 1]) * 100, 2))) + '%' if total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_len))}
-
-        return max_len, pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict
+    neg_structsAVG = {i + 1: (str(round(((neg_structsDICT[i + 1] + neg_correctDICT[i + 1]) / neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
+    neg_clausalAVG = {i + 1: (str(round(((neg_clausalDICT[i + 1] + neg_correctDICT[i + 1]) / neg_total_template[i + 1])* 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
+    neg_mainAVG = {i + 1: (str(round(((negates_mainDICT[i + 1] + neg_correctDICT[i + 1]) / neg_total_template[i + 1])* 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
+    neg_targAVG = {i + 1: (str(round(((negates_targDICT[i + 1] + neg_correctDICT[i + 1]) / neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
+    
+    avg_dict = {i + 1: (str(round((total_correctDICT[i + 1]/ total_template[i + 1]) * 100, 2))) + '%' if total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_len))}
+    dictlist = [total_template, pos_total_template, neg_total_template, pos_correctDICT, neg_correctDICT, pos_structsAVG, pos_clausalAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict]
+    
+    return max_len, dictlist
 
 def write_dicts(dictlist, dictnames, max_len):
     with open('dicts.csv', 'w') as dictfile:
@@ -356,40 +362,39 @@ def write_dicts(dictlist, dictnames, max_len):
 # Main function
 def main():
     ''' 
-    accuracyBOOL - size of results file
-    pos_catBOOL, PPequal_structsBOOL, PPclausalBOOL - size of pos_pos.csv
-    neg_catBOOL, PNnegate_targetBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL - size of pos_neg.csv
+    PPequal_structsBOOL, PPclausalBOOL - size of pos_pos.csv
+    PNnegate_targetBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL - size of pos_neg.csv
 
     '''
     # Files
-    pos_pos, pos_neg = read_file(argv[1]) # Reads raw results, turns it into new results by taking off <eos> token
-    pos_incorrect, neg_incorrect = incorrect_files(pos_pos, pos_neg) # pos_neg.txt, pos_pos.txt
+    pos_pos, pos_neg, correctBOOL = read_file(argv[1]) # Reads raw results, turns it into new results by taking off <eos> token
+    # pos_incorrect, neg_incorrect = incorrect_files(pos_pos, pos_neg) # pos_neg.txt, pos_pos.txt
 
     # Strings
-    PNnegate_targetBOOL = negate_target(neg_incorrect) # returns a list of booleans for negating the target verb
+    neg_targetBOOL = negate_target(pos_neg) # returns a list of booleans for negating the target verb
     # pos_catBOOL, neg_catBOOL = preserve_category(pos_incorrect, neg_incorrect) # returns a list of booleans for perserving grammatical categories
 
     # Trees
-    PPtargtrees, PPpredtrees, PNtargtrees, PNpredtrees = make_trees(pos_incorrect, neg_incorrect) # create trees for all transformations
+    pos_targTREES, pos_predTREES, neg_targTREES, neg_predTREES = make_trees(pos_pos, pos_neg) # create trees for all transformations
 
-    PPequal_structsBOOL, PPclausalBOOL = equal_structs(PPtargtrees, PPpredtrees), clausal(PPtargtrees, PPpredtrees)
-    PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL = equal_structs(PNtargtrees, PNpredtrees), clausal(PNtargtrees, PNpredtrees), negate_main(PNpredtrees)
+    pos_structsBOOL, pos_clausalBOOL = equal_structs(pos_targTREES, pos_predTREES), clausal(pos_targTREES, pos_predTREES) # [targlen, predlen, BOOL]
+    neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL = equal_structs(neg_targTREES, neg_predTREES), clausal(neg_targTREES, neg_predTREES), negate_main(neg_targTREES, neg_predTREES) # [targlen, predlen, BOOL]
 
     # posBOOLS = pos_csv_writer(pos_incorrect, pos_catBOOL, PPequal_structsBOOL, PPclausalBOOL) # writes into a new CSV with 4 columns: targ, pred, boolean values
-    posBOOLS = pos_csv_writer(pos_incorrect, PPequal_structsBOOL, PPclausalBOOL)
+    posBOOLS = pos_csv_writer(pos_pos, pos_structsBOOL, pos_clausalBOOL)
+    
     # negBOOLS = neg_csv_writer(neg_incorrect, neg_catBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL, PNnegate_targetBOOL)
-    negBOOLS = neg_csv_writer(neg_incorrect, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL, PNnegate_targetBOOL)  # writes into a new CSV with 5 columns: targ, pred, boolean values
-
+    negBOOLS = neg_csv_writer(pos_neg, neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL)  # writes into a new CSV with 5 columns: targ, pred, boolean values
+    
+    pos_boolLIST = [pos_structsBOOL, pos_clausalBOOL]
+    neg_boolLIST = [neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL]
     # Creates dictionaries, key: sen length, value: bools
     
     # max_len, pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict = make_dicts(posBOOLS, negBOOLS, newresults)
-    max_len, pos_total_template, neg_total_template, pos_structsAVG, pos_clausalAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict = make_dicts(posBOOLS, negBOOLS, newresults)
+    max_len, dictlist = make_dicts(pos_boolLIST, neg_boolLIST, correctBOOL)
 
-    # list of all dictionaries
-    # dictlist = [pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict]
-    dictlist = [pos_total_template, neg_total_template, pos_structsAVG, pos_clausalAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict]
     # dictionary names
-    dictnames = ["pos_total_template", "neg_total_template", 'pos_structsAVG', 'pos_clausalAVG', 'neg_structsAVG', 'neg_clausalAVG', 'neg_mainAVG', 'neg_targAVG', 'avg_dict']
+    dictnames = ["total_template", "pos_total_template", "neg_total_template", "pos_correctDICT", "neg_correctDICT", 'pos_structsAVG', 'pos_clausalAVG', 'neg_structsAVG', 'neg_clausalAVG', 'neg_mainAVG', 'neg_targAVG', 'avg_dict']
     
     # write dictionaries to files
     write_dicts(dictlist, dictnames, max_len)

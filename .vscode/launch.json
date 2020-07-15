@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": ["negation-noatten-results-6-28-20_0.tsv"],
-            "cwd": "no-attention"
+            "cwd": "no-attention-0"
         }
     ]
 }
