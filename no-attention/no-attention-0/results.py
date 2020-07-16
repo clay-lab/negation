@@ -95,42 +95,88 @@ def negate_target(neg_file):
                     boolList.append([sourcelen, targlen, predlen, 0])
 
         return boolList
+
+def token_acc(pos_pos, pos_neg):
+    with open(pos_pos, 'r') as pos_file, open(pos_neg, 'r') as neg_file:
+
+        pos_reader = list(csv.reader(pos_file, delimiter=','))[1:]
+        neg_reader = list(csv.reader(neg_file, delimiter=','))[1:]
+        readerlist = [pos_reader, neg_reader]
+        token_precisionlist, token_recallList = [], []
+        category_precisionlist, category_recallList = [], []
+
+        prod_dict = {production.rhs()[0]: []  if isinstance(production.rhs()[0], str) else None for production in not_grammar.productions()}
+        for production in not_grammar.productions():
+            if isinstance(production.rhs()[0], str):
+                prod_dict[production.rhs()[0]].append(production.lhs())
+
+        for i in range(len(readerlist)):
+            targlens = [int(line[3]) for line in readerlist[i]]
+            predlens = [int(line[4]) for line in readerlist[i]]
+
+            total_token_correct = 0
+            total_category_correct = 0
+            for line in readerlist[i]:
+                targlen = int(line[3])
+                predlen = int(line[4])
+                if targlen > predlen:
+                    cuttarg = line[0].split()[0:predlen]
+                    cutpred = line[1].split()
+                    length = predlen
+                else:
+                    cuttarg = line[0].split()
+                    cutpred = line[1].split()[0:targlen]
+                    length = targlen
+                token_correct = [1 if cuttarg[i] == cutpred[i] else 0 for i in range(length)]
+                category_correct = [1 if prod_dict[cuttarg[i]] == prod_dict[cutpred[i]] else 0 for i in range(length)]
+
+                total_token_correct += sum(token_correct)
+                total_category_correct += sum(category_correct)
+
+            token_precisionlist.append(total_token_correct / sum(predlens))
+            token_recallList.append(total_token_correct / sum(targlens))
+
+            category_precisionlist.append(total_category_correct / sum(predlens))
+            category_recallList.append(total_category_correct / sum(targlens))
+
+        return token_precisionlist, token_recallList, category_precisionlist, category_recallList
+      
 #TODO: resolve ambiguity with 'the'
 # def preserve_category(posfile, negfile):
 
-    with open(posfile, 'r') as pos_read, open(negfile, 'r') as neg_read:
-        pos_reader = list(csv.reader(pos_read, delimiter=','))[1:]
-        neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
+    # with open(posfile, 'r') as pos_read, open(negfile, 'r') as neg_read:
+    #     pos_reader = list(csv.reader(pos_read, delimiter=','))[1:]
+    #     neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
 
-        prod_dict = {}
-        posBOOL, negBOOL = [], []
+    #     prod_dict = {}
+    #     posBOOL, negBOOL = [], []
 
-        for production in not_grammar.productions():
-            if isinstance(production.rhs()[0], str):
-                prod_dict.update({production.rhs()[0]: production.lhs()})
+    #     for production in not_grammar.productions():
+    #         if isinstance(production.rhs()[0], str):
+    #             prod_dict.update({production.rhs()[0]: production.lhs()})
 
 
-        for line in pos_reader:
-            targ = line[0].split()
-            pred = line[1].split()
-            targ_gram = [prod_dict[word] for word in targ]
-            pred_gram = [prod_dict[word] for word in pred]
-            if targ_gram == pred_gram:
-                posBOOL.append(1)
-            else:
-                posBOOL.append(0)
+    #     for line in pos_reader:
+    #         targ = line[0].split()
+    #         pred = line[1].split()
+    #         targ_gram = [prod_dict[word] for word in targ]
+    #         pred_gram = [prod_dict[word] for word in pred]
+    #         if targ_gram == pred_gram:
+    #             posBOOL.append(1)
+    #         else:
+    #             posBOOL.append(0)
 
-        for line in neg_reader:
-            targ = line[0].split()
-            pred = line[1].split()
-            targ_gram = [prod_dict[word] for word in targ]
-            pred_gram = [prod_dict[word] for word in pred]
-            if targ_gram == pred_gram:
-                negBOOL.append(1)
-            else:
-                negBOOL.append(0)
+    #     for line in neg_reader:
+    #         targ = line[0].split()
+    #         pred = line[1].split()
+    #         targ_gram = [prod_dict[word] for word in targ]
+    #         pred_gram = [prod_dict[word] for word in pred]
+    #         if targ_gram == pred_gram:
+    #             negBOOL.append(1)
+    #         else:
+    #             negBOOL.append(0)
 
-    return posBOOL, negBOOL
+    # return posBOOL, negBOOL
   
 def make_trees(pos_file, neg_file):
 
@@ -176,7 +222,6 @@ def make_trees(pos_file, neg_file):
                             treeslist[i][1].append([sourcelen[j], predlen[j], next(pred_parses[j])])
 
         return treeslist[0][0], treeslist[0][1], treeslist[1][0], treeslist[1][1]
-
 
 def equal_structs(targtrees, predtrees):
     
@@ -286,7 +331,7 @@ def neg_csv_writer(neg_file, structsBOOL, clausalBOOL, neg_mainBOOL, neg_targBOO
     
     return 'pos_negBOOLS.csv'
 
-def make_dicts(posBOOLS, negBOOLS, correctBOOL):
+def make_dicts(posBOOLS, negBOOLS, correctBOOL, tokenLIST):
     # [sourcelen, targlen, predlen, correct, pos]
 
     pos_lenlist = [posBOOLS[0][i][0] for i in range(len(posBOOLS[0]))] 
@@ -346,15 +391,25 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     # Total Average Dict
     avg_dict = {i + 1: (str(round((total_correctDICT[i + 1] / totaltemplatelist[2][i + 1]) * 100, 2))) + '%' if totaltemplatelist[2][i + 1] != 'N/A' else 'N/A' for i in list(range(max_len))}
     
+    token_precisionDICT = {'pos' : tokenLIST[0][0], 'neg' : tokenLIST[0][1]}
+    token_recallDICT = {'pos' : tokenLIST[1][0], 'neg' : tokenLIST[1][1]}
+    category_precisionDICT = {'pos' : tokenLIST[2][0], 'neg' : tokenLIST[2][1]}
+    category_recallDICT = {'pos' : tokenLIST[3][0], 'neg' : tokenLIST[3][1]}
+    print(token_precisionDICT)
+    print(token_recallDICT)
+    print(category_precisionDICT)
+    print(category_recallDICT)
     # Total, pos total, pos correct, neg total, neg correct, total correct, pos structs, pos clausal, neg structs, neg clausal,  neg main, neg targ
     dictlist = [totaltemplatelist[2], totaltemplatelist[0], pos_correctDICT, totaltemplatelist[1], neg_correctDICT,  avg_dict, pos_averages[0], pos_averages[1], neg_averages[0], neg_averages[1], neg_averages[2], neg_averages[3]]
-    return max_len, dictlist
+    dictnames = ["Total Sentences per Length", "Total pos->pos sents per len", "Correct pos->pos sents per len", "Total pos->neg sents per len", "Correct pos->neg sents per len", 'Total Correct per len', 'Preserve tree structures (pos->pos)', 'Preserve significant clauses (pos->pos)', 'Preserve tree structures (pos->neg)', 'Preserve significant clauses (pos->neg)', 'Negates main clause (pos->neg)', 'Negates target (pos->neg)']
+    
+    return max_len, dictlist, dictnames
 
 def write_dicts(dictlist, dictnames, max_len):
     with open('dicts.csv', 'w') as dictfile:
 
         newdicts = [{'Dictionary Name':dictname} for dictname in dictnames]
-
+        
         for i in range(len(newdicts)):
             newdicts[i].update(dictlist[i])
         
@@ -370,40 +425,24 @@ def write_dicts(dictlist, dictnames, max_len):
         
 # Main function
 def main():
-    ''' 
-    PPequal_structsBOOL, PPclausalBOOL - size of pos_pos.csv
-    PNnegate_targetBOOL, PNequal_structsBOOL, PNclausalBOOL, PNnegate_mainBOOL - size of pos_neg.csv
 
-    '''
     # Files
-    # Reads raw results, turns it into new results by taking off <eos> token
-    pos_pos, pos_neg, correctBOOL = read_file(argv[1])  # [sourcelen, targlen, predlen, correct, pos]
-    # pos_incorrect, neg_incorrect = incorrect_files(pos_pos, pos_neg) # pos_neg.txt, pos_pos.txt
+    pos_pos, pos_neg, correctBOOL = read_file(argv[1]) # Reads raw results, turns it into new results by taking off <eos> token
 
     # Strings
     neg_targetBOOL = negate_target(pos_neg) # returns a list of booleans for negating the target verb
-
+    token_precisionlist, token_recallList, category_precisionlist, category_recallList = token_acc(pos_pos, pos_neg) # returns proportion of correct tokens (pos, neg)
+    tokenLIST = [token_precisionlist, token_recallList, category_precisionlist, category_recallList]
     # Trees
     pos_targTREES, pos_predTREES, neg_targTREES, neg_predTREES = make_trees(pos_pos, pos_neg) # create trees for all transformations
-
-    pos_structsBOOL, pos_clausalBOOL = equal_structs(pos_targTREES, pos_predTREES), clausal(pos_targTREES, pos_predTREES) # [targlen, predlen, BOOL]
-    neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL = equal_structs(neg_targTREES, neg_predTREES), clausal(neg_targTREES, neg_predTREES), negate_main(neg_targTREES, neg_predTREES) # [targlen, predlen, BOOL]
-
+    pos_structsBOOL, pos_clausalBOOL = equal_structs(pos_targTREES, pos_predTREES), clausal(pos_targTREES, pos_predTREES) # [sourcelen, targlen, predlen, BOOL]
+    neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL = equal_structs(neg_targTREES, neg_predTREES), clausal(neg_targTREES, neg_predTREES), negate_main(neg_targTREES, neg_predTREES) # [sourcelen, targlen, predlen, BOOL]
     posBOOLS = pos_csv_writer(pos_pos, pos_structsBOOL, pos_clausalBOOL)
     negBOOLS = neg_csv_writer(pos_neg, neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL)  # writes into a new CSV with 5 columns: targ, pred, boolean values
     
-    pos_boolLIST = [pos_structsBOOL, pos_clausalBOOL]
-    neg_boolLIST = [neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL]
-    # Creates dictionaries, key: sen length, value: bools
-    
-    # max_len, pos_total_template, neg_total_template, pos_catAVG, pos_structsAVG, pos_clausalAVG, neg_catAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG, avg_dict = make_dicts(posBOOLS, negBOOLS, newresults)
-    max_len, dictlist = make_dicts(pos_boolLIST, neg_boolLIST, correctBOOL)
-
-    # dictionary names
-    # Total, pos total, pos correct, neg total, neg correct, total correct, pos structs, pos clausal, neg structs, neg clausal,  neg main, neg targ
-    dictnames = ["Total Sentences per Length", "Total pos->pos sents per len", "Correct pos->pos sents per len", "Total pos->neg sents per len", "Correct pos->neg sents per len", 'Total Correct per len', 'Preserve tree structures (pos->pos)', 'Preserve significant clauses (pos->pos)', 'Preserve tree structures (pos->neg)', 'Preserve significant clauses (pos->neg)', 'Negates main clause (pos->neg)', 'Negates target (pos->neg)']
-    
-    # write dictionaries to files
+    # Dictionaries
+    pos_boolLIST, neg_boolLIST = [pos_structsBOOL, pos_clausalBOOL], [neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL]
+    max_len, dictlist, dictnames = make_dicts(pos_boolLIST, neg_boolLIST, correctBOOL, tokenLIST)
     write_dicts(dictlist, dictnames, max_len)
 
 main()
