@@ -1,7 +1,7 @@
 # negation
 New Repo to store results analysis from CLAY lab Transductions
 
-The data in this repo has been trained on the neural network model developed in the [CLAY lab Transductions repository] (https://github.com/clay-lab/transductions).
+The data in this repo has been trained on the neural network model developed in the [CLAY lab Transductions repository](https://github.com/clay-lab/transductions).
 
 ## Hyperparameters
 
@@ -26,7 +26,7 @@ For each run, there are 8 files. Below are descriptions of each file.
 ``dicts.csv`` contains a table with numerical representations of analysis per sentence length
 a ``.tsv`` file contains the results from the test run of the model
 a ``.out`` contains the accuracy measures of the validation data during training
-``no-parses.csv`` contains all non-parseable sentences using the [BottomUpLeftCornerChartParser] (https://www.nltk.org/_modules/nltk/parse/chart.html)
+``no-parses.csv`` contains all non-parseable sentences using the [BottomUpLeftCornerChartParser](https://www.nltk.org/_modules/nltk/parse/chart.html)
 ``pos_neg.csv`` contains all positive to negative transformations in the test data
 ``pos_pos.csv`` contains all postive to positive transformations in the test data
 ``pos_negBOOLS.csv`` contains all of the boolean analysis for each sentence in ``pos_neg.csv`` (displayed in ``dicts.csv``)
