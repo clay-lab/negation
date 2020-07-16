@@ -24,11 +24,18 @@ Subfolders are named based on the run number. There will be 5 runs for each atte
 For each run, there are 8 files. Below are descriptions of each file.
 
 ``dicts.csv`` contains a table with numerical representations of analysis per sentence length
+
 a ``.tsv`` file contains the results from the test run of the model
+
 a ``.out`` contains the accuracy measures of the validation data during training
+
 ``no-parses.csv`` contains all non-parseable sentences using the [BottomUpLeftCornerChartParser](https://www.nltk.org/_modules/nltk/parse/chart.html)
+
 ``pos_neg.csv`` contains all positive to negative transformations in the test data
+
 ``pos_pos.csv`` contains all postive to positive transformations in the test data
+
 ``pos_negBOOLS.csv`` contains all of the boolean analysis for each sentence in ``pos_neg.csv`` (displayed in ``dicts.csv``)
+
 ``pos_negBOOLS.csv`` contains all of the boolean analysis for each sentence in ``pos_pos.csv`` (displayed in ``dicts.csv``)
 
