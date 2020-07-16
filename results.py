@@ -309,6 +309,8 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT, neg_correctDICT = dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1])
     neg_dicts = [neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT]
 
+    total_correctDICT = dict(templatelist[2])
+
     # Fill dictionaries
     for i in range(len(posBOOLS)):
         for sent in posBOOLS[i]:
@@ -328,20 +330,24 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
         templatelist[2][sourcelen] += correct
         if correctBOOL[i][4] == 1 and correct == 1:
             pos_correctDICT[sourcelen] += 1
+            total_correctDICT[sourcelen] += 1
         elif correctBOOL[i][4] == 0 and correct == 1:
             neg_correctDICT[sourcelen] += 1
-        
-    pos_structsAVG = {i + 1: (str(round(((pos_structsDICT[i + 1]) / pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
-    pos_clausalAVG = {i + 1: (str(round(((pos_clausalDICT[i + 1]) / pos_total_template[i + 1]) * 100, 2))) + '%' if pos_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_poslen))}
-
-    neg_structsAVG = {i + 1: (str(round(((neg_structsDICT[i + 1]) / neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-    neg_clausalAVG = {i + 1: (str(round(((neg_clausalDICT[i + 1]) / neg_total_template[i + 1])* 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-    neg_mainAVG = {i + 1: (str(round(((negates_mainDICT[i + 1]) / neg_total_template[i + 1])* 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
-    neg_targAVG = {i + 1: (str(round(((negates_targDICT[i + 1]) / neg_total_template[i + 1]) * 100, 2))) + '%' if neg_total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_neglen))}
+            total_correctDICT[sourcelen] += 1
     
-    avg_dict = {i + 1: (str(round((total_correctDICT[i + 1]/ total_template[i + 1]) * 100, 2))) + '%' if total_template[i + 1] != 'N/A' else 'N/A' for i in list(range(max_len))}
-    dictlist = [total_template, pos_total_template, pos_correctDICT, neg_total_template, neg_correctDICT, avg_dict, pos_structsAVG, pos_clausalAVG, neg_structsAVG, neg_clausalAVG, neg_mainAVG, neg_targAVG]
+    # Positive Average Dictionaries
+    pos_averages = []
+    for i in range(len(pos_dicts)):
+        pos_averages.append({j + 1: (str(round((pos_dicts[i][j + 1] / totaltemplatelist[0][j + 1]) * 100, 2))) + '%' if  totaltemplatelist[0][j + 1] != 'N/A' else 'N/A' for j in list(range(max_len))})
+    # Negative Average Dictionaries
+    neg_averages = []
+    for i in range(len(neg_dicts)):
+        neg_averages.append({j + 1: (str(round((neg_dicts[i][j + 1] / totaltemplatelist[1][j + 1]) * 100, 2))) + '%' if totaltemplatelist[1][j + 1] != 'N/A' else 'N/A' for j in list(range(max_len))})
+    # Total Average Dict
+    avg_dict = {i + 1: (str(round((total_correctDICT[i + 1] / totaltemplatelist[2][i + 1]) * 100, 2))) + '%' if totaltemplatelist[2][i + 1] != 'N/A' else 'N/A' for i in list(range(max_len))}
     
+    # Total, pos total, pos correct, neg total, neg correct, total correct, pos structs, pos clausal, neg structs, neg clausal,  neg main, neg targ
+    dictlist = [totaltemplatelist[2], totaltemplatelist[0], pos_correctDICT, totaltemplatelist[1], neg_correctDICT,  avg_dict, pos_averages[0], pos_averages[1], neg_averages[0], neg_averages[1], neg_averages[2], neg_averages[3]]
     return max_len, dictlist
 
 def write_dicts(dictlist, dictnames, max_len):
@@ -394,6 +400,7 @@ def main():
     max_len, dictlist = make_dicts(pos_boolLIST, neg_boolLIST, correctBOOL)
 
     # dictionary names
+    # Total, pos total, pos correct, neg total, neg correct, total correct, pos structs, pos clausal, neg structs, neg clausal,  neg main, neg targ
     dictnames = ["Total Sentences per Length", "Total pos->pos sents per len", "Correct pos->pos sents per len", "Total pos->neg sents per len", "Correct pos->neg sents per len", 'Total Correct per len', 'Preserve tree structures (pos->pos)', 'Preserve significant clauses (pos->pos)', 'Preserve tree structures (pos->neg)', 'Preserve significant clauses (pos->neg)', 'Negates main clause (pos->neg)', 'Negates target (pos->neg)']
     
     # write dictionaries to files

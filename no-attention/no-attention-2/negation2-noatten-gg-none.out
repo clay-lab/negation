@@ -1,0 +1,168 @@
+Logging in: /gpfs/loomis/home.grace/sls248/transductions/logs/negation-14-07-20-0/b154a407-ae43-45bf-aa61-6f86e375778e
+models/negation-14-07-20-0/SRC.vocab
+Training epoch 1/100 on train data
+Evaluating epoch 1/100 on val data
+sentence-level-accuracy   0.35 %
+token-level-accuracy      28.032 %
+loss                      2.6781 
+Training epoch 2/100 on train data
+Evaluating epoch 2/100 on val data
+sentence-level-accuracy   9.25 %
+token-level-accuracy      51.184 %
+loss                      1.5832 
+Training epoch 3/100 on train data
+Evaluating epoch 3/100 on val data
+sentence-level-accuracy   42.078 %
+token-level-accuracy      67.369 %
+loss                      0.94954 
+Training epoch 4/100 on train data
+Evaluating epoch 4/100 on val data
+sentence-level-accuracy   52.87 %
+token-level-accuracy      74.807 %
+loss                      0.60082 
+Training epoch 5/100 on train data
+Evaluating epoch 5/100 on val data
+sentence-level-accuracy   66.127 %
+token-level-accuracy      79.913 %
+loss                      0.44752 
+Training epoch 6/100 on train data
+Evaluating epoch 6/100 on val data
+sentence-level-accuracy   71.231 %
+token-level-accuracy      83.255 %
+loss                      0.34629 
+Training epoch 7/100 on train data
+Evaluating epoch 7/100 on val data
+sentence-level-accuracy   73.115 %
+token-level-accuracy      83.848 %
+loss                      0.31737 
+Training epoch 8/100 on train data
+Evaluating epoch 8/100 on val data
+sentence-level-accuracy   75.92 %
+token-level-accuracy      87.714 %
+loss                      0.24007 
+Training epoch 9/100 on train data
+Evaluating epoch 9/100 on val data
+sentence-level-accuracy   77.196 %
+token-level-accuracy      88.476 %
+loss                      0.22224 
+Training epoch 10/100 on train data
+Evaluating epoch 10/100 on val data
+sentence-level-accuracy   79.781 %
+token-level-accuracy      90.068 %
+loss                      0.1926 
+Training epoch 11/100 on train data
+Evaluating epoch 11/100 on val data
+sentence-level-accuracy   81.242 %
+token-level-accuracy      91.405 %
+loss                      0.16276 
+Training epoch 12/100 on train data
+Evaluating epoch 12/100 on val data
+sentence-level-accuracy   82.105 %
+token-level-accuracy      91.934 %
+loss                      0.1495 
+Training epoch 13/100 on train data
+Evaluating epoch 13/100 on val data
+sentence-level-accuracy   84.154 %
+token-level-accuracy      93.342 %
+loss                      0.12663 
+Training epoch 14/100 on train data
+Evaluating epoch 14/100 on val data
+sentence-level-accuracy   85.285 %
+token-level-accuracy      93.983 %
+loss                      0.11402 
+Training epoch 15/100 on train data
+Evaluating epoch 15/100 on val data
+sentence-level-accuracy   86.1 %
+token-level-accuracy      93.985 %
+loss                      0.11502 
+EarlyStopping counter: 1 out of 3
+Training epoch 16/100 on train data
+Evaluating epoch 16/100 on val data
+sentence-level-accuracy   87.598 %
+token-level-accuracy      95.071 %
+loss                      0.097931 
+Training epoch 17/100 on train data
+Evaluating epoch 17/100 on val data
+sentence-level-accuracy   88.102 %
+token-level-accuracy      95.261 %
+loss                      0.089261 
+Training epoch 18/100 on train data
+Evaluating epoch 18/100 on val data
+sentence-level-accuracy   89.041 %
+token-level-accuracy      95.927 %
+loss                      0.079873 
+Training epoch 19/100 on train data
+Evaluating epoch 19/100 on val data
+sentence-level-accuracy   89.561 %
+token-level-accuracy      95.903 %
+loss                      0.078486 
+EarlyStopping counter: 1 out of 3
+Training epoch 20/100 on train data
+Evaluating epoch 20/100 on val data
+sentence-level-accuracy   90.518 %
+token-level-accuracy      96.523 %
+loss                      0.068475 
+Training epoch 21/100 on train data
+Evaluating epoch 21/100 on val data
+sentence-level-accuracy   91.387 %
+token-level-accuracy      96.823 %
+loss                      0.063014 
+Training epoch 22/100 on train data
+Evaluating epoch 22/100 on val data
+sentence-level-accuracy   91.677 %
+token-level-accuracy      96.977 %
+loss                      0.059799 
+EarlyStopping counter: 1 out of 3
+Training epoch 23/100 on train data
+Evaluating epoch 23/100 on val data
+sentence-level-accuracy   91.943 %
+token-level-accuracy      97.118 %
+loss                      0.056299 
+Training epoch 24/100 on train data
+Evaluating epoch 24/100 on val data
+sentence-level-accuracy   92.486 %
+token-level-accuracy      97.316 %
+loss                      0.052432 
+EarlyStopping counter: 1 out of 3
+Training epoch 25/100 on train data
+Evaluating epoch 25/100 on val data
+sentence-level-accuracy   92.797 %
+token-level-accuracy      97.356 %
+loss                      0.053041 
+EarlyStopping counter: 2 out of 3
+Training epoch 26/100 on train data
+Evaluating epoch 26/100 on val data
+sentence-level-accuracy   93.326 %
+token-level-accuracy      97.669 %
+loss                      0.046911 
+Training epoch 27/100 on train data
+Evaluating epoch 27/100 on val data
+sentence-level-accuracy   93.424 %
+token-level-accuracy      97.888 %
+loss                      0.043003 
+EarlyStopping counter: 1 out of 3
+Training epoch 28/100 on train data
+Evaluating epoch 28/100 on val data
+sentence-level-accuracy   94.023 %
+token-level-accuracy      98.01 %
+loss                      0.040508 
+Training epoch 29/100 on train data
+Evaluating epoch 29/100 on val data
+sentence-level-accuracy   93.005 %
+token-level-accuracy      97.479 %
+loss                      0.049371 
+EarlyStopping counter: 1 out of 3
+Training epoch 30/100 on train data
+Evaluating epoch 30/100 on val data
+sentence-level-accuracy   93.948 %
+token-level-accuracy      98.051 %
+loss                      0.038276 
+EarlyStopping counter: 2 out of 3
+Training epoch 31/100 on train data
+Evaluating epoch 31/100 on val data
+sentence-level-accuracy   94.74 %
+token-level-accuracy      98.252 %
+loss                      0.035834 
+EarlyStopping counter: 3 out of 3
+Early stopping, resetting to last checkpoint.
+Closing remaining open files:logs/negation-14-07-20-0/b154a407-ae43-45bf-aa61-6f86e375778e/store.h5...done
