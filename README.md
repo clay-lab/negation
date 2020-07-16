@@ -8,10 +8,15 @@ The data in this repo has been trained on the neural network model developed in 
 The negation data is trained on the following hyperparameters:
 
 Encoder type: `` GRU ``
+
 Decoder type: `` GRU ``
+
 Attention: varies. See folder names
+
 Learning Rate: `` 0.01 ``
+
 Hidden Layers: `` 1 ``
+
 Batch Size: `` 5 ``
 
 ## Folders
