@@ -59,24 +59,25 @@ S, NP, MP, VP, AdvP, VPTr, RelP, NPTr, Det, N, PN, Pron, M, VInTr, VTr, NTr, PlD
     
 # """)
 
+#
+
 not_grammar = PCFG.fromstring("""
-    S -> NP MP [0.6] | AdvP S [0.2] | S AdvP [0.2]
+    S -> NP MP [0.3] | AdvP S [0.3] | S AdvP [0.2] | AdvP [0.2]
     NP -> Det N [0.2] | PN [0.7] | Pron [0.1] 
     MP -> M VP [0.5] | M Neg VP [0.5]
-    VP -> VInTr [0.2] | VPTr [0.4] | VPTr RelP [0.4] 
+    VP -> VTr [0.2] | VPTr [0.4] | VPTr RelP [0.4] 
     AdvP -> Adv NP MP [1.0] 
     VPTr -> VTr NPTr  [1.0]
-    RelP -> RP NP M VTr [1.0]
-    NPTr -> Det NTr [0.5] | PlDet PlNTr [0.5] 
-    Det -> 'the' [0.5] | 'a' [0.5]
+    RelP -> RP NP M VTr [0.5] | RP NP M Neg Vtr [0.5]
+    NPTr -> Det NTr [0.5] | Det PlNTr [0.5] 
+    Det -> 'the' [0.5] | 'a' [0.25] | 'many' [0.25]
     N -> 'student' [0.3] | 'professor' [0.3] | 'wizard' [0.2] | 'witch' [0.2]
     PN -> 'harry' [0.05] | 'ginny' [0.05] | 'hermione' [0.05] | 'ron' [0.05] | 'fred' [0.05] | 'george' [0.05] | 'petunia' [0.05] | 'vernon' [0.05] | 'lily' [0.05] | 'hagrid' [0.05] | 'james' [0.05] | 'neville' [0.05] | 'snape' [0.05] | 'dobby' [0.05] | 'mcgonagall' [0.05] | 'lupin' [0.05] | 'draco' [0.05] | 'voldemort' [0.05] | 'sirius' [0.05] | 'albus' [0.05]
     Pron -> 'he' [0.5] | 'she' [0.5]
     M -> 'can' [0.2] | 'may' [0.2] | 'must' [0.3] | 'should' [0.3] 
-    VInTr -> 'hiccup' [0.1] | 'party'[0.1] | 'wiggle' [0.1] | 'laugh' [0.1] | 'smile' [0.1] | 'giggle' [0.1] | 'jump' [0.1] | 'run' [0.1] | 'walk' [0.1] | 'swim' [0.1]
-    VTr -> 'prepare' [0.1] | 'make' [0.1] | 'eat' [0.1] | 'sprinkle' [0.1] | 'arrange' [0.1] | 'chew' [0.1] | 'gobble' [0.1] | 'assemble' [0.1] | 'create' [0.1] | 'hide' [0.1]
+    VTr -> 'hiccup' [0.05] | 'party'[0.05] | 'wiggle' [0.05] | 'laugh' [0.05] | 'smile' [0.05] | 'giggle' [0.05] | 'jump' [0.05] | 'run' [0.05] | 'walk' [0.05] | 'swim' [0.05]
+    VTr -> 'prepare' [0.05] | 'make' [0.05] | 'eat' [0.05] | 'sprinkle' [0.05] | 'arrange' [0.05] | 'chew' [0.05] | 'gobble' [0.05] | 'assemble' [0.05] | 'create' [0.05] | 'hide' [0.05]
     NTr -> 'cookie' [0.1] | 'cake' [0.1] | 'chocolate' [0.1] | 'pancake' [0.1] | 'souffle' [0.1] | 'eclaire' [0.1] | 'croissant' [0.1] | 'strudel' [0.1] | 'baklava' [0.1] | 'doughnut' [0.1]
-    PlDet -> 'the' [0.8] | 'many' [0.2] 
     PlNTr -> 'cookies' [0.1] | 'cakes' [0.1] | 'chocolates' [0.1] | 'pancakes' [0.1] | 'souffles' [0.1] | 'eclaires' [0.1] | 'croissants' [0.1] | 'strudels' [0.1] | 'baklava' [0.1] | 'doughnuts' [0.1]
     RP -> 'that' [0.6] | 'which' [0.4] 
     NTand -> 'and' [1.0]
