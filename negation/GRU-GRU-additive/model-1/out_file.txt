@@ -1,0 +1,7 @@
+Training epoch 1/40 on train data
+Evaluating epoch 1/40
+sentence-level-accuracy   0.0 %
+token-level-accuracy      0.0 %
+loss                      nan 
+sentence-level-accuracy   0.0 %token-level-accuracy      0.0 %Training epoch 2/40 on train data
+Evaluating epoch 2/40

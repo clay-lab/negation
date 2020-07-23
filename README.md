@@ -23,16 +23,12 @@ Batch Size: `` 5 ``
 Each folder is named based on the attention used in each run: no attention, additive, location, or multiplicative.
 
 ### Subfolders
-Subfolders are named based on the run number. There will be 5 runs for each attention type.
+Subfolders are named based on the model number. There will be 5 models for each attention type.
 
 #### Runs
 For each run, there are 8 files. Below are descriptions of each file.
 
 ``dicts.csv`` contains a table with numerical representations of analysis per sentence length
-
-a ``.tsv`` file contains the results from the test run of the model
-
-a ``.out`` contains the accuracy measures of the validation data during training
 
 ``no-parses.csv`` contains all non-parseable sentences using the [BottomUpLeftCornerChartParser](https://www.nltk.org/_modules/nltk/parse/chart.html)
 
