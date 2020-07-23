@@ -1,0 +1,2 @@
+target,prediction,source length,target length,prediction length,correct,Preserves Tree Structure,Preserves Significant Clauses,Parseable
+because harry may assemble a pancake because lupin can gobble many doughnuts petunia must hide a chocolate,because harry may assemble a pancake because lupin can gobble many doughnuts petunia petunia must hide a chocolate,17,17,18,0,N/A,N/A,0

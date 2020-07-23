@@ -1,0 +1,31 @@
+Dictionary Name,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23
+Total Sentences per Length,N/A,N/A,N/A,N/A,N/A,N/A,178,92,795,355,896,388,747,559,1563,1050,445,163,849,744,566,345,266
+Total Correct Sentences per Length,N/A,N/A,N/A,N/A,N/A,N/A,177,92,795,349,887,363,679,523,1331,906,340,93,597,557,313,14,1
+Total pos->pos sents per len,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,1,N/A,N/A,N/A,N/A,N/A,N/A
+Correct pos->pos sents per len,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,N/A,N/A,N/A,N/A,N/A,N/A
+Total pos->neg sents per len,N/A,N/A,N/A,N/A,N/A,N/A,178,92,795,355,896,388,747,559,1563,1050,444,163,849,744,566,345,266
+Correct pos->neg sents per len,N/A,N/A,N/A,N/A,N/A,N/A,177,92,795,349,887,363,679,523,1331,906,340,93,597,557,313,14,1
+Correct Pos->Pos Transformations,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,N/A,N/A,N/A,N/A
+correct Pos->Neg Transformations,N/A,N/A,N/A,N/A,N/A,N/A,99.44%,100.0%,100.0%,98.31%,99.0%,93.56%,90.9%,93.56%,85.16%,86.29%,76.58%,57.06%,70.32%,74.87%,55.3%,4.06%,0.38%
+Total correct per len,N/A,N/A,N/A,N/A,N/A,N/A,99.44%,100.0%,100.0%,98.31%,99.0%,93.56%,90.9%,93.56%,85.16%,86.29%,76.4%,57.06%,70.32%,74.87%,55.3%,4.06%,0.38%
+Total parseable sentences (pos->pos),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,N/A,N/A,N/A,N/A,N/A,N/A
+Parseable sentences (pos->pos),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,N/A,N/A,N/A,N/A
+Preserve tree structures (pos->pos),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,N/A,N/A,N/A,N/A
+Preserve significant clauses (pos->pos),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,N/A,N/A,N/A,N/A
+Total parseable sentences pos->neg,N/A,N/A,N/A,N/A,N/A,N/A,177,92,795,349,890,367,705,531,1447,944,378,130,729,626,400,236,133
+Parseable Sentences (pos->neg),N/A,N/A,N/A,N/A,N/A,N/A,99.44%,100.0%,100.0%,98.31%,99.33%,94.59%,94.38%,94.99%,92.58%,89.9%,85.14%,79.75%,85.87%,84.14%,70.67%,68.41%,50.0%
+Preserve tree structures (pos->neg),N/A,N/A,N/A,N/A,N/A,N/A,99.44%,100.0%,100.0%,98.31%,99.0%,93.56%,90.9%,93.74%,85.41%,86.67%,76.8%,57.06%,70.44%,75.67%,55.83%,34.49%,19.17%
+Preserve significant clauses (pos->neg),N/A,N/A,N/A,N/A,N/A,N/A,99.44%,100.0%,100.0%,98.31%,99.0%,93.56%,90.9%,93.74%,85.41%,86.67%,76.8%,57.06%,70.44%,75.67%,55.83%,43.48%,21.05%
+Negates main clause (pos->neg),N/A,N/A,N/A,N/A,N/A,N/A,99.44%,100.0%,100.0%,98.31%,99.0%,93.56%,90.9%,93.74%,85.41%,86.67%,76.8%,57.06%,70.55%,75.67%,57.42%,46.09%,33.46%
+Negates target (pos->neg),N/A,N/A,N/A,N/A,N/A,N/A,100.0%,100.0%,100.0%,98.59%,99.22%,93.56%,91.97%,95.89%,87.08%,88.76%,77.7%,58.28%,73.5%,79.17%,65.9%,49.28%,42.86%
+Total source tokens,N/A,N/A,N/A,N/A,N/A,N/A,1246,736,7155,3550,9856,4656,9711,7826,23445,16800,7548,2934,16131,14880,11886,7590,6118
+total prediction tokens per source,N/A,N/A,N/A,N/A,N/A,N/A,1425,828,7950,3911,10749,5040,10460,8447,24918,17839,7968,3084,16857,15611,12681,8002,6491
+total target tokens per source,N/A,N/A,N/A,N/A,N/A,N/A,1424,828,7950,3905,10752,5044,10458,8385,25008,17850,7992,3097,16980,15624,12452,7935,6384
+Pos->pos token precision,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,72.22%,,,,,,
+Pos->neg token precision,N/A,N/A,N/A,N/A,N/A,N/A,99.72%,100.0%,100.0%,99.36%,99.8%,98.61%,98.2%,97.74%,96.8%,96.75%,94.78%,90.05%,92.85%,93.7%,89.35%,82.15%,77.54%
+Pos->pos token recall,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,76.47%,,,,,,
+Pos->neg token recall,N/A,N/A,N/A,N/A,N/A,N/A,99.79%,100.0%,100.0%,99.51%,99.77%,98.53%,98.22%,98.46%,96.45%,96.69%,94.49%,89.67%,92.17%,93.62%,90.99%,82.85%,78.84%
+Pos->Pos category precision,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,72.22%,,,,,,
+Pos->neg category precision,N/A,N/A,N/A,N/A,N/A,N/A,99.72%,100.0%,100.0%,99.36%,99.8%,98.61%,98.21%,97.75%,96.82%,96.79%,94.82%,90.21%,92.91%,93.81%,89.62%,84.59%,80.8%
+Pos->pos category recall,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,76.47%,,,,,,
+Pos->Neg category recall,N/A,N/A,N/A,N/A,N/A,N/A,99.79%,100.0%,100.0%,99.51%,99.77%,98.53%,98.23%,98.47%,96.47%,96.73%,94.53%,89.83%,92.24%,93.73%,91.27%,85.31%,82.16%
