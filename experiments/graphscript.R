@@ -80,8 +80,6 @@ negfmplot <- ggplot(data3, aes(x = Dictionary.Name)) +
 
 ggarrange(fullsentplot, negplacement, posplot, negplot, posfmplot, negfmplot,
           ncol = 2, nrow = 3)
-ggarrange(fullsentplot, negplacement, posplot, negplot, posfmplot, negfmplot,
-          ncol = 1, nrow = 6)
 
 
 
