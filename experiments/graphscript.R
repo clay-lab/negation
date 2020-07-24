@@ -1,7 +1,8 @@
 library(ggplot2)
 library(scales)
+library(ggpubr)
 
-ggplot(data3, aes(x = Dictionary.Name)) + 
+fullsentplot <- ggplot(data3, aes(x = Dictionary.Name)) + 
   labs(title="Correct Output  (Full Sequence Accuracy)", x = "Sentence Length", y = "Correct Output (Full Sequence Accuracy)") +
   geom_line(aes(y = avgPPtrans, color = 'Pos->Pos'), size = 1) + 
   geom_point(aes(y = avgPPtrans, color = 'Pos->Pos')) +
@@ -13,7 +14,7 @@ ggplot(data3, aes(x = Dictionary.Name)) +
   scale_x_continuous(breaks = seq(3,30,2)) +
   scale_y_continuous(breaks = seq(0,1,0.1), labels = percent)
 
-ggplot(data3, aes(x = Dictionary.Name)) +
+posplot <- ggplot(data3, aes(x = Dictionary.Name)) +
   labs(title="Pos -> Pos Transformations", x = "Sentence Length", y = "Correct") +
   geom_line(aes(y = avgPPparseable, color = "Parseable Sentences"), size = 1) +
   geom_point(aes(y = avgPPparseable, color = "Parseable Sentences")) +
@@ -27,7 +28,7 @@ ggplot(data3, aes(x = Dictionary.Name)) +
   scale_x_continuous(breaks = seq(3,30,2)) +
   scale_y_continuous(breaks = seq(0,1,0.1), limits = c(0, 1), labels=percent)
 
-ggplot(data3, aes(x = Dictionary.Name)) + 
+negplot <- ggplot(data3, aes(x = Dictionary.Name)) + 
   labs(title="Pos -> Neg Transformations", x = "Sentence Length", y = "Correct") + 
   geom_line(aes(y = avgPNparseable, color = "Parseable Sentences"), size = 1) + 
   geom_point(aes(y = avgPNparseable, color = "Parseable Sentences")) +
@@ -41,7 +42,7 @@ ggplot(data3, aes(x = Dictionary.Name)) +
   scale_x_continuous(breaks = seq(3,30,2)) +
   scale_y_continuous(breaks = seq(0,1,0.1), limits = c(0, 1), labels = percent)
 
-ggplot(data3, aes(x = Dictionary.Name)) +
+negplacement <- ggplot(data3, aes(x = Dictionary.Name)) +
   labs(title="Negation Placement", x = "Sentence Length", y = "Correct") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5)) +
@@ -53,7 +54,7 @@ ggplot(data3, aes(x = Dictionary.Name)) +
   geom_line(aes(y = avgNegTarg, color = 'Negates Target'), size = 1) + 
   geom_point(aes(y = avgNegTarg, color = 'Negates Target')) 
 
-ggplot(data3, aes(x = Dictionary.Name)) + 
+posfmplot <- ggplot(data3, aes(x = Dictionary.Name)) + 
   labs(title="Token Accuracy (F-measure) for Pos->Pos Transformations", x = "Sentence Length", y = "F-measure") +
   geom_line(aes(y = TokenPosPosFM, color = 'Token'), size = 1) +
   geom_point(aes(y = TokenPosPosFM, color = 'Token')) +
@@ -65,7 +66,7 @@ ggplot(data3, aes(x = Dictionary.Name)) +
   scale_x_continuous(breaks = seq(3,30,2)) +
   scale_y_continuous(breaks = seq(0,1,0.1), labels=percent)
 
-ggplot(data3, aes(x = Dictionary.Name)) + 
+negfmplot <- ggplot(data3, aes(x = Dictionary.Name)) + 
   labs(title="Token Accuracy (F-measure) for Pos->Neg Transformations", x = "Sentence Length", y = "F-measure") +
   geom_line(aes(y = TokenPosNegFM, color = 'Token'), size = 1) +
   geom_point(aes(y = TokenPosNegFM, color = 'Token')) +
@@ -76,6 +77,9 @@ ggplot(data3, aes(x = Dictionary.Name)) +
   scale_color_discrete(name = 'Metric') +
   scale_x_continuous(breaks = seq(3,30,2)) +
   scale_y_continuous(breaks = seq(0,1,0.1), limits = c(0.8,1), labels=percent)
+
+ggarrange(fullsentplot, negplacement, posplot, negplot, posfmplot, negfmplot,
+          ncol = 2, nrow = 3)
 
 
 
