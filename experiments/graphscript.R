@@ -3,7 +3,7 @@ library(scales)
 library(ggpubr)
 
 fullsentplot <- ggplot(data3, aes(x = Dictionary.Name)) + 
-  labs(title="Correct Output  (Full Sequence Accuracy)", x = "Sentence Length", y = "Correct Output (Full Sequence Accuracy)") +
+  labs(title="Correct Output  (Full Sequence Accuracy)", x = "Sentence Length", y = "Correct Output") +
   geom_line(aes(y = avgPPtrans, color = 'Pos->Pos'), size = 1) + 
   geom_point(aes(y = avgPPtrans, color = 'Pos->Pos')) +
   geom_line(aes(y = avgPNtrans, color = 'Pos->Neg'), size = 1) + 
@@ -15,7 +15,7 @@ fullsentplot <- ggplot(data3, aes(x = Dictionary.Name)) +
   scale_y_continuous(breaks = seq(0,1,0.1), labels = percent)
 
 posplot <- ggplot(data3, aes(x = Dictionary.Name)) +
-  labs(title="Pos -> Pos Transformations", x = "Sentence Length", y = "Correct") +
+  labs(title="Pos -> Pos Transformations", x = "Sentence Length", y = "% Preserved") +
   geom_line(aes(y = avgPPparseable, color = "Parseable Sentences"), size = 1) +
   geom_point(aes(y = avgPPparseable, color = "Parseable Sentences")) +
   geom_line(aes(y = avgPPtreestruct, color = "Preserves Tree Structure"), size = 1) +
@@ -29,7 +29,7 @@ posplot <- ggplot(data3, aes(x = Dictionary.Name)) +
   scale_y_continuous(breaks = seq(0,1,0.1), limits = c(0, 1), labels=percent)
 
 negplot <- ggplot(data3, aes(x = Dictionary.Name)) + 
-  labs(title="Pos -> Neg Transformations", x = "Sentence Length", y = "Correct") + 
+  labs(title="Pos -> Neg Transformations", x = "Sentence Length", y = "% Preserved") + 
   geom_line(aes(y = avgPNparseable, color = "Parseable Sentences"), size = 1) + 
   geom_point(aes(y = avgPNparseable, color = "Parseable Sentences")) +
   geom_line(aes(y = avgPNtreestruct, color = "Preserves Tree Structures"), size = 1) + 
@@ -43,7 +43,7 @@ negplot <- ggplot(data3, aes(x = Dictionary.Name)) +
   scale_y_continuous(breaks = seq(0,1,0.1), limits = c(0, 1), labels = percent)
 
 negplacement <- ggplot(data3, aes(x = Dictionary.Name)) +
-  labs(title="Negation Placement", x = "Sentence Length", y = "Correct") +
+  labs(title="Negation Placement", x = "Sentence Length", y = "% Negated") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_color_discrete(name = 'Task') +
