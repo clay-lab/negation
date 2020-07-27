@@ -1,15 +1,11 @@
-TokenPosPosFM <- 2 * 
-  ((avgtokenprecPP * avgtokenrecallPP) / 
-     (avgtokenprecPP + avgtokenrecallPP))
+TokenPosPosFM <- ((avgtokenprecPP * avgtokenrecallPP) / 
+     (avgtokenprecPP + avgtokenrecallPP)) * 2
 
-CategoryPosPosFM <- 2 * 
-  ((avgcatprecPP * avgcatrecallPP) /
-     (avgcatprecPP + avgcatrecallPP))
+CategoryPosPosFM <- ((avgcatprecPP * avgcatrecallPP) /
+     (avgcatprecPP + avgcatrecallPP)) * 2
 
-TokenPosNegFM <- 2 *
-  ((avgtokenprecPN * avgtokenrecallPN) /
-     (avgtokenprecPN + avgtokenrecallPN))
+TokenPosNegFM <- ((avgtokenprecPN * avgtokenrecallPN) /
+     (avgtokenprecPN + avgtokenrecallPN)) * 2
 
-CategoryPosNegFM <- 2 *
-  ((avgcatprecPN * avgcatrecallPN) /
-     (avgcatprecPN + avgcatrecallPN))
+CategoryPosNegFM <- ((avgcatprecPN * avgcatrecallPN) /
+     (avgcatprecPN + avgcatrecallPN)) * 2

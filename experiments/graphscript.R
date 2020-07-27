@@ -48,7 +48,7 @@ negplacement <- ggplot(data3, aes(x = Dictionary.Name)) +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_color_discrete(name = 'Task') +
   scale_x_continuous(breaks = seq(3,30,2)) +
-  scale_y_continuous(breaks = (seq(0,1, 0.1)), limits = c(0, 1), labels = percent) +
+  scale_y_continuous(breaks = (seq(0,1, 0.1)), limits = c(0.6, 1), labels = percent) +
   geom_line(aes(y = avgNegMain, colour = "Negates Main"), size = 1) + 
   geom_point(aes(y = avgNegMain, colour = "Negates Main")) +
   geom_line(aes(y = avgNegTarg, color = 'Negates Target'), size = 1) + 
@@ -78,8 +78,8 @@ negfmplot <- ggplot(data3, aes(x = Dictionary.Name)) +
   scale_x_continuous(breaks = seq(3,30,2)) +
   scale_y_continuous(breaks = seq(0,1,0.1), limits = c(0.8,1), labels=percent)
 
-ggarrange(fullsentplot, negplacement, posplot, negplot, posfmplot, negfmplot,
-          ncol = 2, nrow = 3)
+ggarrange(fullsentplot, posfmplot, negfmplot, posplot, negplot, negplacement,
+          ncol = 2, nrow = 2)
 
 
 
