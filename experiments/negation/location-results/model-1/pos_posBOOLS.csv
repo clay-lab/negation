@@ -141,7 +141,7 @@ lily should hide a pancake,lily should hide a pancake,5,5,5,1,1,1,1
 snape should assemble the eclaires,snape should assemble the eclaires,5,5,5,1,1,1,1
 lupin must eat the chocolates,lupin must eat the chocolates,5,5,5,1,1,1,1
 vernon must sprinkle the souffles,vernon must sprinkle the souffles,5,5,5,1,1,1,1
-the wizard must eat the baklava that albus may prepare because lily must chew the chocolate because a professor may giggle,the wizard must eat the baklava that albus may prepare because lily must chew the chocolate because a professor may chew,21,21,21,0,1,1,1
+the wizard must eat the baklava that albus may prepare because lily must chew the chocolate because a professor may giggle,the wizard must eat the baklava that albus may prepare because lily must chew the chocolate because a professor may chew,21,21,21,0,1,0,1
 since vernon may hide a pancake because she should create a doughnut that albus may prepare lupin must prepare a cookie,since vernon may hide a pancake because she should create a doughnut that albus may prepare lupin must prepare a cookie,21,21,21,1,1,1,1
 because lily must giggle mcgonagall can party,because lily must giggle mcgonagall can party,7,7,7,1,1,1,1
 she may laugh since he must laugh,she may laugh since he must laugh,7,7,7,1,1,1,1
@@ -301,8 +301,8 @@ harry must arrange the strudel,harry must arrange the strudel,5,5,5,1,1,1,1
 because harry should make a croissant mcgonagall must create the strudel,because harry should make a croissant mcgonagall must create the strudel,11,11,11,1,1,1,1
 a witch may assemble the doughnut,a witch may assemble the doughnut,6,6,6,1,1,1,1
 the student can sprinkle a chocolate,the student can sprinkle a chocolate,6,6,6,1,1,1,1
-the student must chew the pancakes which harry must hide since lupin can eat the strudels which the student may sprinkle,the student must chew the pancakes which harry must hide since lupin can eat the strudels which the student may chew,21,21,21,0,1,1,1
-because lily should prepare the cookie that the student must eat lily should wiggle because a professor should hide the doughnuts,because lily should prepare the cookie that the student must eat lily should wiggle because a professor should hide the cake,21,21,21,0,0,1,1
+the student must chew the pancakes which harry must hide since lupin can eat the strudels which the student may sprinkle,the student must chew the pancakes which harry must hide since lupin can eat the strudels which the student may chew,21,21,21,0,1,0,1
+because lily should prepare the cookie that the student must eat lily should wiggle because a professor should hide the doughnuts,because lily should prepare the cookie that the student must eat lily should wiggle because a professor should hide the cake,21,21,21,0,0,0,1
 he can eat a baklava,he can eat a baklava,5,5,5,1,1,1,1
 ginny should eat the chocolate,ginny should eat the chocolate,5,5,5,1,1,1,1
 vernon must gobble the croissants,vernon must gobble the croissants,5,5,5,1,1,1,1
@@ -313,7 +313,7 @@ hagrid may run,hagrid may run,3,3,3,1,1,1,1
 hermione must run,hermione must run,3,3,3,1,1,1,1
 neville may wiggle,neville may wiggle,3,3,3,1,1,1,1
 vernon can walk,vernon can walk,3,3,3,1,1,1,1
-since snape may swim because lupin must chew the strudels that he may gobble neville can assemble the chocolates that she may eat,since snape may swim because lupin must chew the strudels that he may gobble neville can assemble the chocolates that lily must assemble,23,23,23,0,0,1,1
+since snape may swim because lupin must chew the strudels that he may gobble neville can assemble the chocolates that she may eat,since snape may swim because lupin must chew the strudels that he may gobble neville can assemble the chocolates that lily must assemble,23,23,23,0,0,0,1
 george must chew a baklava,george must chew a baklava,5,5,5,1,1,1,1
 vernon must assemble a pancake,vernon must assemble a pancake,5,5,5,1,1,1,1
 dobby should create the eclaires,dobby should create the eclaires,5,5,5,1,1,1,1
@@ -346,9 +346,9 @@ because voldemort should create the cakes that hermione must make voldemort can 
 a wizard may smile,a wizard may smile,4,4,4,1,1,1,1
 lupin may party,lupin may party,3,3,3,1,1,1,1
 he may hiccup,he may hiccup,3,3,3,1,1,1,1
-since a professor should hide the cakes which ginny must chew a student must smile since fred must hide the pancake,since a professor should hide the cakes which ginny must chew a student must smile since fred must hide the cookies,21,21,21,0,0,1,1
-a witch must gobble the eclaires which a professor must assemble since lily should gobble a croissant that he may assemble,a witch must gobble the eclaires which a professor must assemble since lily should gobble a croissant that he may gobble,21,21,21,0,1,1,1
-because lily can make the chocolate voldemort must sprinkle the cookies that fred should hide because lily may hide the souffles,because lily can make the chocolate voldemort must sprinkle the cookies that fred should hide because lily may hide the eclaires,21,21,21,0,1,1,1
+since a professor should hide the cakes which ginny must chew a student must smile since fred must hide the pancake,since a professor should hide the cakes which ginny must chew a student must smile since fred must hide the cookies,21,21,21,0,0,0,1
+a witch must gobble the eclaires which a professor must assemble since lily should gobble a croissant that he may assemble,a witch must gobble the eclaires which a professor must assemble since lily should gobble a croissant that he may gobble,21,21,21,0,1,0,1
+because lily can make the chocolate voldemort must sprinkle the cookies that fred should hide because lily may hide the souffles,because lily can make the chocolate voldemort must sprinkle the cookies that fred should hide because lily may hide the eclaires,21,21,21,0,1,0,1
 dobby can gobble a pancake which george can eat,dobby can gobble a pancake which george can eat,9,9,9,1,1,1,1
 hagrid may arrange a baklava that petunia must hide,hagrid may arrange a baklava that petunia must hide,9,9,9,1,1,1,1
 sirius may chew a souffle that george can arrange,sirius may chew a souffle that george can arrange,9,9,9,1,1,1,1
@@ -570,8 +570,8 @@ harry should eat a doughnut that neville must create,harry should eat a doughnut
 voldemort can gobble the strudels that fred must hide,voldemort can gobble the strudels that fred must hide,9,9,9,1,1,1,1
 since george can party he may arrange the eclaire,since george can party he may arrange the eclaire,9,9,9,1,1,1,1
 since james can hiccup a student can run,since james can hiccup a student can run,8,8,8,1,1,1,1
-since fred should eat a eclaire that sirius should chew because james should prepare many cakes dobby must assemble a doughnut,since fred should eat a eclaire that sirius should chew because james should prepare many cakes dobby must assemble a baklava,21,21,21,0,0,1,1
-because albus should assemble a pancake she can make the croissant that the student should chew because a professor should laugh,because albus should assemble a pancake she can make the croissant that the student should chew because a professor should chew,21,21,21,0,1,1,1
+since fred should eat a eclaire that sirius should chew because james should prepare many cakes dobby must assemble a doughnut,since fred should eat a eclaire that sirius should chew because james should prepare many cakes dobby must assemble a baklava,21,21,21,0,1,0,1
+because albus should assemble a pancake she can make the croissant that the student should chew because a professor should laugh,because albus should assemble a pancake she can make the croissant that the student should chew because a professor should chew,21,21,21,0,1,0,1
 since voldemort may sprinkle the souffles since george must hiccup harry can make a doughnut that a student must gobble,since voldemort may sprinkle the souffles since george must hiccup harry can make a doughnut that a student must gobble,20,20,20,1,1,1,1
 a witch must hide many pancakes that lupin should create because snape should make the souffles which james should sprinkle,a witch must hide many pancakes that lupin should create because snape should make the souffles which james should sprinkle,20,20,20,1,1,1,1
 a student should arrange the strudel,a student should arrange the strudel,6,6,6,1,1,1,1
@@ -621,7 +621,7 @@ petunia must hide the eclaire,petunia must hide the eclaire,5,5,5,1,1,1,1
 ron must hide the cakes,ron must hide the cakes,5,5,5,1,1,1,1
 voldemort may gobble the souffles,voldemort may gobble the souffles,5,5,5,1,1,1,1
 he may arrange a cake,he may arrange a cake,5,5,5,1,1,1,1
-since james must prepare a baklava that vernon can create a professor must eat the chocolate which a student must prepare,since james must prepare a baklava that vernon can create a professor must eat the chocolate which a student must chew,21,21,21,0,1,1,1
+since james must prepare a baklava that vernon can create a professor must eat the chocolate which a student must prepare,since james must prepare a baklava that vernon can create a professor must eat the chocolate which a student must chew,21,21,21,0,1,0,1
 since petunia must create the souffle which the professor should prepare he should hiccup,since petunia must create the souffle which the professor should prepare he should hiccup,14,14,14,1,1,1,1
 since she must eat a cookie the professor should party since mcgonagall may walk,since she must eat a cookie the professor should party since mcgonagall may walk,14,14,14,1,1,1,1
 since harry should prepare the cake because a professor can giggle albus must laugh,since harry should prepare the cake because a professor can giggle albus must laugh,14,14,14,1,1,1,1
@@ -740,7 +740,7 @@ because voldemort must run hermione must jump,because voldemort must run hermion
 a wizard should arrange a pancake because vernon should prepare the chocolates,a wizard should arrange a pancake because vernon should prepare the chocolates,12,12,12,1,1,1,1
 because george can run a student must hide the strudel,because george can run a student must hide the strudel,10,10,10,1,1,1,1
 the professor should assemble the baklava which mcgonagall can prepare,the professor should assemble the baklava which mcgonagall can prepare,10,10,10,1,1,1,1
-hermione may create the cake which a professor can prepare because harry should eat the cookies which the student should chew,hermione may create the cake which a professor can prepare because harry should eat the cookies which the student should eat,21,21,21,0,1,1,1
+hermione may create the cake which a professor can prepare because harry should eat the cookies which the student should chew,hermione may create the cake which a professor can prepare because harry should eat the cookies which the student should eat,21,21,21,0,1,0,1
 since lupin should gobble the doughnuts vernon must prepare a croissant,since lupin should gobble the doughnuts vernon must prepare a croissant,11,11,11,1,1,1,1
 he may chew the souffle since george should create the souffle,he may chew the souffle since george should create the souffle,11,11,11,1,1,1,1
 ginny must chew the croissants which harry should arrange,ginny must chew the croissants which harry should arrange,9,9,9,1,1,1,1
@@ -1012,7 +1012,7 @@ albus can walk,albus can walk,3,3,3,1,1,1,1
 a witch must gobble a chocolate which a student must gobble,a witch must gobble a chocolate which a student must gobble,11,11,11,1,1,1,1
 george must prepare the cookie because he should eat the doughnut,george must prepare the cookie because he should eat the doughnut,11,11,11,1,1,1,1
 because fred must arrange a souffle since dobby can make the cake a student must eat the eclaires that james must chew,because fred must arrange a souffle since dobby can make the cake a student must eat the eclaires that james must chew,22,22,22,1,1,1,1
-because the wizard can make a baklava that fred should create since neville must smile a student should gobble the cakes,because the wizard can make a baklava that fred should create since neville must smile a student should gobble the cookies,21,21,21,0,1,1,1
+because the wizard can make a baklava that fred should create since neville must smile a student should gobble the cakes,because the wizard can make a baklava that fred should create since neville must smile a student should gobble the cookies,21,21,21,0,1,0,1
 a wizard should assemble the cake,a wizard should assemble the cake,6,6,6,1,1,1,1
 the student should prepare the cakes,the student should prepare the cakes,6,6,6,1,1,1,1
 a professor may make the pancake that lupin can make,a professor may make the pancake that lupin can make,10,10,10,1,1,1,1
@@ -1024,8 +1024,8 @@ mcgonagall can gobble the pancake,mcgonagall can gobble the pancake,5,5,5,1,1,1,
 albus should create the croissants,albus should create the croissants,5,5,5,1,1,1,1
 a witch should hiccup,a witch should hiccup,4,4,4,1,1,1,1
 because a witch may create a eclaire that a wizard should hide ginny may sprinkle the croissant,because a witch may create a eclaire that a wizard should hide ginny may sprinkle the croissant,17,17,17,1,1,1,1
-since a witch must create the cake that a professor should prepare george must sprinkle the eclaires which neville should hide,since a witch must create the cake that a professor should prepare george must sprinkle the eclaires which neville should chew,21,21,21,0,1,1,1
-the student should prepare a baklava that vernon must eat because a student must create the cake that he must create,the student should prepare a baklava that vernon must eat because a student must create the cake that he must chew,21,21,21,0,1,1,1
+since a witch must create the cake that a professor should prepare george must sprinkle the eclaires which neville should hide,since a witch must create the cake that a professor should prepare george must sprinkle the eclaires which neville should chew,21,21,21,0,1,0,1
+the student should prepare a baklava that vernon must eat because a student must create the cake that he must create,the student should prepare a baklava that vernon must eat because a student must create the cake that he must chew,21,21,21,0,1,0,1
 she can assemble a croissant which neville may sprinkle,she can assemble a croissant which neville may sprinkle,9,9,9,1,1,1,1
 because lupin can walk dobby must make the chocolate,because lupin can walk dobby must make the chocolate,9,9,9,1,1,1,1
 neville must prepare the eclaires that draco can arrange,neville must prepare the eclaires that draco can arrange,9,9,9,1,1,1,1
@@ -1067,7 +1067,7 @@ mcgonagall may chew the eclaire which voldemort must eat because fred can hiccup
 voldemort must hide a baklava that dobby should make because draco may party,voldemort must hide a baklava that dobby should make because draco may party,13,13,13,1,1,1,1
 because hagrid must giggle sirius should gobble a cookie which albus must chew,because hagrid must giggle sirius should gobble a cookie which albus must chew,13,13,13,1,1,1,1
 since she should eat the souffle that ginny should make vernon should laugh,since she should eat the souffle that ginny should make vernon should laugh,13,13,13,1,1,1,1
-because a student can assemble a doughnut which a wizard can chew draco must eat the chocolate that lily can assemble,because a student can assemble a doughnut which a wizard can chew draco must eat the chocolate that lily can eat,21,21,21,0,1,1,1
+because a student can assemble a doughnut which a wizard can chew draco must eat the chocolate that lily can assemble,because a student can assemble a doughnut which a wizard can chew draco must eat the chocolate that lily can eat,21,21,21,0,1,0,1
 because the witch should hide the doughnuts vernon must assemble a strudel,because the witch should hide the doughnuts vernon must assemble a strudel,12,12,12,1,1,1,1
 a wizard may chew a doughnut that fred should hide,a wizard may chew a doughnut that fred should hide,10,10,10,1,1,1,1
 ginny should create the eclaires that she must chew,ginny should create the eclaires that she must chew,9,9,9,1,1,1,1
@@ -1243,7 +1243,7 @@ the student may eat the strudels which he must gobble,the student may eat the st
 a student should walk because neville must assemble the strudel that albus may gobble,a student should walk because neville must assemble the strudel that albus may gobble,14,14,14,1,1,1,1
 a professor should prepare the strudel which harry must eat because dobby can run,a professor should prepare the strudel which harry must eat because dobby can run,14,14,14,1,1,1,1
 a student must make a croissant,a student must make a croissant,6,6,6,1,1,1,1
-the wizard must eat a eclaire that a professor can prepare since the wizard may chew the pancake that george can make,the wizard must eat a eclaire that a professor can prepare since the wizard may chew the pancake that george should chew,22,22,22,0,1,1,1
+the wizard must eat a eclaire that a professor can prepare since the wizard may chew the pancake that george can make,the wizard must eat a eclaire that a professor can prepare since the wizard may chew the pancake that george should chew,22,22,22,0,1,0,1
 since a professor must chew the cake james should arrange a chocolate because dobby can arrange a souffle,since a professor must chew the cake james should arrange a chocolate because dobby can arrange a souffle,18,18,18,1,1,1,1
 he must arrange a eclaire since james must create a strudel,he must arrange a eclaire since james must create a strudel,11,11,11,1,1,1,1
 dobby should gobble many eclaires which the professor must make,dobby should gobble many eclaires which the professor must make,10,10,10,1,1,1,1
@@ -1266,7 +1266,7 @@ draco may arrange the pancake which snape must chew,draco may arrange the pancak
 he may create the croissant that james must hide,he may create the croissant that james must hide,9,9,9,1,1,1,1
 vernon must prepare the croissant that ginny can create,vernon must prepare the croissant that ginny can create,9,9,9,1,1,1,1
 james must make the strudels which snape may prepare,james must make the strudels which snape may prepare,9,9,9,1,1,1,1
-since a student must party harry must hide many cookies that a student may prepare because albus should eat a baklava,since a student must party harry must hide many cookies that a student may prepare because albus should eat a pancake,21,21,21,0,0,1,1
+since a student must party harry must hide many cookies that a student may prepare because albus should eat a baklava,since a student must party harry must hide many cookies that a student may prepare because albus should eat a pancake,21,21,21,0,0,0,1
 neville should assemble the chocolate,neville should assemble the chocolate,5,5,5,1,1,1,1
 hagrid may eat the eclaire,hagrid may eat the eclaire,5,5,5,1,1,1,1
 she should make the eclaires,she should make the eclaires,5,5,5,1,1,1,1
@@ -1508,7 +1508,7 @@ a student should eat the cookies since petunia should eat the strudel which snap
 the witch should arrange a souffle because vernon may sprinkle the souffle that james can gobble,the witch should arrange a souffle because vernon may sprinkle the souffle that james can gobble,16,16,16,1,1,1,1
 because lily should prepare a eclaire a wizard may sprinkle the pancakes that he should gobble,because lily should prepare a eclaire a wizard may sprinkle the pancakes that he should gobble,16,16,16,1,1,1,1
 a student should gobble the chocolates,a student should gobble the chocolates,6,6,6,1,1,1,1
-a professor should party since mcgonagall can gobble the baklava that hermione should make since a witch can arrange the eclaires,a professor should party since mcgonagall can gobble the baklava that hermione should make since a witch can arrange the baklava,21,21,21,0,1,1,1
+a professor should party since mcgonagall can gobble the baklava that hermione should make since a witch can arrange the eclaires,a professor should party since mcgonagall can gobble the baklava that hermione should make since a witch can arrange the baklava,21,21,21,0,1,0,1
 snape should laugh,snape should laugh,3,3,3,1,1,1,1
 fred may laugh,fred may laugh,3,3,3,1,1,1,1
 she must laugh,she must laugh,3,3,3,1,1,1,1
@@ -1532,7 +1532,7 @@ she should eat the baklava since neville may make the cakes,she should eat the b
 because he should chew a souffle she must gobble the cookie,because he should chew a souffle she must gobble the cookie,11,11,11,1,1,1,1
 because fred must eat the cookies sirius may assemble the eclaires,because fred must eat the cookies sirius may assemble the eclaires,11,11,11,1,1,1,1
 she should arrange the eclaires because james should gobble the chocolate,she should arrange the eclaires because james should gobble the chocolate,11,11,11,1,1,1,1
-because george must chew the chocolates since he should prepare the doughnut that fred may hide lily must eat the souffle,because george must chew the chocolates since he should prepare the doughnut that fred may hide lily must eat the strudels,21,21,21,0,0,1,1
+because george must chew the chocolates since he should prepare the doughnut that fred may hide lily must eat the souffle,because george must chew the chocolates since he should prepare the doughnut that fred may hide lily must eat the strudels,21,21,21,0,0,0,1
 voldemort should arrange many baklava that albus can create,voldemort should arrange many baklava that albus can create,9,9,9,1,1,1,1
 she can hide many souffles that he should gobble,she can hide many souffles that he should gobble,9,9,9,1,1,1,1
 draco should eat the pancake that harry should make,draco should eat the pancake that harry should make,9,9,9,1,1,1,1
@@ -1586,7 +1586,7 @@ hagrid can prepare a cake,hagrid can prepare a cake,5,5,5,1,1,1,1
 the wizard must assemble the croissant,the wizard must assemble the croissant,6,6,6,1,1,1,1
 a wizard must hide the croissants which lupin can hide,a wizard must hide the croissants which lupin can hide,10,10,10,1,1,1,1
 the witch must prepare many cakes since he must hiccup,the witch must prepare many cakes since he must hiccup,10,10,10,1,1,1,1
-because lily should eat a baklava harry should create the souffle that voldemort can assemble because snape should chew a souffle,because lily should eat a baklava harry should create the souffle that voldemort can assemble because snape should chew a cake,21,21,21,0,1,1,1
+because lily should eat a baklava harry should create the souffle that voldemort can assemble because snape should chew a souffle,because lily should eat a baklava harry should create the souffle that voldemort can assemble because snape should chew a cake,21,21,21,0,1,0,1
 snape must gobble a strudel which she must gobble,snape must gobble a strudel which she must gobble,9,9,9,1,1,1,1
 hermione must hide the chocolate that hagrid must create,hermione must hide the chocolate that hagrid must create,9,9,9,1,1,1,1
 hermione should arrange the pancakes that mcgonagall can chew,hermione should arrange the pancakes that mcgonagall can chew,9,9,9,1,1,1,1
@@ -1897,8 +1897,8 @@ lupin must arrange the baklava,lupin must arrange the baklava,5,5,5,1,1,1,1
 ginny should eat the cookies,ginny should eat the cookies,5,5,5,1,1,1,1
 albus must assemble the croissants that the professor must eat,albus must assemble the croissants that the professor must eat,10,10,10,1,1,1,1
 the student should prepare a cake that james may eat,the student should prepare a cake that james may eat,10,10,10,1,1,1,1
-because james may make a croissant that dobby should sprinkle dobby must gobble the strudels since albus may make the cookies,because james may make a croissant that dobby should sprinkle dobby must gobble the strudels since albus may make the cakes,21,21,21,0,1,1,1
-since snape may chew a pancake which lupin can arrange since snape should arrange the pancakes lupin can prepare a cake,since snape may chew a pancake which lupin can arrange since snape should arrange the pancakes lupin can prepare a pancake,21,21,21,0,1,1,1
+because james may make a croissant that dobby should sprinkle dobby must gobble the strudels since albus may make the cookies,because james may make a croissant that dobby should sprinkle dobby must gobble the strudels since albus may make the cakes,21,21,21,0,1,0,1
+since snape may chew a pancake which lupin can arrange since snape should arrange the pancakes lupin can prepare a cake,since snape may chew a pancake which lupin can arrange since snape should arrange the pancakes lupin can prepare a pancake,21,21,21,0,1,0,1
 since fred should party albus can make the strudels,since fred should party albus can make the strudels,9,9,9,1,1,1,1
 james can swim,james can swim,3,3,3,1,1,1,1
 sirius can walk,sirius can walk,3,3,3,1,1,1,1
@@ -1958,10 +1958,10 @@ the student can gobble the souffle since mcgonagall can swim,the student can gob
 since ron should create the pancake that she may arrange the witch should assemble a pancake,since ron should create the pancake that she may arrange the witch should assemble a pancake,16,16,16,1,1,1,1
 because hermione should chew the cakes that ginny can eat a professor should eat a strudel,because hermione should chew the cakes that ginny can eat a professor should eat a strudel,16,16,16,1,1,1,1
 since sirius must prepare the strudel that ginny should prepare a student should sprinkle many baklava,since sirius must prepare the strudel that ginny should prepare a student should sprinkle many baklava,16,16,16,1,1,1,1
-since vernon must create a strudel that a professor can create he may chew the croissants which a professor should create,since vernon must create a strudel that a professor can create he may chew the croissants which a professor should chew,21,21,21,0,1,1,1
-a witch can eat a cake that the professor should chew since vernon must gobble the cake which he can make,a witch can eat a cake that the professor should chew since vernon must gobble the cake which he can chew,21,21,21,0,1,1,1
-because ron should chew the strudels that ginny can prepare because hermione must create a souffle george can arrange a cake,because ron should chew the strudels that ginny can prepare because hermione must create a souffle george can arrange a souffle,21,21,21,0,1,1,1
-ron should eat the croissants because harry can chew a doughnut because dobby should make the cake which draco can assemble,ron should eat the croissants because harry can chew a doughnut because dobby should make the cake which draco can prepare,21,21,21,0,1,1,1
+since vernon must create a strudel that a professor can create he may chew the croissants which a professor should create,since vernon must create a strudel that a professor can create he may chew the croissants which a professor should chew,21,21,21,0,1,0,1
+a witch can eat a cake that the professor should chew since vernon must gobble the cake which he can make,a witch can eat a cake that the professor should chew since vernon must gobble the cake which he can chew,21,21,21,0,1,0,1
+because ron should chew the strudels that ginny can prepare because hermione must create a souffle george can arrange a cake,because ron should chew the strudels that ginny can prepare because hermione must create a souffle george can arrange a souffle,21,21,21,0,1,0,1
+ron should eat the croissants because harry can chew a doughnut because dobby should make the cake which draco can assemble,ron should eat the croissants because harry can chew a doughnut because dobby should make the cake which draco can prepare,21,21,21,0,1,0,1
 dobby should chew the cookie,dobby should chew the cookie,5,5,5,1,1,1,1
 ginny may hide the eclaire,ginny may hide the eclaire,5,5,5,1,1,1,1
 ginny should hide a souffle,ginny should hide a souffle,5,5,5,1,1,1,1
@@ -2153,7 +2153,7 @@ because george may eat the eclaires which dobby should create albus should make 
 because petunia must chew the eclaire draco may sprinkle the eclaires that mcgonagall must assemble,because petunia must chew the eclaire draco may sprinkle the eclaires that mcgonagall must assemble,15,15,15,1,1,1,1
 vernon should party because george should giggle,vernon should party because george should giggle,7,7,7,1,1,1,1
 ginny can prepare the doughnuts because ginny must sprinkle many cookies since vernon must sprinkle the cakes,ginny can prepare the doughnuts because ginny must sprinkle many cookies since vernon must sprinkle the cakes,17,17,17,1,1,1,1
-the student must make the cake since a professor may walk because voldemort should prepare the baklava that a witch may sprinkle,the student must make the cake since a professor may walk because voldemort should prepare the baklava that a witch must chew,22,22,22,0,1,1,1
+the student must make the cake since a professor may walk because voldemort should prepare the baklava that a witch may sprinkle,the student must make the cake since a professor may walk because voldemort should prepare the baklava that a witch must chew,22,22,22,0,1,0,1
 the professor must gobble the doughnuts,the professor must gobble the doughnuts,6,6,6,1,1,1,1
 a student may eat the croissants,a student may eat the croissants,6,6,6,1,1,1,1
 a witch must sprinkle a pancake,a witch must sprinkle a pancake,6,6,6,1,1,1,1
@@ -2196,8 +2196,8 @@ ginny must create many cookies,ginny must create many cookies,5,5,5,1,1,1,1
 ginny must make a chocolate,ginny must make a chocolate,5,5,5,1,1,1,1
 draco can sprinkle the doughnuts,draco can sprinkle the doughnuts,5,5,5,1,1,1,1
 ginny should hide the eclaires,ginny should hide the eclaires,5,5,5,1,1,1,1
-because fred can create the chocolates that a professor must sprinkle a wizard should gobble the cookie which he should assemble,because fred can create the chocolates that a professor must sprinkle a wizard should gobble the cookie which he should gobble,21,21,21,0,1,1,1
-since snape must chew a doughnut the professor should run since petunia should create a souffle that the student should arrange,since snape must chew a doughnut the professor should run since petunia should create a souffle that the student should gobble,21,21,21,0,1,1,1
+because fred can create the chocolates that a professor must sprinkle a wizard should gobble the cookie which he should assemble,because fred can create the chocolates that a professor must sprinkle a wizard should gobble the cookie which he should gobble,21,21,21,0,1,0,1
+since snape must chew a doughnut the professor should run since petunia should create a souffle that the student should arrange,since snape must chew a doughnut the professor should run since petunia should create a souffle that the student should gobble,21,21,21,0,1,0,1
 snape can sprinkle the cakes that ginny may sprinkle,snape can sprinkle the cakes that ginny may sprinkle,9,9,9,1,1,1,1
 since lily must sprinkle the chocolates george can hiccup,since lily must sprinkle the chocolates george can hiccup,9,9,9,1,1,1,1
 james must sprinkle the baklava that dobby must hide,james must sprinkle the baklava that dobby must hide,9,9,9,1,1,1,1
@@ -2357,9 +2357,9 @@ the student may make the doughnuts,the student may make the doughnuts,6,6,6,1,1,
 she can eat the eclaires which a professor must gobble,she can eat the eclaires which a professor must gobble,10,10,10,1,1,1,1
 petunia can gobble a croissant which a wizard should make because hermione can prepare the cakes,petunia can gobble a croissant which a wizard should make because hermione can prepare the cakes,16,16,16,1,1,1,1
 ginny may eat the eclaires since james can create the croissant which the student can arrange,ginny may eat the eclaires since james can create the croissant which the student can arrange,16,16,16,1,1,1,1
-since james can assemble the pancakes ron can prepare the eclaires that dobby must eat because voldemort must make a chocolate,since james can assemble the pancakes ron can prepare the eclaires that dobby must eat because voldemort must make a doughnut,21,21,21,0,1,1,1
+since james can assemble the pancakes ron can prepare the eclaires that dobby must eat because voldemort must make a chocolate,since james can assemble the pancakes ron can prepare the eclaires that dobby must eat because voldemort must make a doughnut,21,21,21,0,1,0,1
 since george should giggle since albus can create many pancakes lily should chew many souffles because she can make a doughnut,since george should giggle since albus can create many pancakes lily should chew many souffles because she can make a doughnut,21,21,21,1,1,1,1
-the wizard must assemble the cookies which the student can create because sirius can prepare the baklava that george should make,the wizard must assemble the cookies which the student can create because sirius can prepare the baklava that george should chew,21,21,21,0,1,1,1
+the wizard must assemble the cookies which the student can create because sirius can prepare the baklava that george should make,the wizard must assemble the cookies which the student can create because sirius can prepare the baklava that george should chew,21,21,21,0,1,0,1
 because vernon should arrange many doughnuts fred must assemble the doughnut,because vernon should arrange many doughnuts fred must assemble the doughnut,11,11,11,1,1,1,1
 since dobby can prepare the doughnut a student must hide the baklava,since dobby can prepare the doughnut a student must hide the baklava,12,12,12,1,1,1,1
 lupin must eat the eclaires which a witch should prepare,lupin must eat the eclaires which a witch should prepare,10,10,10,1,1,1,1
@@ -2393,8 +2393,8 @@ a professor should swim,a professor should swim,4,4,4,1,1,1,1
 a wizard can run,a wizard can run,4,4,4,1,1,1,1
 lupin should smile since the professor may prepare the croissant that neville can sprinkle,lupin should smile since the professor may prepare the croissant that neville can sprinkle,14,14,14,1,1,1,1
 since petunia should wiggle ginny must eat the cookie that a witch should create,since petunia should wiggle ginny must eat the cookie that a witch should create,14,14,14,1,1,1,1
-because he can gobble a doughnut because she should make the pancake that snape should eat george may sprinkle the strudels,because he can gobble a doughnut because she should make the pancake that snape should eat george may sprinkle the pancakes,21,21,21,0,1,1,1
-since the witch may gobble the doughnuts that hagrid may hide sirius may hide the eclaires that the professor should create,since the witch may gobble the doughnuts that hagrid may hide sirius may hide the eclaires that the professor should hide,21,21,21,0,1,1,1
+because he can gobble a doughnut because she should make the pancake that snape should eat george may sprinkle the strudels,because he can gobble a doughnut because she should make the pancake that snape should eat george may sprinkle the pancakes,21,21,21,0,1,0,1
+since the witch may gobble the doughnuts that hagrid may hide sirius may hide the eclaires that the professor should create,since the witch may gobble the doughnuts that hagrid may hide sirius may hide the eclaires that the professor should hide,21,21,21,0,1,0,1
 because the witch should chew a chocolate george may run because she must arrange a pancake which albus may chew,because the witch should chew a chocolate george may run because she must arrange a pancake which albus may chew,20,20,20,1,1,1,1
 because a student may run ginny should gobble the cakes which sirius can sprinkle because albus must hide many cakes,because a student may run ginny should gobble the cakes which sirius can sprinkle because albus must hide many cakes,20,20,20,1,1,1,1
 the student must party,the student must party,4,4,4,1,1,1,1
@@ -2425,8 +2425,8 @@ because lupin can eat the souffles hermione should hiccup since albus can assemb
 he should arrange the souffle,he should arrange the souffle,5,5,5,1,1,1,1
 mcgonagall can prepare a baklava that a professor must gobble,mcgonagall can prepare a baklava that a professor must gobble,10,10,10,1,1,1,1
 the wizard should jump since hagrid may arrange a croissant,the wizard should jump since hagrid may arrange a croissant,10,10,10,1,1,1,1
-because mcgonagall must sprinkle a strudel draco can chew a eclaire because hermione should gobble a cake which snape should chew,because mcgonagall must sprinkle a strudel draco can chew a eclaire because hermione should gobble a cake which snape should hide,21,21,21,0,1,1,1
-james must sprinkle the souffles which a professor can create since the witch should create many cookies that ginny can gobble,james must sprinkle the souffles which a professor can create since the witch should create many cookies that ginny can create,21,21,21,0,1,1,1
+because mcgonagall must sprinkle a strudel draco can chew a eclaire because hermione should gobble a cake which snape should chew,because mcgonagall must sprinkle a strudel draco can chew a eclaire because hermione should gobble a cake which snape should hide,21,21,21,0,1,0,1
+james must sprinkle the souffles which a professor can create since the witch should create many cookies that ginny can gobble,james must sprinkle the souffles which a professor can create since the witch should create many cookies that ginny can create,21,21,21,0,1,0,1
 she may arrange the souffles,she may arrange the souffles,5,5,5,1,1,1,1
 fred should chew a baklava,fred should chew a baklava,5,5,5,1,1,1,1
 voldemort can sprinkle the eclaires,voldemort can sprinkle the eclaires,5,5,5,1,1,1,1
@@ -2661,7 +2661,7 @@ a student must eat the chocolates that she may gobble since draco must arrange t
 since ginny may arrange the baklava which mcgonagall may chew the wizard should sprinkle the souffle,since ginny may arrange the baklava which mcgonagall may chew the wizard should sprinkle the souffle,16,16,16,1,1,1,1
 the student can gobble many eclaires,the student can gobble many eclaires,6,6,6,1,1,1,1
 since the student may assemble the doughnuts which the wizard should chew since she can hide a chocolate a wizard must hiccup,since the student may assemble the doughnuts which the wizard should chew since she can hide a chocolate a wizard can hide a chocolate,22,22,24,0,0,0,1
-since a student may eat the pancakes which a wizard must arrange albus can make the strudels that vernon should make,since a student may eat the pancakes which a wizard must arrange albus can make the strudels that vernon should eat,21,21,21,0,1,1,1
+since a student may eat the pancakes which a wizard must arrange albus can make the strudels that vernon should make,since a student may eat the pancakes which a wizard must arrange albus can make the strudels that vernon should eat,21,21,21,0,1,0,1
 because draco may gobble the cookies he can jump,because draco may gobble the cookies he can jump,9,9,9,1,1,1,1
 lupin can make the baklava that harry can assemble,lupin can make the baklava that harry can assemble,9,9,9,1,1,1,1
 george may eat many baklava that voldemort must arrange,george may eat many baklava that voldemort must arrange,9,9,9,1,1,1,1
@@ -2707,7 +2707,7 @@ vernon must hide many baklava that james must hide,vernon must hide many baklava
 lily can assemble a doughnut that he can sprinkle,lily can assemble a doughnut that he can sprinkle,9,9,9,1,1,1,1
 since vernon can wiggle sirius can arrange the cake which petunia must chew,since vernon can wiggle sirius can arrange the cake which petunia must chew,13,13,13,1,1,1,1
 she can sprinkle the souffles that george must eat because a professor must prepare the doughnut which the wizard can prepare,she can sprinkle the souffles that george must eat because a professor must prepare the doughnut which the wizard can prepare,21,21,21,1,1,1,1
-albus must sprinkle a cake because snape must sprinkle a croissant that george should gobble because albus must chew a souffle,albus must sprinkle a cake because snape must sprinkle a croissant that george should gobble because albus must chew a doughnut,21,21,21,0,1,1,1
+albus must sprinkle a cake because snape must sprinkle a croissant that george should gobble because albus must chew a souffle,albus must sprinkle a cake because snape must sprinkle a croissant that george should gobble because albus must chew a doughnut,21,21,21,0,1,0,1
 because dobby may sprinkle the souffles which the wizard can eat lupin must gobble the strudels that snape should make,because dobby may sprinkle the souffles which the wizard can eat lupin must gobble the strudels that snape should make,20,20,20,1,1,1,1
 since george must make the souffle that voldemort should chew vernon must chew the croissant since mcgonagall must smile,since george must make the souffle that voldemort should chew vernon must chew the croissant since mcgonagall must smile,19,19,19,1,1,1,1
 hermione should prepare the doughnuts that snape must sprinkle,hermione should prepare the doughnuts that snape must sprinkle,9,9,9,1,1,1,1
@@ -2727,7 +2727,7 @@ petunia must assemble the cookies,petunia must assemble the cookies,5,5,5,1,1,1,
 the wizard may smile,the wizard may smile,4,4,4,1,1,1,1
 a wizard can run,a wizard can run,4,4,4,1,1,1,1
 a wizard must smile,a wizard must smile,4,4,4,1,1,1,1
-because dobby must gobble the doughnuts that fred may hide because a witch should gobble the cakes james must gobble the doughnut,because dobby must gobble the doughnuts that fred may hide because a witch should gobble the cakes james must gobble the cakes,22,22,22,0,0,1,1
+because dobby must gobble the doughnuts that fred may hide because a witch should gobble the cakes james must gobble the doughnut,because dobby must gobble the doughnuts that fred may hide because a witch should gobble the cakes james must gobble the cakes,22,22,22,0,0,0,1
 a professor should gobble the eclaires which hagrid should arrange,a professor should gobble the eclaires which hagrid should arrange,10,10,10,1,1,1,1
 because voldemort may hiccup a witch should hide many baklava,because voldemort may hiccup a witch should hide many baklava,10,10,10,1,1,1,1
 snape must make a croissant that the wizard must sprinkle,snape must make a croissant that the wizard must sprinkle,10,10,10,1,1,1,1
@@ -2741,7 +2741,7 @@ since he may hide the croissants which she must assemble harry may make the souf
 since george may eat the eclaires that draco can create harry must arrange the strudels which he may sprinkle,since george may eat the eclaires that draco can create harry must arrange the strudels which he may sprinkle,19,19,19,1,1,1,1
 lily must prepare the souffle since neville must run because dobby should hide the baklava which albus must arrange,lily must prepare the souffle since neville must run because dobby should hide the baklava which albus must arrange,19,19,19,1,1,1,1
 a witch should chew a souffle,a witch should chew a souffle,6,6,6,1,1,1,1
-ron should make a doughnut since lupin may prepare the croissants which vernon can gobble since hagrid must hide a pancake,ron should make a doughnut since lupin may prepare the croissants which vernon can gobble since hagrid must hide a cookie,21,21,21,0,1,1,1
+ron should make a doughnut since lupin may prepare the croissants which vernon can gobble since hagrid must hide a pancake,ron should make a doughnut since lupin may prepare the croissants which vernon can gobble since hagrid must hide a cookie,21,21,21,0,1,0,1
 because she must assemble the eclaires because the student can hiccup neville must hide the baklava that mcgonagall can arrange,because she must assemble the eclaires because the student can hiccup neville must hide the baklava that mcgonagall can arrange,20,20,20,1,1,1,1
 because mcgonagall may run sirius can party,because mcgonagall may run sirius can party,7,7,7,1,1,1,1
 since hagrid must run neville should run,since hagrid must run neville should run,7,7,7,1,1,1,1
@@ -2831,7 +2831,7 @@ snape can sprinkle the cookie that dobby may arrange because the wizard must eat
 george should gobble the cakes which draco must sprinkle since the student may gobble many baklava,george should gobble the cakes which draco must sprinkle since the student may gobble many baklava,16,16,16,1,1,1,1
 ginny must assemble a baklava,ginny must assemble a baklava,5,5,5,1,1,1,1
 a professor may hiccup,a professor may hiccup,4,4,4,1,1,1,1
-vernon may prepare the chocolates that george may hide since a professor must make the chocolate which a professor can eat,vernon may prepare the chocolates that george may hide since a professor must make the chocolate which a professor can prepare,21,21,21,0,1,1,1
+vernon may prepare the chocolates that george may hide since a professor must make the chocolate which a professor can eat,vernon may prepare the chocolates that george may hide since a professor must make the chocolate which a professor can prepare,21,21,21,0,1,0,1
 since a wizard must chew the cakes which he should eat fred should laugh because dobby should hide a cake,since a wizard must chew the cakes which he should eat fred should laugh because dobby should hide a cake,20,20,20,1,1,1,1
 albus may make a chocolate that she must gobble because he can arrange the croissants that the professor should arrange,albus may make a chocolate that she must gobble because he can arrange the croissants that the professor should arrange,20,20,20,1,1,1,1
 james must make a croissant that harry must chew,james must make a croissant that harry must chew,9,9,9,1,1,1,1
@@ -2872,9 +2872,9 @@ sirius may run,sirius may run,3,3,3,1,1,1,1
 ginny should smile,ginny should smile,3,3,3,1,1,1,1
 petunia may laugh,petunia may laugh,3,3,3,1,1,1,1
 she must smile,she must smile,3,3,3,1,1,1,1
-because he can sprinkle the souffle he can prepare the souffles because sirius can chew a eclaire that james must prepare,because he can sprinkle the souffle he can prepare the souffles because sirius can chew a eclaire that james must chew,21,21,21,0,1,1,1
-since sirius can eat the strudel which dobby must create lily can chew the eclaire since he must eat the pancake,since sirius can eat the strudel which dobby must create lily can chew the eclaire since he must eat the eclaire,21,21,21,0,1,1,1
-a student must create a chocolate that a wizard should create since draco must assemble the eclaire that lupin must gobble,a student must create a chocolate that a wizard should create since draco must assemble the eclaire that lupin must assemble,21,21,21,0,1,1,1
+because he can sprinkle the souffle he can prepare the souffles because sirius can chew a eclaire that james must prepare,because he can sprinkle the souffle he can prepare the souffles because sirius can chew a eclaire that james must chew,21,21,21,0,1,0,1
+since sirius can eat the strudel which dobby must create lily can chew the eclaire since he must eat the pancake,since sirius can eat the strudel which dobby must create lily can chew the eclaire since he must eat the eclaire,21,21,21,0,1,0,1
+a student must create a chocolate that a wizard should create since draco must assemble the eclaire that lupin must gobble,a student must create a chocolate that a wizard should create since draco must assemble the eclaire that lupin must assemble,21,21,21,0,1,0,1
 hermione must sprinkle a souffle because ginny must hiccup,hermione must sprinkle a souffle because ginny must hiccup,9,9,9,1,1,1,1
 lupin can chew the eclaires that james should hide,lupin can chew the eclaires that james should hide,9,9,9,1,1,1,1
 harry can sprinkle the baklava that vernon should sprinkle,harry can sprinkle the baklava that vernon should sprinkle,9,9,9,1,1,1,1
@@ -3070,7 +3070,7 @@ because he should arrange a souffle ron should smile,because he should arrange a
 lupin must make the souffles which harry should hide,lupin must make the souffles which harry should hide,9,9,9,1,1,1,1
 fred should create the doughnuts that lily must assemble,fred should create the doughnuts that lily must assemble,9,9,9,1,1,1,1
 petunia should make the croissant which the wizard should sprinkle since vernon should gobble the doughnuts which ginny must make,petunia should make the croissant which the wizard should sprinkle since vernon should gobble the doughnuts which ginny must make,20,20,20,1,1,1,1
-since lily should arrange the baklava ginny can run because dobby can gobble a pancake because neville must chew many baklava,since lily should arrange the baklava ginny can run because dobby can gobble a pancake because neville must chew many chocolates,21,21,21,0,1,1,1
+since lily should arrange the baklava ginny can run because dobby can gobble a pancake because neville must chew many baklava,since lily should arrange the baklava ginny can run because dobby can gobble a pancake because neville must chew many chocolates,21,21,21,0,1,0,1
 because voldemort should arrange a baklava petunia can chew a cake because hermione must prepare a cake which dobby can prepare,because voldemort should arrange a baklava petunia can chew a cake because hermione must prepare a cake which dobby can prepare,21,21,21,1,1,1,1
 she must gobble many baklava,she must gobble many baklava,5,5,5,1,1,1,1
 vernon can gobble a croissant,vernon can gobble a croissant,5,5,5,1,1,1,1
@@ -3133,8 +3133,8 @@ he should sprinkle many strudels,he should sprinkle many strudels,5,5,5,1,1,1,1
 ron must chew the souffles,ron must chew the souffles,5,5,5,1,1,1,1
 harry should assemble a strudel,harry should assemble a strudel,5,5,5,1,1,1,1
 voldemort must hide the souffle,voldemort must hide the souffle,5,5,5,1,1,1,1
-mcgonagall should prepare the eclaire that lily should sprinkle because the wizard may sprinkle a cookie which a witch should eat,mcgonagall should prepare the eclaire that lily should sprinkle because the wizard may sprinkle a cookie which a witch should hide,21,21,21,0,1,1,1
-albus should create the doughnuts which hagrid should create since george should make many cakes since ron may chew the souffles,albus should create the doughnuts which hagrid should create since george should make many cakes since ron may chew the doughnuts,21,21,21,0,1,1,1
+mcgonagall should prepare the eclaire that lily should sprinkle because the wizard may sprinkle a cookie which a witch should eat,mcgonagall should prepare the eclaire that lily should sprinkle because the wizard may sprinkle a cookie which a witch should hide,21,21,21,0,1,0,1
+albus should create the doughnuts which hagrid should create since george should make many cakes since ron may chew the souffles,albus should create the doughnuts which hagrid should create since george should make many cakes since ron may chew the doughnuts,21,21,21,0,1,0,1
 mcgonagall can assemble the chocolates that a witch should gobble,mcgonagall can assemble the chocolates that a witch should gobble,10,10,10,1,1,1,1
 sirius must chew many pancakes that a wizard must gobble,sirius must chew many pancakes that a wizard must gobble,10,10,10,1,1,1,1
 since james can make the cake that the witch should hide she can assemble a chocolate which she should prepare,since james can make the cake that the witch should hide she can assemble a chocolate which she should prepare,20,20,20,1,1,1,1
@@ -3156,7 +3156,7 @@ ginny should assemble a eclaire since the professor may gobble the pancakes that
 ron must arrange many cakes because neville can prepare the eclaire,ron must arrange many cakes because neville can prepare the eclaire,11,11,11,1,1,1,1
 since albus should prepare many pancakes she can assemble the cookie,since albus should prepare many pancakes she can assemble the cookie,11,11,11,1,1,1,1
 because hagrid can arrange the cookie lily should sprinkle a cookie,because hagrid can arrange the cookie lily should sprinkle a cookie,11,11,11,1,1,1,1
-since a witch must hide the souffle which lily may sprinkle petunia can make the chocolates because lily must assemble a eclaire,since a witch must hide the souffle which lily may sprinkle petunia can make the chocolates because lily must assemble the chocolates,22,22,22,0,0,1,1
+since a witch must hide the souffle which lily may sprinkle petunia can make the chocolates because lily must assemble a eclaire,since a witch must hide the souffle which lily may sprinkle petunia can make the chocolates because lily must assemble the chocolates,22,22,22,0,0,0,1
 since he must hide the doughnuts that ginny can make lupin must laugh,since he must hide the doughnuts that ginny can make lupin must laugh,13,13,13,1,1,1,1
 because petunia must run snape must assemble the strudels that albus may assemble,because petunia must run snape must assemble the strudels that albus may assemble,13,13,13,1,1,1,1
 since harry should eat the eclaire which ron can chew hermione may laugh,since harry should eat the eclaire which ron can chew hermione may laugh,13,13,13,1,1,1,1
@@ -3369,7 +3369,7 @@ draco may hide many cakes,draco may hide many cakes,5,5,5,1,1,1,1
 ginny may make a strudel,ginny may make a strudel,5,5,5,1,1,1,1
 lily must hide a souffle,lily must hide a souffle,5,5,5,1,1,1,1
 hermione should chew the chocolates,hermione should chew the chocolates,5,5,5,1,1,1,1
-sirius must gobble the cakes that the student should hide because sirius should make a doughnut which the professor must sprinkle,sirius must gobble the cakes that the student should hide because sirius should make a doughnut which the professor must chew,21,21,21,0,1,1,1
+sirius must gobble the cakes that the student should hide because sirius should make a doughnut which the professor must sprinkle,sirius must gobble the cakes that the student should hide because sirius should make a doughnut which the professor must chew,21,21,21,0,1,0,1
 he must walk since hermione must assemble a cake,he must walk since hermione must assemble a cake,9,9,9,1,1,1,1
 ginny should arrange many baklava which lily should assemble,ginny should arrange many baklava which lily should assemble,9,9,9,1,1,1,1
 she can make the pancakes that lily must chew,she can make the pancakes that lily must chew,9,9,9,1,1,1,1
@@ -3524,7 +3524,7 @@ hagrid should hiccup,hagrid should hiccup,3,3,3,1,1,1,1
 hagrid must party,hagrid must party,3,3,3,1,1,1,1
 the professor should hide a doughnut,the professor should hide a doughnut,6,6,6,1,1,1,1
 the wizard must assemble the cookies,the wizard must assemble the cookies,6,6,6,1,1,1,1
-because albus must chew a eclaire that albus can eat snape may assemble the eclaire that she must chew because harry can walk,because albus must chew a eclaire that albus can eat snape may assemble the eclaire that she must chew because she must chew,23,23,23,0,0,1,1
+because albus must chew a eclaire that albus can eat snape may assemble the eclaire that she must chew because harry can walk,because albus must chew a eclaire that albus can eat snape may assemble the eclaire that she must chew because she must chew,23,23,23,0,0,0,1
 she can make a croissant since hermione should create a croissant,she can make a croissant since hermione should create a croissant,11,11,11,1,1,1,1
 the witch must sprinkle the eclaires that mcgonagall may create,the witch must sprinkle the eclaires that mcgonagall may create,10,10,10,1,1,1,1
 fred can chew the chocolates which a wizard must chew,fred can chew the chocolates which a wizard must chew,10,10,10,1,1,1,1
@@ -3585,7 +3585,7 @@ since vernon must make the croissants that ron must arrange a student should cre
 draco can gobble the souffles that a professor must assemble,draco can gobble the souffles that a professor must assemble,10,10,10,1,1,1,1
 the witch must jump,the witch must jump,4,4,4,1,1,1,1
 the professor must party,the professor must party,4,4,4,1,1,1,1
-since snape must chew a baklava harry must arrange the doughnuts because george should make the chocolates that petunia must make,since snape must chew a baklava harry must arrange the doughnuts because george should make the chocolates that petunia must eat,21,21,21,0,1,1,1
+since snape must chew a baklava harry must arrange the doughnuts because george should make the chocolates that petunia must make,since snape must chew a baklava harry must arrange the doughnuts because george should make the chocolates that petunia must eat,21,21,21,0,1,0,1
 voldemort should eat a cookie which petunia may hide,voldemort should eat a cookie which petunia may hide,9,9,9,1,1,1,1
 since he may laugh he may assemble a croissant,since he may laugh he may assemble a croissant,9,9,9,1,1,1,1
 snape should arrange the souffle which hermione must assemble,snape should arrange the souffle which hermione must assemble,9,9,9,1,1,1,1
@@ -3695,9 +3695,9 @@ lupin can arrange a baklava,lupin can arrange a baklava,5,5,5,1,1,1,1
 lupin may prepare the cookies,lupin may prepare the cookies,5,5,5,1,1,1,1
 hagrid should assemble the cookies,hagrid should assemble the cookies,5,5,5,1,1,1,1
 dobby should gobble the doughnuts,dobby should gobble the doughnuts,5,5,5,1,1,1,1
-since george can arrange the cake ron can prepare the eclaires that albus must hide because lupin may arrange a cookie,since george can arrange the cake ron can prepare the eclaires that albus must hide because lupin may arrange a cake,21,21,21,0,1,1,1
-since a student should arrange the cake that hagrid may hide draco can arrange many souffles that a professor must sprinkle,since a student should arrange the cake that hagrid may hide draco can arrange many souffles that a professor must chew,21,21,21,0,1,1,1
-dobby may assemble a souffle that a witch can gobble since harry should prepare the cookies that a wizard should create,dobby may assemble a souffle that a witch can gobble since harry should prepare the cookies that a wizard should eat,21,21,21,0,1,1,1
+since george can arrange the cake ron can prepare the eclaires that albus must hide because lupin may arrange a cookie,since george can arrange the cake ron can prepare the eclaires that albus must hide because lupin may arrange a cake,21,21,21,0,1,0,1
+since a student should arrange the cake that hagrid may hide draco can arrange many souffles that a professor must sprinkle,since a student should arrange the cake that hagrid may hide draco can arrange many souffles that a professor must chew,21,21,21,0,1,0,1
+dobby may assemble a souffle that a witch can gobble since harry should prepare the cookies that a wizard should create,dobby may assemble a souffle that a witch can gobble since harry should prepare the cookies that a wizard should eat,21,21,21,0,1,0,1
 petunia must make a doughnut which draco must prepare,petunia must make a doughnut which draco must prepare,9,9,9,1,1,1,1
 ginny should make the eclaire which lily should assemble,ginny should make the eclaire which lily should assemble,9,9,9,1,1,1,1
 hagrid can chew the cakes that ginny must eat,hagrid can chew the cakes that ginny must eat,9,9,9,1,1,1,1
@@ -3706,7 +3706,7 @@ hagrid should sprinkle the eclaires that mcgonagall should assemble,hagrid shoul
 the wizard may assemble many chocolates,the wizard may assemble many chocolates,6,6,6,1,1,1,1
 the student should make the pancakes,the student should make the pancakes,6,6,6,1,1,1,1
 a professor can gobble the chocolate,a professor can gobble the chocolate,6,6,6,1,1,1,1
-neville can eat the cake because a student should walk since the professor should chew the cakes which the student must prepare,neville can eat the cake because a student should walk since the professor should chew the cakes which the student should prepare,22,22,22,0,1,1,1
+neville can eat the cake because a student should walk since the professor should chew the cakes which the student must prepare,neville can eat the cake because a student should walk since the professor should chew the cakes which the student should prepare,22,22,22,0,1,0,1
 since hagrid should jump a professor can sprinkle the strudel which a professor may hide because the wizard may chew the baklava,since hagrid should jump a professor can sprinkle the strudel which a professor may hide because the wizard may chew the baklava,22,22,22,1,1,1,1
 the student can jump,the student can jump,4,4,4,1,1,1,1
 the wizard should sprinkle a eclaire that mcgonagall may gobble,the wizard should sprinkle a eclaire that mcgonagall may gobble,10,10,10,1,1,1,1
@@ -3824,7 +3824,7 @@ the student should create the eclaire because she should jump,the student should
 because a witch should make a souffle snape must gobble the souffles,because a witch should make a souffle snape must gobble the souffles,12,12,12,1,1,1,1
 the professor should chew the pancakes since she must jump,the professor should chew the pancakes since she must jump,10,10,10,1,1,1,1
 dobby must make the cakes which a professor should sprinkle,dobby must make the cakes which a professor should sprinkle,10,10,10,1,1,1,1
-sirius should create the eclaires because sirius can assemble the baklava since james must prepare a cookie that she can make,sirius should create the eclaires because sirius can assemble the baklava since james must prepare a cookie that she can prepare,21,21,21,0,1,1,1
+sirius should create the eclaires because sirius can assemble the baklava since james must prepare a cookie that she can make,sirius should create the eclaires because sirius can assemble the baklava since james must prepare a cookie that she can prepare,21,21,21,0,1,0,1
 since the student should assemble the eclaires that lily may eat albus should prepare the doughnuts which draco can eat,since the student should assemble the eclaires that lily may eat albus should prepare the doughnuts which draco can eat,20,20,20,1,1,1,1
 the wizard must sprinkle a croissant,the wizard must sprinkle a croissant,6,6,6,1,1,1,1
 draco must make a eclaire that the professor must make,draco must make a eclaire that the professor must make,10,10,10,1,1,1,1
@@ -4056,7 +4056,7 @@ a wizard must prepare the pancakes,a wizard must prepare the pancakes,6,6,6,1,1,
 petunia must eat a baklava that voldemort should assemble since a student may prepare the croissant that ginny should sprinkle,petunia must eat a baklava that voldemort should assemble since a student may prepare the croissant that ginny should sprinkle,20,20,20,1,1,1,1
 since albus must eat the baklava that hermione may gobble neville must sprinkle a eclaire that the wizard should hide,since albus must eat the baklava that hermione may gobble neville must sprinkle a eclaire that the wizard should hide,20,20,20,1,1,1,1
 because a wizard should sprinkle the eclaire that hermione must arrange draco can sprinkle a strudel that fred can gobble,because a wizard should sprinkle the eclaire that hermione must arrange draco can sprinkle a strudel that fred can gobble,20,20,20,1,1,1,1
-since he can make many chocolates george may gobble the strudels which vernon can chew since a student can gobble the cakes,since he can make many chocolates george may gobble the strudels which vernon can chew since a student can gobble a souffle,22,22,22,0,0,1,1
+since he can make many chocolates george may gobble the strudels which vernon can chew since a student can gobble the cakes,since he can make many chocolates george may gobble the strudels which vernon can chew since a student can gobble a souffle,22,22,22,0,0,0,1
 because harry must walk the professor can gobble a cookie which a wizard should prepare because a student may create the baklava,because harry must walk the professor can gobble a cookie which a wizard should prepare because a student may create,22,22,20,0,0,0,1
 hagrid should assemble the baklava which the student must sprinkle,hagrid should assemble the baklava which the student must sprinkle,10,10,10,1,1,1,1
 since the wizard should sprinkle many pancakes neville may run,since the wizard should sprinkle many pancakes neville may run,10,10,10,1,1,1,1
@@ -4064,7 +4064,7 @@ the wizard must chew a doughnut that albus should create,the wizard must chew a 
 a student must jump,a student must jump,4,4,4,1,1,1,1
 the wizard should wiggle,the wizard should wiggle,4,4,4,1,1,1,1
 since a wizard can smile because petunia can assemble the pancake because lupin should chew the baklava ron may eat the croissant,since a wizard can smile because petunia can assemble the pancake because lupin should chew the baklava ron may eat,22,22,20,0,0,0,1
-since sirius may eat a baklava neville may prepare the pancakes because snape can eat many cookies that snape must hide,since sirius may eat a baklava neville may prepare the pancakes because snape can eat many cookies that snape must gobble,21,21,21,0,1,1,1
+since sirius may eat a baklava neville may prepare the pancakes because snape can eat many cookies that snape must hide,since sirius may eat a baklava neville may prepare the pancakes because snape can eat many cookies that snape must gobble,21,21,21,0,1,0,1
 a professor may make many croissants,a professor may make many croissants,6,6,6,1,1,1,1
 the witch can make the pancake,the witch can make the pancake,6,6,6,1,1,1,1
 mcgonagall may hide a strudel that fred should arrange,mcgonagall may hide a strudel that fred should arrange,9,9,9,1,1,1,1
@@ -4207,7 +4207,7 @@ vernon should chew the chocolate that harry may prepare,vernon should chew the c
 james should sprinkle the souffles which harry can sprinkle,james should sprinkle the souffles which harry can sprinkle,9,9,9,1,1,1,1
 voldemort should arrange the cakes which james should assemble,voldemort should arrange the cakes which james should assemble,9,9,9,1,1,1,1
 voldemort must smile because mcgonagall may prepare the eclaires,voldemort must smile because mcgonagall may prepare the eclaires,9,9,9,1,1,1,1
-since hagrid may eat the doughnuts hagrid must make the eclaire which harry must eat because neville must chew the doughnuts,since hagrid may eat the doughnuts hagrid must make the eclaire which harry must eat because neville must chew the baklava,21,21,21,0,1,1,1
+since hagrid may eat the doughnuts hagrid must make the eclaire which harry must eat because neville must chew the doughnuts,since hagrid may eat the doughnuts hagrid must make the eclaire which harry must eat because neville must chew the baklava,21,21,21,0,1,0,1
 dobby should gobble many eclaires,dobby should gobble many eclaires,5,5,5,1,1,1,1
 snape must assemble the souffles,snape must assemble the souffles,5,5,5,1,1,1,1
 vernon can eat a croissant,vernon can eat a croissant,5,5,5,1,1,1,1
@@ -4267,7 +4267,7 @@ petunia may gobble a strudel which albus may chew,petunia may gobble a strudel w
 lily must create the doughnut that james should assemble,lily must create the doughnut that james should assemble,9,9,9,1,1,1,1
 hagrid must gobble the strudel because fred must create the croissants which hagrid can hide,hagrid must gobble the strudel because fred must create the croissants which hagrid can hide,15,15,15,1,1,1,1
 because harry may chew a baklava he can chew the doughnut that george can create,because harry may chew a baklava he can chew the doughnut that george can create,15,15,15,1,1,1,1
-because fred should chew the pancake which he should create he must eat the doughnut because petunia may create a cookie,because fred should chew the pancake which he should create he must eat the doughnut because petunia may create a doughnut,21,21,21,0,1,1,1
+because fred should chew the pancake which he should create he must eat the doughnut because petunia may create a cookie,because fred should chew the pancake which he should create he must eat the doughnut because petunia may create a doughnut,21,21,21,0,1,0,1
 ron should wiggle,ron should wiggle,3,3,3,1,1,1,1
 dobby should giggle,dobby should giggle,3,3,3,1,1,1,1
 mcgonagall can wiggle,mcgonagall can wiggle,3,3,3,1,1,1,1
@@ -4524,7 +4524,7 @@ she may giggle since fred should sprinkle a souffle which neville may prepare be
 a student should hide the chocolates which petunia may eat because a student must gobble a cake,a student should hide the chocolates which petunia may eat because a student must gobble a cake,17,17,17,1,1,1,1
 petunia should hide the souffles because the witch must gobble the cookie,petunia should hide the souffles because the witch must gobble the cookie,12,12,12,1,1,1,1
 the professor must eat the pancakes that albus should gobble,the professor must eat the pancakes that albus should gobble,10,10,10,1,1,1,1
-since neville should eat many croissants which a student must arrange a professor can gobble many croissants that sirius can chew,since neville should eat many croissants which a student must arrange a professor can gobble many croissants that sirius can gobble,21,21,21,0,1,1,1
+since neville should eat many croissants which a student must arrange a professor can gobble many croissants that sirius can chew,since neville should eat many croissants which a student must arrange a professor can gobble many croissants that sirius can gobble,21,21,21,0,1,0,1
 a witch should eat the chocolates,a witch should eat the chocolates,6,6,6,1,1,1,1
 lily must sprinkle the pancake,lily must sprinkle the pancake,5,5,5,1,1,1,1
 albus may eat the croissant,albus may eat the croissant,5,5,5,1,1,1,1
@@ -4585,7 +4585,7 @@ since james may prepare a cookie which vernon should prepare albus must hide the
 snape may eat the cake that vernon can arrange because petunia should assemble the cake which mcgonagall can make,snape may eat the cake that vernon can arrange because petunia should assemble the cake which mcgonagall can make,19,19,19,1,1,1,1
 she should prepare the souffles which a professor should make,she should prepare the souffles which a professor should make,10,10,10,1,1,1,1
 a student can arrange the strudels that neville must arrange,a student can arrange the strudels that neville must arrange,10,10,10,1,1,1,1
-because a witch may arrange a baklava that a student can assemble harry can assemble the eclaire which voldemort should eat,because a witch may arrange a baklava that a student can assemble harry can assemble the eclaire which voldemort should chew,21,21,21,0,1,1,1
+because a witch may arrange a baklava that a student can assemble harry can assemble the eclaire which voldemort should eat,because a witch may arrange a baklava that a student can assemble harry can assemble the eclaire which voldemort should chew,21,21,21,0,1,0,1
 he should make a pancake,he should make a pancake,5,5,5,1,1,1,1
 hagrid may arrange a souffle,hagrid may arrange a souffle,5,5,5,1,1,1,1
 voldemort must sprinkle the baklava,voldemort must sprinkle the baklava,5,5,5,1,1,1,1
@@ -4630,7 +4630,7 @@ ginny must hide the chocolates,ginny must hide the chocolates,5,5,5,1,1,1,1
 george should eat a baklava,george should eat a baklava,5,5,5,1,1,1,1
 voldemort may sprinkle the doughnuts,voldemort may sprinkle the doughnuts,5,5,5,1,1,1,1
 harry may prepare the pancake,harry may prepare the pancake,5,5,5,1,1,1,1
-since petunia must create the souffle snape must arrange a eclaire because james must chew the baklava which vernon must sprinkle,since petunia must create the souffle snape must arrange a eclaire because james must chew the baklava which vernon must gobble,21,21,21,0,1,1,1
+since petunia must create the souffle snape must arrange a eclaire because james must chew the baklava which vernon must sprinkle,since petunia must create the souffle snape must arrange a eclaire because james must chew the baklava which vernon must gobble,21,21,21,0,1,0,1
 since james should hide the baklava which sirius may make she may gobble the croissant which a professor can make,since james should hide the baklava which sirius may make she may gobble the croissant which a professor can make,20,20,20,1,1,1,1
 neville can make a strudel that snape may make,neville can make a strudel that snape may make,9,9,9,1,1,1,1
 petunia should assemble the cookies since hagrid should hiccup,petunia should assemble the cookies since hagrid should hiccup,9,9,9,1,1,1,1
@@ -4940,8 +4940,8 @@ a professor should prepare the cake,a professor should prepare the cake,6,6,6,1,
 a professor can arrange the croissants,a professor can arrange the croissants,6,6,6,1,1,1,1
 james should assemble a cookie,james should assemble a cookie,5,5,5,1,1,1,1
 draco must chew the cakes,draco must chew the cakes,5,5,5,1,1,1,1
-because the student must assemble a cookie which the student should prepare petunia should hide the eclaire that petunia can chew,because the student must assemble a cookie which the student should prepare petunia should hide the eclaire that petunia can hide,21,21,21,0,1,1,1
-because a professor should assemble a croissant that harry must arrange the wizard can sprinkle a baklava that ginny must create,because a professor should assemble a croissant that harry must arrange the wizard can sprinkle a baklava that ginny must hide,21,21,21,0,1,1,1
+because the student must assemble a cookie which the student should prepare petunia should hide the eclaire that petunia can chew,because the student must assemble a cookie which the student should prepare petunia should hide the eclaire that petunia can hide,21,21,21,0,1,0,1
+because a professor should assemble a croissant that harry must arrange the wizard can sprinkle a baklava that ginny must create,because a professor should assemble a croissant that harry must arrange the wizard can sprinkle a baklava that ginny must hide,21,21,21,0,1,0,1
 snape should party,snape should party,3,3,3,1,1,1,1
 dobby should walk,dobby should walk,3,3,3,1,1,1,1
 petunia must jump,petunia must jump,3,3,3,1,1,1,1
@@ -5064,10 +5064,10 @@ draco must chew many doughnuts that voldemort should assemble,draco must chew ma
 the student can chew the cookie,the student can chew the cookie,6,6,6,1,1,1,1
 albus must prepare the chocolates,albus must prepare the chocolates,5,5,5,1,1,1,1
 albus can make a baklava,albus can make a baklava,5,5,5,1,1,1,1
-because albus should chew the souffle that ginny may sprinkle because hagrid should chew the pancakes fred should eat the strudel,because albus should chew the souffle that ginny may sprinkle because hagrid should chew the pancakes fred should eat the pancakes,21,21,21,0,0,1,1
-because snape should eat the cakes that hagrid should arrange the professor must chew the strudels since the professor must laugh,because snape should eat the cakes that hagrid should arrange the professor must chew the strudels since the professor must make,21,21,21,0,1,1,1
+because albus should chew the souffle that ginny may sprinkle because hagrid should chew the pancakes fred should eat the strudel,because albus should chew the souffle that ginny may sprinkle because hagrid should chew the pancakes fred should eat the pancakes,21,21,21,0,0,0,1
+because snape should eat the cakes that hagrid should arrange the professor must chew the strudels since the professor must laugh,because snape should eat the cakes that hagrid should arrange the professor must chew the strudels since the professor must make,21,21,21,0,1,0,1
 a student may gobble a eclaire,a student may gobble a eclaire,6,6,6,1,1,1,1
-since dobby may hide the pancake that sirius may arrange the witch should prepare the eclaires that a wizard should make,since dobby may hide the pancake that sirius may arrange the witch should prepare the eclaires that a wizard should create,21,21,21,0,1,1,1
+since dobby may hide the pancake that sirius may arrange the witch should prepare the eclaires that a wizard should make,since dobby may hide the pancake that sirius may arrange the witch should prepare the eclaires that a wizard should create,21,21,21,0,1,0,1
 fred must assemble the souffle,fred must assemble the souffle,5,5,5,1,1,1,1
 hagrid should hide the croissants,hagrid should hide the croissants,5,5,5,1,1,1,1
 george must chew the croissants,george must chew the croissants,5,5,5,1,1,1,1
