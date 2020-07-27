@@ -1,0 +1,46 @@
+Training epoch 1/40 on train data
+Evaluating epoch 1/40
+sentence-level-accuracy   93.164 %
+token-level-accuracy      97.983 %
+loss                      0.52538 
+sentence-level-accuracy   87.09 %token-level-accuracy      97.934 %Training epoch 2/40 on train data
+Evaluating epoch 2/40
+sentence-level-accuracy   89.708 %
+token-level-accuracy      98.638 %
+loss                      0.052773 
+sentence-level-accuracy   83.25 %token-level-accuracy      98.644 %Training epoch 3/40 on train data
+Evaluating epoch 3/40
+sentence-level-accuracy   99.755 %
+token-level-accuracy      99.957 %
+loss                      0.0088849 
+sentence-level-accuracy   91.68 %token-level-accuracy      99.953 %Training epoch 4/40 on train data
+Evaluating epoch 4/40
+sentence-level-accuracy   99.589 %
+token-level-accuracy      99.951 %
+loss                      0.0054852 
+sentence-level-accuracy   92.05 %token-level-accuracy      99.954 %Training epoch 5/40 on train data
+Evaluating epoch 5/40
+sentence-level-accuracy   95.64 %
+token-level-accuracy      99.475 %
+loss                      0.012398 
+sentence-level-accuracy   88.99 %token-level-accuracy      99.513 %Training epoch 6/40 on train data
+Evaluating epoch 6/40
+sentence-level-accuracy   99.431 %
+token-level-accuracy      99.901 %
+loss                      0.0037651 
+sentence-level-accuracy   92.12 %token-level-accuracy      99.939 %Training epoch 7/40 on train data
+Evaluating epoch 7/40
+sentence-level-accuracy   99.41 %
+token-level-accuracy      99.939 %
+loss                      0.0033425 
+sentence-level-accuracy   91.62 %token-level-accuracy      99.958 %Training epoch 8/40 on train data
+Evaluating epoch 8/40
+sentence-level-accuracy   99.625 %
+token-level-accuracy      99.973 %
+loss                      0.0023694 
+sentence-level-accuracy   92.03 %token-level-accuracy      99.953 %Training epoch 9/40 on train data
+Evaluating epoch 9/40
+sentence-level-accuracy   38.832 %
+token-level-accuracy      60.327 %
+loss                      0.80224 
+sentence-level-accuracy   37.48 %token-level-accuracy      60.48 %Early stopping, resetting to last checkpoint.
