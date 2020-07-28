@@ -9,10 +9,12 @@ from nltk.draw.tree import draw_trees
 from nltk.tree import ParentedTree
 import nltk
 
-def read_file(filename):
+def read_file(filename, directory):
     path = os.getcwd()
     print(path)
-    with open(filename, newline='') as rfile, open("pos_pos.csv", 'w') as pos_file, open("pos_neg.csv", 'w') as neg_file:
+    posfile = os.path.join(directory, "pos_pos.csv")
+    negfile = os.path.join(directory, "pos_neg.csv")
+    with open(filename, newline='') as rfile, open(posfile, 'w') as pos_file, open(negfile, 'w') as neg_file:
 
         boolLIST = []
 
@@ -37,7 +39,7 @@ def read_file(filename):
                 pos = 1
             boolLIST.append([sourcelen, targlen, predlen, correct, pos])
 
-        return "pos_pos.csv", "pos_neg.csv", boolLIST
+        return posfile, negfile, boolLIST
  
 # def incorrect_files(pos_pos, pos_neg):
 
@@ -194,7 +196,8 @@ def token_acc(pos_pos, pos_neg):
   
 def make_trees(pos_file, neg_file):
 
-    with open(pos_file, 'r') as pos_read, open(neg_file, 'r') as neg_read, open("no-parses.csv", 'w') as npfile:
+    noparses = os.path.join(argv[2], "no-parses.csv")
+    with open(pos_file, 'r') as pos_read, open(neg_file, 'r') as neg_read, open(noparses, 'w') as npfile:
         npwriter = csv.writer(npfile, delimiter=',', lineterminator='\n', quotechar='/')
         parser = BottomUpLeftCornerChartParser(not_grammar)
  
@@ -313,8 +316,8 @@ def negate_main(targtrees, predtrees):
     return boolList
 
 def pos_csv_writer(pos_file, structsBOOL, clausalBOOL, pos_parsedBOOL):
-
-    with open(pos_file, 'r') as read_file, open('pos_posBOOLS.csv', 'w') as boolsfile:
+    posbools = os.path.join(argv[2], 'pos_posBOOLS.csv')
+    with open(pos_file, 'r') as read_file, open(posbools, 'w') as boolsfile:
 
         reader = list(csv.reader(read_file, delimiter=','))
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
@@ -329,11 +332,11 @@ def pos_csv_writer(pos_file, structsBOOL, clausalBOOL, pos_parsedBOOL):
             reader[i].extend([structsBOOL[i][3], clausalBOOL[i][3], pos_parsedBOOL[i][3]])
             writer.writerow(reader[i])
     
-    return 'pos_posBOOLS.csv'
+    return posbools
 
 def neg_csv_writer(neg_file, structsBOOL, clausalBOOL, neg_mainBOOL, neg_targBOOL, neg_parsedBOOL):
-    
-    with open(neg_file, 'r') as read_file, open('pos_negBOOLS.csv', 'w') as boolsfile:
+    negbools = os.path.join(argv[2], "pos_negBOOLS.csv")
+    with open(neg_file, 'r') as read_file, open(negbools, 'w') as boolsfile:
 
         reader = list(csv.reader(read_file, delimiter=','))
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
@@ -347,7 +350,7 @@ def neg_csv_writer(neg_file, structsBOOL, clausalBOOL, neg_mainBOOL, neg_targBOO
             reader[i].extend([structsBOOL[i][3], clausalBOOL[i][3], neg_mainBOOL[i][3], neg_targBOOL[i][3], neg_parsedBOOL[i][3]])
             writer.writerow(reader[i])
     
-    return 'pos_negBOOLS.csv'
+    return negbools
 
 def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     # [sourcelen, targlen, predlen, correct, pos]
@@ -454,7 +457,8 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     return max_len, dictlist, dictnames
 
 def write_dicts(dictlist, dictnames, max_len):
-    with open('dicts.csv', 'w') as dictfile:
+    dicts = os.path.join(argv[2], 'dicts.csv')
+    with open(dicts, 'w') as dictfile:
 
         newdicts = [{'Dictionary Name':dictname} for dictname in dictnames]
         
@@ -475,7 +479,7 @@ def write_dicts(dictlist, dictnames, max_len):
 def main():
 
     # Files
-    pos_pos, pos_neg, correctBOOL = read_file(argv[1]) # Reads raw results, turns it into new results by taking off <eos> token
+    pos_pos, pos_neg, correctBOOL = read_file(argv[1], argv[2]) # Reads raw results, turns it into new results by taking off <eos> token
 
     # Strings
     neg_targetBOOL = negate_target(pos_neg) # returns a list of booleans for negating the target verb
