@@ -40,30 +40,6 @@ def read_file(filename, directory):
             boolLIST.append([sourcelen, targlen, predlen, correct, pos])
 
         return posfile, negfile, boolLIST
- 
-# def incorrect_files(pos_pos, pos_neg):
-
-    # with open(pos_pos, 'r') as pos_posfile, open(pos_neg, 'r') as pos_negfile, open("neg_incorrect.csv", 'w') as neg_file, open("pos_incorrect.csv", 'w') as pos_file:
-        
-    #     pos_reader = csv.reader(pos_posfile, delimiter=',')
-    #     neg_reader = csv.reader(pos_negfile, delimiter=',')
-    #     neg_writer = csv.writer(neg_file, delimiter=',', lineterminator='\n', quotechar='/')
-    #     pos_writer = csv.writer(pos_file, delimiter=',', lineterminator='\n', quotechar='/')
-
-    #     for row in pos_reader:
-    #         if row[0] == 'target':
-    #             pos_writer.writerow(row)
-    #         else:
-    #             if row[0] != row[1]:             
-    #                 pos_writer.writerow(row)
-    #     for row in neg_reader:
-    #         if row[0] == 'target':
-    #             neg_writer.writerow(row)
-    #         else:
-    #             if row[0] != row[1]:
-    #                 neg_writer.writerow(row)
-                
-    #     return 'pos_incorrect.csv', 'neg_incorrect.csv'
 
 def negate_target(neg_file):
     with open(neg_file, 'r') as neg_read:
@@ -80,7 +56,6 @@ def negate_target(neg_file):
             else:
                 targsent = line[0].split()
                 predsent = line[1].split()
-                # print(targsent)
                 not_index = targsent.index('not') 
                 targverb = targsent[not_index + 1]
 
@@ -156,43 +131,6 @@ def token_acc(pos_pos, pos_neg):
         token_list = [source_token_template, pred_tokens, targ_tokens, token_precisionlist[0], token_precisionlist[1], token_recallList[0], token_recallList[1], category_precisionlist[0], category_precisionlist[1], category_recallList[0], category_recallList[1]]
         token_names = ['Total source tokens', 'total prediction tokens per source', 'total target tokens per source', 'Pos->pos token precision', 'Pos->neg token precision', 'Pos->pos token recall', 'Pos->neg token recall', 'Pos->Pos category precision', 'Pos->neg category precision', 'Pos->pos category recall', 'Pos->Neg category recall']
         return token_list, token_names
-      
-#TODO: resolve ambiguity with 'the'
-# def preserve_category(posfile, negfile):
-
-    # with open(posfile, 'r') as pos_read, open(negfile, 'r') as neg_read:
-    #     pos_reader = list(csv.reader(pos_read, delimiter=','))[1:]
-    #     neg_reader = list(csv.reader(neg_read, delimiter=','))[1:]
-
-    #     prod_dict = {}
-    #     posBOOL, negBOOL = [], []
-
-    #     for production in not_grammar.productions():
-    #         if isinstance(production.rhs()[0], str):
-    #             prod_dict.update({production.rhs()[0]: production.lhs()})
-
-
-    #     for line in pos_reader:
-    #         targ = line[0].split()
-    #         pred = line[1].split()
-    #         targ_gram = [prod_dict[word] for word in targ]
-    #         pred_gram = [prod_dict[word] for word in pred]
-    #         if targ_gram == pred_gram:
-    #             posBOOL.append(1)
-    #         else:
-    #             posBOOL.append(0)
-
-    #     for line in neg_reader:
-    #         targ = line[0].split()
-    #         pred = line[1].split()
-    #         targ_gram = [prod_dict[word] for word in targ]
-    #         pred_gram = [prod_dict[word] for word in pred]
-    #         if targ_gram == pred_gram:
-    #             negBOOL.append(1)
-    #         else:
-    #             negBOOL.append(0)
-
-    # return posBOOL, negBOOL
   
 def make_trees(pos_file, neg_file):
 
@@ -287,33 +225,54 @@ def equal_structs(targtrees, predtrees):
     return boolList1, boolList2
 
 def negate_main(targtrees, predtrees):
-    boolList = []
+    boolList1, boolList2, boolList3 = [], [], []
     length = range(len(predtrees))
-    for tree in length:
-        sourcelen = targtrees[tree][0]
-        targlen = targtrees[tree][1]
-        predlen = predtrees[tree][1]
-        if predtrees[tree][2] == 'correct':
-            boolList.append([sourcelen, targlen, predlen, 1])
-        elif predtrees[tree][2] == 'N/A':
-            boolList.append([sourcelen, targlen, predlen, 'N/A'])
+    for i in length:
+        sourcelen = targtrees[i][0]
+        targlen = targtrees[i][1]
+        predlen = predtrees[i][1]
+        if predtrees[i][2] == 'correct':
+            boolList1.append([sourcelen, targlen, predlen, 1])
+            boolList2.append([sourcelen, targlen, predlen, 1])
+            boolList3.append([sourcelen, targlen, predlen, 0])
+        elif predtrees[i][2] == 'N/A':
+            boolList1.append([sourcelen, targlen, predlen, 'N/A'])
+            boolList2.append([sourcelen, targlen, predlen, 'N/A'])
+            boolList3.append([sourcelen, targlen, predlen, 'N/A'])
         else:
-            treeslist = []
-            for trees in predtrees[tree][2]:
-                for subtree in trees.subtrees(filter=lambda t: t.label() == 'S'):
+            treeslist1, treeslist2, treeslist3 = [], [], []
+            targsent = targtrees[i][2][0].leaves()
+            not_index = targsent.index('not') 
+            targverb = targsent[not_index + 1]
+
+            for tree in predtrees[i][2]:
+                predsent = tree.leaves()
+                for subtree in tree.subtrees(filter=lambda t: t.label() == 'S'):
                     subtree
                 if len(subtree) == 2 and subtree[1][1].leaves()[0] == 'not':
-                    treeslist.append(1)
+                    treeslist1.append(1)
+                    if tree.leaves()[tree.leaves().index('not') + 1] == targverb:
+                        treeslist2.append(1)
                 else:
-                    treeslist.append(0)
-            if 1 in treeslist:
-                boolList.append([sourcelen, targlen, predlen, 1])
-                    # print(subtree.leaves())
+                    if 'not' in tree.leaves():
+                        treeslist3.append(1)
+
+            if 1 in treeslist1:
+                boolList1.append([sourcelen, targlen, predlen, 1])
             else:
-                boolList.append([sourcelen, targlen, predlen, 0])
+                boolList1.append([sourcelen, targlen, predlen, 0])
+            if 1 in treeslist2:
+                boolList2.append([sourcelen, targlen, predlen, 1])
+            else:
+                boolList2.append([sourcelen, targlen, predlen, 0])
+            if 1 in treeslist3:
+                boolList3.append([sourcelen, targlen, predlen, 1])
+            else:
+                boolList3.append([sourcelen, targlen, predlen, 0])
+
                 
     
-    return boolList
+    return boolList1, boolList2, boolList3
 
 def pos_csv_writer(pos_file, structsBOOL, clausalBOOL, pos_parsedBOOL):
     posbools = os.path.join(argv[2], 'pos_posBOOLS.csv')
@@ -334,20 +293,20 @@ def pos_csv_writer(pos_file, structsBOOL, clausalBOOL, pos_parsedBOOL):
     
     return posbools
 
-def neg_csv_writer(neg_file, structsBOOL, clausalBOOL, neg_mainBOOL, neg_targBOOL, neg_parsedBOOL):
+def neg_csv_writer(neg_file, structsBOOL, clausalBOOL, neg_mainBOOL, neg_targBOOL, neg_targmainBOOL, negnotmainBOOL, neg_parsedBOOL):
     negbools = os.path.join(argv[2], "pos_negBOOLS.csv")
     with open(neg_file, 'r') as read_file, open(negbools, 'w') as boolsfile:
 
         reader = list(csv.reader(read_file, delimiter=','))
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
 
-        reader[0].extend(["Preserves Tree Structure", "Preserves Significant Clauses", "Negates Main Verb", "Negates Target Verb", "Parseable"])
+        reader[0].extend(["Preserves Tree Structure", "Preserves Significant Clauses", "Negates Main Verb", "Negates Target Verb", "Negates Target Verb in Main Clause", "Negation Present Outside the Main Clause", "Parseable"])
         writer.writerow(reader[0])
 
         reader = reader[1:]
         length = range(len(reader))
         for i in length:
-            reader[i].extend([structsBOOL[i][3], clausalBOOL[i][3], neg_mainBOOL[i][3], neg_targBOOL[i][3], neg_parsedBOOL[i][3]])
+            reader[i].extend([structsBOOL[i][3], clausalBOOL[i][3], neg_mainBOOL[i][3], neg_targBOOL[i][3], neg_targmainBOOL[i][3], negnotmainBOOL[i][3], neg_parsedBOOL[i][3]])
             writer.writerow(reader[i])
     
     return negbools
@@ -372,8 +331,8 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     pos_structsDICT, pos_clausalDICT, pos_parseableDICT = dict(templatelist[0]), dict(templatelist[0]), dict(templatelist[0])
     pos_dicts = [pos_structsDICT, pos_clausalDICT, pos_parseableDICT]
 
-    neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT, neg_parseableDICT = dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1])
-    neg_dicts = [neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT, neg_parseableDICT]
+    neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT, negates_targmainDICT, neg_notmainDICT, neg_parseableDICT = dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1]), dict(templatelist[1])
+    neg_dicts = [neg_structsDICT, neg_clausalDICT, negates_mainDICT, negates_targDICT, negates_targmainDICT, neg_notmainDICT, neg_parseableDICT]
 
     pos_correctDICT, neg_correctDICT, total_correctDICT = dict(templatelist[0]), dict(templatelist[1]), dict(templatelist[2])
     correct_dicts = [pos_correctDICT, neg_correctDICT, total_correctDICT]
@@ -429,11 +388,13 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     pos_averages[0], 
     pos_averages[1],
     neg_parseableDICT, 
-    neg_averages[4], 
+    neg_averages[6], 
     neg_averages[0], 
     neg_averages[1], 
     neg_averages[2], 
-    neg_averages[3]]
+    neg_averages[3],
+    neg_averages[4],
+    neg_averages[5]]
     dictnames = ["Total Sentences per Length", 
     "Total Correct Sentences per Length", 
     "Total pos->pos sents per len", 
@@ -452,7 +413,9 @@ def make_dicts(posBOOLS, negBOOLS, correctBOOL):
     'Preserve tree structures (pos->neg)', 
     'Preserve significant clauses (pos->neg)', 
     'Negates main clause (pos->neg)', 
-    'Negates target (pos->neg)']
+    'Negates target (pos->neg)',
+    'Negates target in the main clause (pos->neg)',
+    'Negates outside of the main clause (pos->neg)']
     
     return max_len, dictlist, dictnames
 
@@ -488,12 +451,12 @@ def main():
     pos_targTREES, pos_predTREES, neg_targTREES, neg_predTREES, pos_parsedBOOL, neg_parsedBOOL = make_trees(pos_pos, pos_neg) # create trees for all transformations
     pos_structsBOOL, pos_clausalBOOL = equal_structs(pos_targTREES, pos_predTREES) # [sourcelen, targlen, predlen, BOOL]
     neg_structsBOOL, neg_clausalBOOL = equal_structs(neg_targTREES, neg_predTREES)
-    neg_mainBOOL = negate_main(neg_targTREES, neg_predTREES) # [sourcelen, targlen, predlen, BOOL]
+    neg_mainBOOL, neg_targmainBOOL, negnotmainBOOL = negate_main(neg_targTREES, neg_predTREES) # [sourcelen, targlen, predlen, BOOL]
     posBOOLS = pos_csv_writer(pos_pos, pos_structsBOOL, pos_clausalBOOL,pos_parsedBOOL)
-    negBOOLS = neg_csv_writer(pos_neg, neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL, neg_parsedBOOL)  # writes into a new CSV with columns: targ, pred, boolean values
+    negBOOLS = neg_csv_writer(pos_neg, neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL, neg_targmainBOOL, negnotmainBOOL, neg_parsedBOOL)  # writes into a new CSV with columns: targ, pred, boolean values
     
     # Dictionaries
-    pos_boolLIST, neg_boolLIST = [pos_structsBOOL, pos_clausalBOOL, pos_parsedBOOL], [neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL, neg_parsedBOOL]
+    pos_boolLIST, neg_boolLIST = [pos_structsBOOL, pos_clausalBOOL, pos_parsedBOOL], [neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL, neg_targmainBOOL, negnotmainBOOL, neg_parsedBOOL]
     max_len, dictlist, dictnames = make_dicts(pos_boolLIST, neg_boolLIST, correctBOOL)
     dictlist.extend(tokenList)
     dictnames.extend(token_names)
