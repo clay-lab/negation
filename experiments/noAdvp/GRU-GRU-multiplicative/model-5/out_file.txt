@@ -1,0 +1,31 @@
+Training epoch 1/40 on train data
+Evaluating epoch 1/40
+sentence-level-accuracy   86.106 %
+token-level-accuracy      93.255 %
+loss                      0.57933 
+sentence-level-accuracy   81.94 %token-level-accuracy      93.25 %Training epoch 2/40 on train data
+Evaluating epoch 2/40
+sentence-level-accuracy   98.082 %
+token-level-accuracy      98.919 %
+loss                      0.038177 
+sentence-level-accuracy   90.98 %token-level-accuracy      98.921 %Training epoch 3/40 on train data
+Evaluating epoch 3/40
+sentence-level-accuracy   99.322 %
+token-level-accuracy      99.712 %
+loss                      0.012418 
+sentence-level-accuracy   91.9 %token-level-accuracy      99.763 %Training epoch 4/40 on train data
+Evaluating epoch 4/40
+sentence-level-accuracy   98.381 %
+token-level-accuracy      99.664 %
+loss                      0.01284 
+sentence-level-accuracy   91.15 %token-level-accuracy      99.819 %Training epoch 5/40 on train data
+Evaluating epoch 5/40
+sentence-level-accuracy   95.699 %
+token-level-accuracy      99.095 %
+loss                      0.020831 
+sentence-level-accuracy   88.42 %token-level-accuracy      98.995 %Training epoch 6/40 on train data
+Evaluating epoch 6/40
+sentence-level-accuracy   98.64 %
+token-level-accuracy      99.667 %
+loss                      0.01268 
+sentence-level-accuracy   90.81 %token-level-accuracy      99.655 %Early stopping, resetting to last checkpoint.
