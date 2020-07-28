@@ -216,12 +216,10 @@ def make_trees(pos_file, neg_file):
             correctlist = [int(line[5]) for line in readerlist[i]]
 
             # return list of generators for parses
-            targ_parses = [parser.parse(targlist[j]) if correctlist[j] != 1 else "correct" for j in range(len(targlist))]
-            pred_parses = [parser.parse(predlist[j]) if correctlist[j] != 1 else "correct" for j in range(len(predlist))]
+            targ_parses = [list(parser.parse(targlist[j])) if correctlist[j] != 1 else "correct" for j in range(len(targlist))]
+            pred_parses = [list(parser.parse(predlist[j])) if correctlist[j] != 1 else "correct" for j in range(len(predlist))]
 
-            # returns number of parses in each generator
-            len_predparses = [len(list(parser.parse(pred))) for pred in predlist]
- 
+            # returns number of parses in each generator 
             npwriter.writerow(['Target', 'Prediction', 'Source Length'])
             for j in range(len(pred_parses)):
                 if pred_parses[j] == "correct":
@@ -229,14 +227,14 @@ def make_trees(pos_file, neg_file):
                     treeslist[i][1].append([sourcelen[j], predlen[j], "correct"])
                     boolList[i].append([sourcelen[j], targlen[j], predlen[j], 1])
                 else:
-                    if len_predparses[j] == 0: 
+                    if len(pred_parses[j]) == 0: 
                         npwriter.writerow([' '.join(targlist[j]), ' '.join(predlist[j]), sourcelen[j]])
                         treeslist[i][0].append([sourcelen[j], targlen[j], 'N/A'])
                         treeslist[i][1].append([sourcelen[j], predlen[j], 'N/A'])
                         boolList[i].append([sourcelen[j], targlen[j], predlen[j], 0])
                     else:
                             # append target tree, append pred parses GENERATOR not tree
-                            treeslist[i][0].append([sourcelen[j], targlen[j], next(targ_parses[j])])
+                            treeslist[i][0].append([sourcelen[j], targlen[j], targ_parses[j]])
                             treeslist[i][1].append([sourcelen[j], predlen[j], pred_parses[j]])
                             boolList[i].append([sourcelen[j], targlen[j], predlen[j], 1])
 
@@ -244,63 +242,46 @@ def make_trees(pos_file, neg_file):
 
 def equal_structs(targtrees, predtrees):
     
-    boolList = []
+    boolList1, boolList2 = [], []
     length = range(len(targtrees))
-    for tree in length:
-        sourcelen = targtrees[tree][0]
-        targlen = targtrees[tree][1]
-        predlen = predtrees[tree][1]
-        if targtrees[tree][2] == 'correct':
-            boolList.append([sourcelen, targlen, predlen, 1])
-        elif targtrees[tree][2] == 'N/A':
-            boolList.append([sourcelen, targlen, predlen, 'N/A'])
+    for i in length:
+        sourcelen = targtrees[i][0]
+        targlen = targtrees[i][1]
+        predlen = predtrees[i][1]
+        if targtrees[i][2] == 'correct':
+            boolList1.append([sourcelen, targlen, predlen, 1])
+            boolList2.append([sourcelen, targlen, predlen, 1])
+        elif targtrees[i][2] == 'N/A':
+            boolList1.append([sourcelen, targlen, predlen, 'N/A'])
+            boolList2.append([sourcelen, targlen, predlen, 'N/A'])
         elif (targlen != predlen):
-            boolList.append([sourcelen, targlen, predlen, 0])
+            boolList1.append([sourcelen, targlen, predlen, 0])
+            boolList2.append([sourcelen, targlen, predlen, 0])
         else:
-            treeslist = []
-            for trees in predtrees[tree][2]:
-                targprods = (targtrees[tree][2]).productions()
-                predprods = trees.productions()
-                targNodes = [production.lhs() for production in targprods]
-                predNodes = [production.lhs() for production in predprods]
-                if targNodes == predNodes:
-                    treeslist.append(1)
-                else:
-                    treeslist.append(0)
-            if 1 in treeslist:
-                boolList.append([sourcelen, targlen, predlen, 1])
+            targprods = [tree.productions() for tree in targtrees[i][2]]
+            predprods = [tree.productions() for tree in predtrees[i][2]]
+            targNodes, predNodes, targclauses, predclauses = [], [], [], []
+            structlist, clauselist = [], []
+            for j in range(len(targprods)):
+                targNodes.append([production.lhs() for production in targprods[j]])
+                targclauses.append([str(nodes) for nodes in targNodes[j] if (str(nodes) == 'S' or str(nodes) == 'AdvP' or str(nodes) == 'RelP')])
+            for j in range(len(predprods)):
+                predNodes.append([production.lhs() for production in predprods[j]])
+                predclauses.append([str(nodes) for nodes in predNodes[j] if (str(nodes) == 'S' or str(nodes) == 'AdvP' or str(nodes) == 'RelP')])
+            for j in range(len(targNodes)):
+                for k in range(len(predNodes)):
+                    structlist.append(targNodes[j] == predNodes[k])
+                    clauselist.append(targclauses[j] == predclauses[k])
+            if True in structlist:
+                boolList1.append([sourcelen, targlen, predlen, 1])
             else:
-                boolList.append([sourcelen, targlen, predlen, 0])
-
-    return boolList
-
-def clausal(targtrees, predtrees):
-
-    boolList = []
-    length = range(len(targtrees))
-    for tree in length:
-        sourcelen = targtrees[tree][0]
-        targlen = targtrees[tree][1]
-        predlen = predtrees[tree][1]
-        if targtrees[tree][2] == 'correct':
-            boolList.append([sourcelen, targlen, predlen, 1])
-        elif targtrees[tree][2] == 'N/A':
-            boolList.append([sourcelen, targlen, predlen,'N/A'])
-        else:
-            treeslist = []
-            targNodes = [prod for prod in targtrees[tree][2].productions() if (str(prod.lhs()) == 'S' or str(prod.lhs()) == 'AdvP' or str(prod.lhs()) == 'RelP') or ('S' in str(prod.rhs()) or 'AdvP' in str(prod.rhs()) or 'RelP' in str(prod.rhs())) or 'VP' in str(prod.rhs())]
-            for trees in predtrees[tree][2]:
-                predNodes = [prod for prod in trees.productions() if (str(prod.lhs()) == 'S' or str(prod.lhs()) == 'AdvP' or str(prod.lhs()) == 'RelP') or ('S' in str(prod.rhs()) or 'AdvP' in str(prod.rhs()) or 'RelP' in str(prod.rhs())) or 'VP' in str(prod.rhs())]
-                if targNodes == predNodes:
-                    treeslist.append(1)
-                else:
-                    treeslist.append(0)
-            if 1 in treeslist:
-                boolList.append([sourcelen, targlen, predlen, 1])
+                boolList1.append([sourcelen, targlen, predlen, 0])
+            if True in clauselist:
+                boolList2.append([sourcelen, targlen, predlen, 1])
             else:
-                boolList.append([sourcelen, targlen, predlen, 0])
+                boolList2.append([sourcelen, targlen, predlen, 0])
 
-    return boolList
+    return boolList1, boolList2
 
 def negate_main(targtrees, predtrees):
     boolList = []
@@ -501,8 +482,9 @@ def main():
     tokenList, token_names = token_acc(pos_pos, pos_neg) # returns proportion of correct tokens (pos, neg)
     # Trees
     pos_targTREES, pos_predTREES, neg_targTREES, neg_predTREES, pos_parsedBOOL, neg_parsedBOOL = make_trees(pos_pos, pos_neg) # create trees for all transformations
-    pos_structsBOOL, pos_clausalBOOL = equal_structs(pos_targTREES, pos_predTREES), clausal(pos_targTREES, pos_predTREES) # [sourcelen, targlen, predlen, BOOL]
-    neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL = equal_structs(neg_targTREES, neg_predTREES), clausal(neg_targTREES, neg_predTREES), negate_main(neg_targTREES, neg_predTREES) # [sourcelen, targlen, predlen, BOOL]
+    pos_structsBOOL, pos_clausalBOOL = equal_structs(pos_targTREES, pos_predTREES) # [sourcelen, targlen, predlen, BOOL]
+    neg_structsBOOL, neg_clausalBOOL = equal_structs(neg_targTREES, neg_predTREES)
+    neg_mainBOOL = negate_main(neg_targTREES, neg_predTREES) # [sourcelen, targlen, predlen, BOOL]
     posBOOLS = pos_csv_writer(pos_pos, pos_structsBOOL, pos_clausalBOOL,pos_parsedBOOL)
     negBOOLS = neg_csv_writer(pos_neg, neg_structsBOOL, neg_clausalBOOL, neg_mainBOOL, neg_targetBOOL, neg_parsedBOOL)  # writes into a new CSV with columns: targ, pred, boolean values
     
