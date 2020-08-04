@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["C:/Users/shayn/Documents/Github/negation/experiments/negation/GRU-GRU-None/model-1/results/negation.tsv", "C:/Users/shayn/Documents/Github/negation/experiments/negation/None-results/model-1"]
+            "args": ["C:/Users/shayn/Documents/Github/negation/experiments/negation/GRU-GRU-Multiplicative/model-3/results/negation.tsv", "C:/Users/shayn/Documents/Github/negation/experiments/negation/Multiplicative-results/model-3"]
              }
     ]
 }
