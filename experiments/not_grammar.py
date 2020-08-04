@@ -33,36 +33,10 @@ import random
 #TODO: ADD NEG
 S, NP, MP, VP, AdvP, VPTr, RelP, NPTr, Det, N, PN, Pron, M, VInTr, VTr, NTr, PlDet,PlNTr, RP, NTand, Adv, Neg = nonterminals('S, NP, MP, VP, AdvP, VPTr, RelP, NPTr, Det, N, PN, Pron, M, VInTr, VTr, NTr, PlDet,PlNTr, RP, NTand, Adv, Neg')
 
-# not_grammar = CFG.fromstring("""
-#     S -> NP MP | AdvP S | S AdvP
-#     NP -> Det N | PN | Pron
-#     MP -> M VP | M Neg VP
-#     VP -> VInTr | VPTr | VPTr RelP
-#     AdvP -> Adv NP MP
-#     VPTr -> VTr NPTr
-#     RelP -> RP NP M VTr | RP NP M Neg Vtr
-#     NPTr -> Det NTr | PlDet PlNTr
-#     Det -> 'the' | 'a' 
-#     N -> 'student' | 'professor' | 'wizard' | 'witch'
-#     PN -> 'harry'   | 'ginny'   | 'hermione'  | 'ron'   | 'fred'   | 'george'   | 'petunia'   | 'vernon'   | 'lily'   | 'hagrid'   | 'james'   | 'neville'   | 'snape'   | 'dobby'   | 'mcgonagall'   | 'lupin'   | 'draco'   | 'voldemort'   | 'sirius'   | 'albus'  
-#     Pron -> 'he'   | 'she'  
-#     M -> 'can'   | 'may'   | 'must'   | 'should'   
-#     VInTr -> 'hiccup'   | 'party'  | 'wiggle'   | 'laugh'   | 'smile'   | 'giggle'   | 'jump'   | 'run'   | 'walk'   | 'swim'  
-#     VTr -> 'prepare'   | 'make'   | 'eat'   | 'sprinkle'   | 'arrange'   | 'chew'   | 'gobble'   | 'assemble'   | 'create'   | 'hide'  
-#     NTr -> 'cookie'   | 'cake'   | 'chocolate'   | 'pancake'   | 'souffle'   | 'eclaire'   | 'croissant'   | 'strudel'   | 'baklava'   | 'doughnut'  
-#     PlDet -> 'the'   | 'many'   
-#     PlNTr -> 'cookies'   | 'cakes'   | 'chocolates'   | 'pancakes'   | 'souffles'   | 'eclaires'   | 'croissants'   | 'strudels'   | 'baklava'   | 'doughnuts'  
-#     RP -> 'that'   | 'which'   
-#     NTand -> 'and'  
-#     Adv -> 'because'   | 'since'     
-#     Neg -> 'not'  
-    
-# """)
-
-#
-
 not_grammar = PCFG.fromstring("""
-    S -> NP MP [0.3] | AdvP S [0.3] | S AdvP [0.2] | AdvP [0.2]
+    S -> AdvP S [0.2] | AdvP [0.2] | S1 [0.6]
+    S1 -> S1 AdvP [0.2] | S2 [0.8]
+    S2 -> NP MP [1.0]
     NP -> Det N [0.2] | PN [0.7] | Pron [0.1] 
     MP -> M VP [0.5] | M Neg VP [0.5]
     VP -> VTr [0.2] | VPTr [0.4] | VPTr RelP [0.4] 
@@ -77,8 +51,8 @@ not_grammar = PCFG.fromstring("""
     M -> 'can' [0.2] | 'may' [0.2] | 'must' [0.3] | 'should' [0.3] 
     VTr -> 'hiccup' [0.05] | 'party'[0.05] | 'wiggle' [0.05] | 'laugh' [0.05] | 'smile' [0.05] | 'giggle' [0.05] | 'jump' [0.05] | 'run' [0.05] | 'walk' [0.05] | 'swim' [0.05]
     VTr -> 'prepare' [0.05] | 'make' [0.05] | 'eat' [0.05] | 'sprinkle' [0.05] | 'arrange' [0.05] | 'chew' [0.05] | 'gobble' [0.05] | 'assemble' [0.05] | 'create' [0.05] | 'hide' [0.05]
-    NTr -> 'cookie' [0.1] | 'cake' [0.1] | 'chocolate' [0.1] | 'pancake' [0.1] | 'souffle' [0.1] | 'eclaire' [0.1] | 'croissant' [0.1] | 'strudel' [0.1] | 'baklava' [0.1] | 'doughnut' [0.1]
-    PlNTr -> 'cookies' [0.1] | 'cakes' [0.1] | 'chocolates' [0.1] | 'pancakes' [0.1] | 'souffles' [0.1] | 'eclaires' [0.1] | 'croissants' [0.1] | 'strudels' [0.1] | 'baklava' [0.1] | 'doughnuts' [0.1]
+    NTr -> 'cookie' [0.05] | 'cake' [0.05] | 'chocolate' [0.05] | 'pancake' [0.05] | 'souffle' [0.05] | 'eclaire' [0.05] | 'croissant' [0.05] | 'strudel' [0.05] | 'baklava' [0.05] | 'doughnut' [0.05]
+    NTr -> 'cookies' [0.05] | 'cakes' [0.05] | 'chocolates' [0.05] | 'pancakes' [0.05] | 'souffles' [0.05] | 'eclaires' [0.05] | 'croissants' [0.05] | 'strudels' [0.05] | 'baklava' [0.05] | 'doughnuts' [0.05]
     RP -> 'that' [0.6] | 'which' [0.4] 
     NTand -> 'and' [1.0]
     Adv -> 'because' [0.5] | 'since' [0.5]   
