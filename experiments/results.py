@@ -395,7 +395,7 @@ def main():
     dictnames.extend(negmainNAMES)
     targDICTS, targNAMES = negate_target(neg_list, neg_template, templateDICT, len_range) # returns a list of booleans for negating the target verb
     dictlist.extend(targDICTS)
-    dictlist.extend(targNAMES)
+    dictnames.extend(targNAMES)
     pos_csv_writer(pos_list)
     neg_csv_writer(neg_list)  # writes into a new CSV with columns: targ, pred, boolean values
     # Dictionaries
