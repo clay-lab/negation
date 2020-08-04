@@ -58,9 +58,11 @@ def read_file(filename):
                 "Correct Pos->Pos Transformations (%)",
                 "Correct Pos->Neg Transformations (%)",
                 "Total Correct Transformations (%)"]
+    avgdictlist = [dictlist[6], dictlist[7], dictlist[8]]
+    avgdictnames = [dictnames[6], dictnames[7], dictnames[8]]
 
 
-    return pos_list, neg_list, dict(pos_template), dict(neg_template), dict(templateDICT), dictlist, dictnames, len_range
+    return pos_list, neg_list, dict(pos_template), dict(neg_template), dict(templateDICT), dictlist, dictnames, len_range, avgdictlist, avgdictnames
 
 def negate_target(neg_list, neg_templateDICT, templateDICT, len_range):
     # dicts: has the target verb, negates the target verb
@@ -97,7 +99,9 @@ def negate_target(neg_list, neg_templateDICT, templateDICT, len_range):
                 "Pos->Neg Predictions Negating the Target Verb (Denominator: all pos->neg sentences)",
                 "Pos->Neg Predictions Negating the Target Verb (Denominator: pos->neg with target verb)"
                 ]
-    return dictlist, dictnames
+    avgdictlist = dictlist 
+    avgdictnames = dictnames
+    return dictlist, dictnames, avgdictlist, avgdictnames
 
 def token_acc(pos_list, neg_list, templateDICT, len_range):
         sentlist = [pos_list, neg_list]
@@ -164,8 +168,11 @@ def token_acc(pos_list, neg_list, templateDICT, len_range):
         'Pos->Pos Category Precision (%)', 
         'Pos->Neg Category Precision (%)', 
         'Pos->Pos Category Recall (%)', 
-        'Pos->Neg Category Recall']
-        return token_dicts, token_names
+        'Pos->Neg Category Recall (%)']
+
+        avgdictlist = token_dicts[3:]
+        avgdictnames = token_names[3:]
+        return token_dicts, token_names, avgdictlist, avgdictnames
   
 def make_trees(pos_list, neg_list, templateDICT, pos_template, neg_template, len_range):
 
@@ -216,7 +223,9 @@ def make_trees(pos_list, neg_list, templateDICT, pos_template, neg_template, len
                         'Parseable Sentences (%)',
                         'Pos->Pos Parseable Sentences (%)',
                         'Pos->Neg Parseable Sentences (%)']
-        return treeslist, dictlist, dictnames
+        avgdictlist = dictlist[3]
+        avgdictnames = dictnames[3]
+        return treeslist, dictlist, dictnames, avgdictlist, avgdictnames
 
 def equal_structs(pos_list, neg_list, treeslist, templateDICT, pos_template, neg_template, totalparseableDICT, parseableDICT, len_range):
     #treeslist: [[postarg, pospred], [negtarg, negpred]]
@@ -265,7 +274,9 @@ def equal_structs(pos_list, neg_list, treeslist, templateDICT, pos_template, neg
                 "Pos->Neg Preseve Tree Structures (%)",
                 "Pos->Neg Preserve Significant Clauses (%)"]
     
-    return dictlist, dictnames
+    avgdictlist = dictlist
+    avgdictnames = dictnames
+    return dictlist, dictnames, avgdictlist, avgdictnames
 
 def negate_main(neg_list, targtrees, predtrees, templateDICT, neg_template, neg_parsesDICT, len_range):
     # extend(has main clause, negates main clause, negates outside of main clause)
@@ -307,16 +318,21 @@ def negate_main(neg_list, targtrees, predtrees, templateDICT, neg_template, neg_
     avgnegmainDICT = {length + 1: str(round((negates_mainDICT[length + 1] / neg_template[length + 1]) * 100, 2)) + '%' for length in len_range}
     avgnegmainonlymainDICT = {length + 1: str(round((negates_mainDICT[length + 1] / main_clauseDICT[length + 1]) * 100, 2)) + '%' for length in len_range}
     avghasmainDICT = {length + 1: str(round((main_clauseDICT[length + 1] / neg_template[length + 1]) * 100, 2)) + '%' for length in len_range}
+    avgnegatesoutsideDICT = {length + 1: str(round((negates_outsideDICT[length + 1] / main_clauseDICT[length + 1]) * 100, 2)) + '%' for length in len_range}
 
-    dictlist = [main_clauseDICT, negates_mainDICT, negates_outsideDICT, no_mainDICT, avgnegmainDICT, avgnegmainonlymainDICT, avghasmainDICT]
+    dictlist = [main_clauseDICT, negates_mainDICT, negates_outsideDICT, avgnegatesoutsideDICT, no_mainDICT, avgnegmainDICT, avgnegmainonlymainDICT, avghasmainDICT]
     dictnames = ["Pos->Neg Predictions with Main Clause (#)",
                 "Pos->Neg Predictions that Negate Main Clause (#)",
                 "Pos->Neg Predictions that Negate Outside Main Clause (#)",
+                "Pos->Neg Predictions that Negate Outside Main Clause (%)",
                 "Pos->Neg Predictions without Main Clause (#)",
                 "Pos->Neg Predictions that Negate Main Clause (Denominator: all Pos->Neg sentences)",
                 "Pos->Neg Predictions that Negate Main Clause (Denominator: only Pos->Neg sentences with main clauses)",
                 "Pos->Neg Predictions with Main Clause (%)"]
-    return dictlist, dictnames
+    avgdictlist = [dictlist[3], dictlist[5], dictlist[6], dictlist[7]]
+    avgdictnames = [dictnames[3], dictnames[5], dictnames[6], dictnames[7]]
+
+    return dictlist, dictnames, avgdictlist, avgdictnames
 
 def pos_csv_writer(pos_list):
     posbools = os.path.join(argv[2], 'pos_pos.csv')
@@ -358,10 +374,9 @@ def neg_csv_writer(neg_list):
         for i in range(len(neg_list)):
             writer.writerow([neg_list[i]])
 
-def write_dicts(dictlist, dictnames, len_range):
+def write_dicts(dictlist, dictnames, avgdictlist, avgdictnames, len_range):
     dicts = os.path.join(argv[2], 'dicts.csv')
     with open(dicts, 'w') as dictfile:
-
         newdicts = [{'Dictionary Name':dictname} for dictname in dictnames]
         
         for i in range(len(newdicts)):
@@ -380,24 +395,29 @@ def write_dicts(dictlist, dictnames, len_range):
 def main():
     # pos_list: target sent, pred sent, sourcelen, targlen, predlen, correctBOOL
     # templates: total transformations (templateDICT is blank)
-    pos_list, neg_list, pos_template, neg_template, templateDICT, dictlist, dictnames, len_range = read_file(argv[1])
-    tokenDICTS, tokenNAMES = token_acc(pos_list, neg_list, templateDICT, len_range) # returns proportion of correct tokens (pos, neg)
-    dictlist.extend(tokenDICTS)
-    dictnames.extend(tokenNAMES)
-    treeslist, parseDICTS, parseNAMES = make_trees(pos_list, neg_list, templateDICT, pos_template, neg_template, len_range) # create trees for all transformations
-    dictlist.extend(parseDICTS)
-    dictnames.extend(parseNAMES)
-    structDICTS, structNAMES = equal_structs(pos_list, neg_list, treeslist, templateDICT, pos_template, neg_template, parseDICTS[0], parseDICTS[1], len_range) # [sourcelen, targlen, predlen, BOOL]
-    dictlist.extend(structDICTS)
-    dictnames.extend(structNAMES)
-    negmainDICTS, negmainNAMES = negate_main(neg_list, treeslist[1][0], treeslist[1][1], templateDICT, neg_template, parseDICTS[2], len_range) # [sourcelen, targlen, predlen, BOOL]
-    dictlist.extend(negmainDICTS)
-    dictnames.extend(negmainNAMES)
-    targDICTS, targNAMES = negate_target(neg_list, neg_template, templateDICT, len_range) # returns a list of booleans for negating the target verb
-    dictlist.extend(targDICTS)
-    dictnames.extend(targNAMES)
+    pos_list, neg_list, pos_template, neg_template, templateDICT, dictlist, dictnames, len_range, avgdictlist, avgdictnames = read_file(argv[1])
+    tokenDICTS, tokenNAMES, avgtokenlist, avgtokennames = token_acc(pos_list, neg_list, templateDICT, len_range) # returns proportion of correct tokens (pos, neg)
+    dictlist.extend(tokenDICTS), dictnames.extend(tokenNAMES)
+    avgdictlist.extend(avgtokenlist), avgdictnames.extend(avgtokennames)
+    
+    treeslist, parseDICTS, parseNAMES, avgparselist, avgparsenames = make_trees(pos_list, neg_list, templateDICT, pos_template, neg_template, len_range) # create trees for all transformations
+    dictlist.extend(parseDICTS), dictnames.extend(parseNAMES)
+    avgdictlist.extend(avgparselist), avgdictnames.extend(avgparsenames)
+   
+    structDICTS, structNAMES, avgstructlist, avgstructnames = equal_structs(pos_list, neg_list, treeslist, templateDICT, pos_template, neg_template, parseDICTS[0], parseDICTS[1], len_range) # [sourcelen, targlen, predlen, BOOL]
+    dictlist.extend(structDICTS), dictnames.extend(structNAMES)
+    avgdictlist.extend(avgstructlist), avgdictnames.extend(avgstructnames)
+    
+    negmainDICTS, negmainNAMES, avgmainlist, avgmainnames = negate_main(neg_list, treeslist[1][0], treeslist[1][1], templateDICT, neg_template, parseDICTS[2], len_range) # [sourcelen, targlen, predlen, BOOL]
+    dictlist.extend(negmainDICTS), dictnames.extend(negmainNAMES)
+    avgdictlist.extend(avgmainlist), avgdictnames.extend(avgmainnames)
+    
+    targDICTS, targNAMES, avgtarglist, avgtargnames = negate_target(neg_list, neg_template, templateDICT, len_range) # returns a list of booleans for negating the target verb
+    dictlist.extend(targDICTS), dictnames.extend(targNAMES)
+    avgdictlist.extend(avgtarglist), avgdictnames.extend(avgtargnames)
+    
     pos_csv_writer(pos_list)
     neg_csv_writer(neg_list)  # writes into a new CSV with columns: targ, pred, boolean values
     # Dictionaries
-    write_dicts(dictlist, dictnames, len_range)
+    write_dicts(dictlist, dictnames, avgdictlist, avgdictnames, len_range)
 main()
