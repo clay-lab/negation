@@ -383,7 +383,7 @@ def write_dicts(dictlist, dictnames, avgdictlist, avgdictnames, len_range):
             newdicts[i].update(dictlist[i])
         
         len_range[0] = 'Dictionary Name'
-        len_range.append(23)
+        len_range.append(len_range[-1] + 1)
         fieldnames = len_range
 
         writer = csv.DictWriter(dictfile, fieldnames=fieldnames, delimiter=',', lineterminator='\n')
