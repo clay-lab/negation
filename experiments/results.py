@@ -349,7 +349,7 @@ def pos_csv_writer(pos_list):
                         "Preserves Significant Clauses (S, AdvP, RelP)"])
 
         for i in range(len(pos_list)):
-            writer.writerow([pos_list[i]])
+            writer.writerow(pos_list[i])
     
 def neg_csv_writer(neg_list):
     negbools = os.path.join(argv[2], "pos_neg.csv")
@@ -372,7 +372,7 @@ def neg_csv_writer(neg_list):
                         "Negates Target Verb"])
 
         for i in range(len(neg_list)):
-            writer.writerow([neg_list[i]])
+            writer.writerow(neg_list[i])
 
 def write_dicts(dictlist, dictnames, avgdictlist, avgdictnames, len_range):
     dicts = os.path.join(argv[2], 'dicts.csv')
