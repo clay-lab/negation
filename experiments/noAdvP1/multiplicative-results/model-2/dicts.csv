@@ -37,6 +37,8 @@ Pos->Neg Predictions without Main Clause (#),4,1,32,44,37,44,14,15,51,49,30,14,3
 Pos->Neg Predictions that Negate Main Clause (Denominator: all Pos->Neg sentences),0.98%,0.0%,0.0%,0.0%,0.0%,0.0%,0.28%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,1.23%
 Pos->Neg Predictions that Negate Main Clause (Denominator: only Pos->Neg sentences with main clauses),2.08%,0.0%,0.0%,0.0%,0.0%,0.0%,0.38%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,0.0%,3.12%
 Pos->Neg Predictions with Main Clause (%),47.06%,79.63%,66.75%,68.22%,79.95%,60.81%,73.45%,82.33%,84.21%,77.37%,70.35%,46.88%,78.15%,78.44%,62.6%,55.17%,38.58%,39.51%
+Pos->Neg Predictions Containing the Target Verb (#),89,53,340,206,394,215,315,244,751,503,203,55,344,337,217,143,95,58
 Pos->Neg Predictions Containing the Target Verb (%),87.25%,98.15%,86.96%,96.26%,98.75%,96.85%,88.98%,91.73%,94.11%,93.32%,89.82%,85.94%,88.43%,90.84%,82.82%,82.18%,74.8%,71.6%
+Pos->Neg Prediction Negating the Target Verb (#),3,7,1,0,41,28,6,0,54,59,25,4,34,29,28,13,7,5
 Pos->Neg Predictions Negating the Target Verb (Denominator: all pos->neg sentences),2.94%,12.96%,0.26%,0.0%,10.28%,12.61%,1.69%,0.0%,6.77%,10.95%,11.06%,6.25%,8.74%,7.82%,10.69%,7.47%,5.51%,6.17%
 Pos->Neg Predictions Negating the Target Verb (Denominator: pos->neg with target verb),3.37%,13.21%,0.29%,0.0%,10.41%,13.02%,1.9%,0.0%,7.19%,11.73%,12.32%,7.27%,9.88%,8.61%,12.9%,9.09%,7.37%,8.62%
