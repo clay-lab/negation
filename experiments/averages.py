@@ -36,7 +36,7 @@ def main():
         for i in range(dictnum):
             meandict = []
             for j in range(len(collatedDicts[0][0])):
-                meandict.append(mean([collatedDicts[i][0][j], collatedDicts[i][1][j], collatedDicts[i][2][j], collatedDicts[i][3][j], collatedDicts[i][4][j]]))
+                meandict.append(round(mean([collatedDicts[i][0][j], collatedDicts[i][1][j], collatedDicts[i][2][j], collatedDicts[i][3][j], collatedDicts[i][4][j]]), 2))
             meanDicts.append(meandict)  
         dictnames = [dicts1list[i][0].split(',')[0] for i in range(dictnum)]
         for i in range(dictnum):
