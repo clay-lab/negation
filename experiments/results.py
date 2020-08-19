@@ -94,8 +94,10 @@ def negate_target(neg_list, neg_templateDICT, templateDICT, len_range):
     avgnegates_targDICT = {length + 1: str(round((negates_targDICT[length + 1] / neg_templateDICT[length + 1]) * 100, 2)) + '%' for length in len_range}
     avgnegates_targ1DICT = {length + 1: str(round((negates_targDICT[length + 1] / has_targetDICT[length + 1]) * 100, 2)) + '%' if has_targetDICT[length + 1] != 0 else 0 for length in len_range}
     avghas_targDICT = {length + 1: str(round((has_targetDICT[length + 1] / neg_templateDICT[length + 1]) * 100, 2)) + '%' for length in len_range}
-    dictlist = [avghas_targDICT, avgnegates_targDICT, avgnegates_targ1DICT]
-    dictnames = ["Pos->Neg Predictions Containing the Target Verb (%)",
+    dictlist = [has_targetDICT, avghas_targDICT, negates_targDICT, avgnegates_targDICT, avgnegates_targ1DICT]
+    dictnames = ["Pos->Neg Predictions Containing the Target Verb (#)",
+                "Pos->Neg Predictions Containing the Target Verb (%)",
+                "Pos->Neg Prediction Negating the Target Verb (#)",
                 "Pos->Neg Predictions Negating the Target Verb (Denominator: all pos->neg sentences)",
                 "Pos->Neg Predictions Negating the Target Verb (Denominator: pos->neg with target verb)"
                 ]

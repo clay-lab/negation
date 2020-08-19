@@ -37,6 +37,8 @@ Pos->Neg Predictions without Main Clause (#),0,0,0,0.8,0.2,0.2,0,0,0,0.4,0.6,0.4
 Pos->Neg Predictions that Negate Main Clause (Denominator: all Pos->Neg sentences),0.0,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 Pos->Neg Predictions that Negate Main Clause (Denominator: only Pos->Neg sentences with main clauses),0.0,0.02,0.0,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 Pos->Neg Predictions with Main Clause (%),0.99,0.77,0.98,0.77,0.97,0.79,0.96,0.83,0.97,0.86,0.82,0.79,0.97,0.9,0.89,0.81,0.76,0.61
+Pos->Neg Predictions Containing the Target Verb (#),102,54,391,213,399,221.8,354,265.2,797.8,538.8,226,64,388.6,369.4,260.2,172,114.2,70.2
 Pos->Neg Predictions Containing the Target Verb (%),1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.99,0.99,0.9,0.87
+Pos->Neg Prediction Negating the Target Verb (#),8,5.8,0.4,0.8,44,23,2.8,1,56.6,48.2,22.4,3.6,34,24.8,27.6,12.2,4.6,5.2
 Pos->Neg Predictions Negating the Target Verb (Denominator: all pos->neg sentences),0.08,0.11,0.0,0.0,0.11,0.1,0.01,0.0,0.07,0.09,0.1,0.06,0.09,0.07,0.11,0.07,0.04,0.06
 Pos->Neg Predictions Negating the Target Verb (Denominator: pos->neg with target verb),0.08,0.11,0.0,0.0,0.11,0.1,0.01,0.0,0.07,0.09,0.1,0.06,0.09,0.07,0.11,0.07,0.04,0.07
