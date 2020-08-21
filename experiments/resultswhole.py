@@ -8,6 +8,8 @@ from nltk import BottomUpLeftCornerChartParser, Nonterminal, nonterminals
 from nltk.draw.tree import draw_trees
 from nltk.tree import ParentedTree
 import nltk
+import statistics
+import argparse
 
 def read_file(filename):
     with open(filename, newline='') as rfile:
@@ -105,9 +107,9 @@ def token_acc(pos_list, neg_list):
 
         return token_precisionlist, token_recallList, category_precisionlist, category_recallList
   
-def make_trees(pos_list, neg_list):
+def make_trees(pos_list, neg_list, outfolder):
 
-    noparses = os.path.join(argv[2], "no-parses.csv")
+    noparses = os.path.join(outfolder, "no-parses.csv")
     with open(noparses, 'w', newline='') as npfile:
         npwriter = csv.writer(npfile, delimiter=',', lineterminator='\n', quotechar='/')
         parser = BottomUpLeftCornerChartParser(not_grammar)
@@ -240,8 +242,8 @@ def noAdvp(neg_list, targtrees, predtrees):
                 moreclauses += 1
     return negateone, negatefirst, negateselsewhere, oneclause, moreclauses
 
-def pos_csv_writer(pos_list):
-    posbools = os.path.join(argv[2], 'pos_pos.csv')
+def pos_csv_writer(pos_list, outfolder):
+    posbools = os.path.join(outfolder, 'pos_pos.csv')
     with open(posbools, 'w') as boolsfile:
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
         writer.writerow(["Target Sentence",
@@ -257,8 +259,8 @@ def pos_csv_writer(pos_list):
         for i in range(len(pos_list)):
             writer.writerow(pos_list[i])
     
-def neg_csv_writer(neg_list):
-    negbools = os.path.join(argv[2], "pos_neg.csv")
+def neg_csv_writer(neg_list, outfolder):
+    negbools = os.path.join(outfolder, "pos_neg.csv")
     with open(negbools, 'w') as boolsfile:
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
         writer.writerow(["Target Sentence",
@@ -280,43 +282,29 @@ def neg_csv_writer(neg_list):
         for i in range(len(neg_list)):
             writer.writerow(neg_list[i])
 
-def table(tablelist, tablenames):
-    tablestransposed = os.path.join(argv[2], 'tablestransposed.csv')
-    tables = os.path.join(argv[2], 'tables.csv')
-    with open(tablestransposed, 'w') as tabletransposedfile, open(tables, 'w') as tablefile:
-    #     newdicts = [{'Dictionary Name':dictname} for dictname in dictnames]
-        
-    #     for i in range(len(newdicts)):
-    #         newdicts[i].update(dictlist[i])
-        
-    #     len_range[0] = 'Dictionary Name'
-    #     len_range.append(len_range[-1] + 1)
-    #     fieldnames = len_range
-
-        writer = csv.writer(tabletransposedfile, delimiter=',', lineterminator='\n')
-        writer.writerow(tablenames)
-        writer.writerow(tablelist)
+def write_table(tablelist, tablenames, outfolder):
+    tables = os.path.join(outfolder[:-8], '{0}-tables.csv'.format(argv[2]))
+    with open(tables, 'w') as tablefile:
         tablewriter = csv.writer(tablefile, delimiter=',', lineterminator='\n')
-        for i in range(len(tablelist)):
-            tablewriter.writerow([tablenames[i], tablelist[i]])
-    #     writer.writeheader()
-    #     writer.writerows(newdicts)
-
+        tablewriter.writerow(['Task', 'Model 1', 'Model 2', 'Model 3', 'Model 4', 'Model 5', 'Mean'])
+        for i in range(len(tablelist[0])):
+            average = statistics.mean([tablelist[0][i], tablelist[1][i], tablelist[2][i], tablelist[3][i], tablelist[4][i]])
+            tablewriter.writerow([tablenames[i], tablelist[0][i], tablelist[1][i], tablelist[2][i], tablelist[3][i], tablelist[4][i], average])
 # Main function
-def main():
+def main(resultsfile, outfolder):
     # pos_list: target sent, pred sent, sourcelen, targlen, predlen, correctBOOL
     # templates: total transformations (templateDICT is blank)
-    pos_list, neg_list, poscorrectTOTAL, negcorrectTOTAL = read_file(argv[1])
+    pos_list, neg_list, poscorrectTOTAL, negcorrectTOTAL = read_file(resultsfile)
     token_precisionlist, token_recallList, category_precisionlist, category_recallList = token_acc(pos_list, neg_list) # returns proportion of correct tokens (pos, neg)
-    treeslist, posparseables, negparseables, allparseables = make_trees(pos_list, neg_list) # create trees for all transformations    
+    treeslist, posparseables, negparseables, allparseables = make_trees(pos_list, neg_list, outfolder) # create trees for all transformations    
     posstructs, posclausal, negstructs, negclausal = equal_structs(pos_list, neg_list, treeslist) # [srcelen, targlen, predlen, BOOL]    
     mainclauseTOTAL, negatesmainTOTAL, negatesoutsideTOTAL, nomainTOTAL = negate_main(neg_list, treeslist[1][0], treeslist[1][1]) # [sourcelen, targlen, predlen, BOOL]
     has_targetTOTAL, negates_targTOTAL = negate_target(neg_list) # returns a list of booleans for negating the target verb
     if 'noadvp' in argv[1].lower():
         negateone, negatefirst, negateselsewhere, oneclause, moreclauses = noAdvp(neg_list, treeslist[1][0], treeslist[1][1])
 
-    pos_csv_writer(pos_list)
-    neg_csv_writer(neg_list)  # writes into a new CSV with columns: targ, pred, boolean values
+    pos_csv_writer(pos_list, outfolder)
+    neg_csv_writer(neg_list, outfolder)  # writes into a new CSV with columns: targ, pred, boolean values
     # Dictionaries
     tablelist = [len(pos_list), len(neg_list), poscorrectTOTAL, negcorrectTOTAL, round(token_precisionlist[0], 2),
             round(token_precisionlist[1], 2), round(token_recallList[0], 2), round(token_recallList[1], 2), round(category_precisionlist[0], 2),
@@ -331,5 +319,21 @@ def main():
     if 'noadvp' in argv[1].lower():
         tablelist.extend([negateone, negatefirst, negateselsewhere, oneclause, moreclauses])
         tablenames.extend(['Negates the One Adv Clause', 'Negates the First Adv Clause', 'Negates Elsewhere', 'Has one Adv Clause', 'Has more than one Adv Clause'])
-    table(tablelist, tablenames)
-main()
+    return tablelist, tablenames
+
+
+tablelist = []
+for i in range(5):
+    task = argv[1]
+    attention = argv[2]
+    directory = argv[3]
+    resultsfile = os.path.join(directory, task, 'models', 'GRU-GRU-{0}'.format(attention), 'model-{0}'.format(i + 1), 'results', '{0}.tsv'.format(task))
+    outfolder = os.path.join(directory, task, '{0}-results'.format(attention), 'model-{0}'.format(i + 1))
+    tablenums, tablenames = main(resultsfile, outfolder)
+    tablelist.append(tablenums)
+    print('Evaluated Model {0}'.format(i + 1))
+print('Writing Results to File')
+write_table(tablelist, tablenames, outfolder)
+
+
+

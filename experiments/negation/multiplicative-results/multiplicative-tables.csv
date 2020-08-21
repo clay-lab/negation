@@ -1,0 +1,26 @@
+Task,Model 1,Model 2,Model 3,Model 4,Model 5,Mean
+Total Pos->Pos,5096,5096,5096,5096,5096,5096
+Total Pos->Neg,4904,4904,4904,4904,4904,4904
+Pos->Pos Correct,5063,5088,85,5083,5095,4082.8
+Pos->Neg Correct,4883,4889,45,4890,4900,3921.4
+Pos Token Precision,1.0,1.0,0.36,1.0,1.0,0.872
+Neg Token Precision,1.0,1.0,0.41,1.0,1.0,0.882
+Pos Token Recall,1.0,1.0,0.25,1.0,1.0,0.85
+Neg Token Recall,1.0,1.0,0.29,1.0,1.0,0.858
+Pos Category Precision,1.0,1.0,0.62,1.0,1.0,0.924
+Neg Category Precision,1.0,1.0,0.63,1.0,1.0,0.926
+Pos Category Recall,1.0,1.0,0.44,1.0,1.0,0.888
+Neg Category Recall,1.0,1.0,0.45,1.0,1.0,0.89
+Parseable Pos->Pos,5080,5096,3956,5094,5096,4864.4
+Parseable Pos->Neg,4893,4897,3241,4900,4902,4566.6
+All Parseable Sentences,9973,9993,7197,9994,9998,9431
+Equal Structures Pos->Pos,5073,5092,1549,5088,5096,4379.6
+Preserves Clauses Pos->Pos,5073,5092,1614,5088,5096,4392.6
+Equal Structures Pos->Neg,4888,4893,1141,4893,4901,4143.2
+Preserves Clauses Pos->Neg,4888,4893,1182,4893,4901,4151.4
+Has Main Clause,4892,4897,2976,4898,4902,4513
+Negates Main,4891,4896,2974,4898,4902,4512.2
+Negates Outside Main,0,0,0,0,0,0
+No Main Clause,1,0,265,2,0,53.6
+Has Target Verb,4901,4900,742,4900,4904,4069.4
+Negates Target Verb,4899,4899,638,4899,4904,4047.8
