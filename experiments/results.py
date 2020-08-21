@@ -336,6 +336,9 @@ def negate_main(neg_list, targtrees, predtrees, templateDICT, neg_template, neg_
 
     return dictlist, dictnames, avgdictlist, avgdictnames
 
+def noAdvp(neg_list, targtrees, predtrees, templateDICT, neg_template, neg_parsesDICT, len_range):
+    
+
 def pos_csv_writer(pos_list):
     posbools = os.path.join(argv[2], 'pos_pos.csv')
     with open(posbools, 'w') as boolsfile:
@@ -392,6 +395,8 @@ def write_dicts(dictlist, dictnames, avgdictlist, avgdictnames, len_range):
         writer.writeheader()
         writer.writerows(newdicts)
 
+
+
         
 # Main function
 def main():
@@ -417,6 +422,11 @@ def main():
     targDICTS, targNAMES, avgtarglist, avgtargnames = negate_target(neg_list, neg_template, templateDICT, len_range) # returns a list of booleans for negating the target verb
     dictlist.extend(targDICTS), dictnames.extend(targNAMES)
     avgdictlist.extend(avgtarglist), avgdictnames.extend(avgtargnames)
+
+    if 'noAdvp' in argv[1]:
+        noadvpDICTS, targNAMES, avgtarglist, avgtargnames = noAdvp(neg_list, treeslist[1][0], treeslist[1][1], templateDICT, neg_template, parseDICTS[2], len_range)
+
+
     
     pos_csv_writer(pos_list)
     neg_csv_writer(neg_list)  # writes into a new CSV with columns: targ, pred, boolean values

@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["C:/Users/shayn/Documents/Github/negation/experiments/noAdvP/GRU-GRU-location/model-1/results/noAdvp.tsv", "C:/Users/shayn/Documents/Github/negation/experiments/noAdvp/location-results/model-1"]
+            "args": ["C:/Users/shayn/Documents/Github/negation/experiments/noAdvP1/models/GRU-GRU-location/model-1/results/noAdvp1.tsv", "C:/Users/shayn/Documents/Github/negation/experiments/noAdvp/location-results/model-1"]
              },
         {
             "name": "Python: Averages",
