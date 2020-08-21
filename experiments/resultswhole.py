@@ -281,8 +281,9 @@ def neg_csv_writer(neg_list):
             writer.writerow(neg_list[i])
 
 def table(tablelist, tablenames):
+    tablestransposed = os.path.join(argv[2], 'tablestransposed.csv')
     tables = os.path.join(argv[2], 'tables.csv')
-    with open(tables, 'w') as tablefile:
+    with open(tablestransposed, 'w') as tabletransposedfile, open(tables, 'w') as tablefile:
     #     newdicts = [{'Dictionary Name':dictname} for dictname in dictnames]
         
     #     for i in range(len(newdicts)):
@@ -292,9 +293,12 @@ def table(tablelist, tablenames):
     #     len_range.append(len_range[-1] + 1)
     #     fieldnames = len_range
 
-        writer = csv.writer(tablefile, delimiter=',', lineterminator='\n')
+        writer = csv.writer(tabletransposedfile, delimiter=',', lineterminator='\n')
         writer.writerow(tablenames)
         writer.writerow(tablelist)
+        tablewriter = csv.writer(tablefile, delimiter=',', lineterminator='\n')
+        for i in range(len(tablelist)):
+            tablewriter.writerow([tablenames[i], tablelist[i]])
     #     writer.writeheader()
     #     writer.writerows(newdicts)
 

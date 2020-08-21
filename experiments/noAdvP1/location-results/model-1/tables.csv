@@ -1,2 +1,30 @@
-Total Pos->Pos,Total Pos->Neg,Pos->Pos Correct,Pos->Neg Correct,Pos Token Precision,Neg Token Precision,Pos Token Recall,Neg Token Recall,Pos Category Precision,Neg Category Precision,Pos Category Recall,Neg Category Recall,Parseable Pos->Pos,Parseable Pos->Neg,All Parseable Sentences,Equal Structures Pos->Pos,Preserves Clauses Pos->Pos,Equal Structures Pos->Neg,Preserves Clauses Pos->Neg,Has Main Clause,Negates Main,Negates Outside Main,No Main Clause,Has Target Verb,Negates Target Verb,Negates the One Adv Clause,Negates the First Adv Clause,Negates Elsewhere,Has one Adv Clause,Has more than one Adv Clause
-4967,5033,4617,1,0.99,0.5,0.99,0.49,1.0,0.5,1.0,0.5,4945,4994,9939,4861,4876,1,4923,4979,1,4969,15,5008,359,4448,536,0,4448,536
+Total Pos->Pos,4967
+Total Pos->Neg,5033
+Pos->Pos Correct,4617
+Pos->Neg Correct,1
+Pos Token Precision,0.99
+Neg Token Precision,0.5
+Pos Token Recall,0.99
+Neg Token Recall,0.49
+Pos Category Precision,1.0
+Neg Category Precision,0.5
+Pos Category Recall,1.0
+Neg Category Recall,0.5
+Parseable Pos->Pos,4945
+Parseable Pos->Neg,4994
+All Parseable Sentences,9939
+Equal Structures Pos->Pos,4861
+Preserves Clauses Pos->Pos,4876
+Equal Structures Pos->Neg,1
+Preserves Clauses Pos->Neg,4923
+Has Main Clause,4979
+Negates Main,1
+Negates Outside Main,4969
+No Main Clause,15
+Has Target Verb,5008
+Negates Target Verb,359
+Negates the One Adv Clause,4448
+Negates the First Adv Clause,536
+Negates Elsewhere,0
+Has one Adv Clause,4448
+Has more than one Adv Clause,536
