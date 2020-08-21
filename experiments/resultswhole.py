@@ -329,11 +329,12 @@ for i in range(5):
     directory = argv[3]
     resultsfile = os.path.join(directory, task, 'models', 'GRU-GRU-{0}'.format(attention), 'model-{0}'.format(i + 1), 'results', '{0}.tsv'.format(task))
     outfolder = os.path.join(directory, task, '{0}-results'.format(attention), 'model-{0}'.format(i + 1))
+    tablesdir = os.path.join(directory, taks, '{0}-results'.format(attention))
     tablenums, tablenames = main(resultsfile, outfolder)
     tablelist.append(tablenums)
     print('Evaluated Model {0}'.format(i + 1))
 print('Writing Results to File')
-write_table(tablelist, tablenames, outfolder)
+write_table(tablelist, tablenames, tablesdir)
 
 
 
