@@ -1,9 +1,5 @@
 # negation
-New Repo to store results analysis from CLAY lab Transductions
-
-The data in this repo has been trained on the neural network model developed in the [CLAY lab Transductions repository](https://github.com/clay-lab/transductions).
-
-## Hyperparameters
+The data in this repo has been trained on the neural network model developed in the [CLAY lab Transductions repository](https://github.com/clay-lab/transductions) using the following hyperparameters:
 
 The negation data is trained on the following hyperparameters:
 
@@ -19,7 +15,14 @@ Hidden Layers: `` 1 ``
 
 Batch Size: `` 5 ``
 
-## Folders
+For more information on the data analysis in this repository, visit this [this link](https://docs.google.com/document/d/107KZ1vDLfGgx0bMNxNhf7bz_ejVvmiSrCKTB4VKA5hU/edit?usp=sharing)
+
+## Experiments
+There are currently two experiments in this repository: 'negation' and 'noAdvp'. 
+
+Negation: train, val, and test data contains sentences with adverbial phrases before and after the main clause.
+
+NoAdvp: train and val datasets contain pos->neg transformations without adverbial phrases before the main clause. Test dataset 
 Each folder is named based on the attention used in each run: no attention, additive, location, or multiplicative.
 
 ### Subfolders
