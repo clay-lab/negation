@@ -1,20 +1,16 @@
 from sys import argv
 import csv
-import pandas as pd
-from os import mkdir
 import os
+from os import mkdir
 from not_grammar import not_grammar
-from nltk import BottomUpLeftCornerChartParser, Nonterminal, nonterminals
-from nltk.draw.tree import draw_trees
-from nltk.tree import ParentedTree
-import nltk
+from nltk import BottomUpLeftCornerChartParser
 import statistics
-import argparse
 
 def read_file(filename):
     with open(filename, newline='') as rfile:
         reader = list(csv.reader(rfile, delimiter='\t', lineterminator='\n'))
         neg_list, pos_list = [], []
+        postitle, negtitle = [], []
         poscorrectTOTAL = 0
         negcorrectTOTAL = 0
         for line in reader[1:]:
@@ -28,10 +24,23 @@ def read_file(filename):
             else:
                 pos_list.append([' '.join(newline[1]), ' '.join(newline[2]), sourcelen, targlen, predlen, correct])
                 poscorrectTOTAL += correct
+            
+        
+    postitle.extend(["Target Sentence",
+                        "Predicted Sentence",
+                        "Source Length",
+                        "Target Length",
+                        "Prediction Length",
+                        "Correct Transformation"])
+    negtitle.extend(["Target Sentence",
+                        "Predicted Sentence",
+                        "Source Length",
+                        "Target Length",
+                        "Prediction Length",
+                        "Correct Transformation"])
+    return postitle, negtitle, pos_list, neg_list, poscorrectTOTAL, negcorrectTOTAL
 
-    return pos_list, neg_list, poscorrectTOTAL, negcorrectTOTAL
-
-def negate_target(neg_list):
+def negate_target(negtitle, neg_list):
     has_targetTOTAL, negates_targTOTAL = 0, 0
     for i in range(len(neg_list)):
         sourcelen = neg_list[i][2]
@@ -57,6 +66,8 @@ def negate_target(neg_list):
                         neg_list[1].extend([0])
             else:
                 neg_list[i].extend([0, 0])
+    negtitle.extend(["Has Target Verb",
+                    "Negates Target Verb"])
     return has_targetTOTAL, negates_targTOTAL
 
 def token_acc(pos_list, neg_list):
@@ -107,7 +118,7 @@ def token_acc(pos_list, neg_list):
 
         return token_precisionlist, token_recallList, category_precisionlist, category_recallList
   
-def make_trees(pos_list, neg_list, outfolder):
+def make_trees(postitle, negtitle, pos_list, neg_list, outfolder):
 
     noparses = os.path.join(outfolder, "no-parses.csv")
     with open(noparses, 'w', newline='') as npfile:
@@ -143,10 +154,11 @@ def make_trees(pos_list, neg_list, outfolder):
                         treeslist[i][1].append([sentlist[i][j][2], sentlist[i][j][4], pred_parses[j]])
                         parseables[i] += 1
                         sentlist[i][j].extend([1])
-
+    postitle.extend(['Parseable'])
+    negtitle.extend(['Parseable'])
     return treeslist, parseables[0], parseables[1], sum(parseables)
 
-def equal_structs(pos_list, neg_list, treeslist):
+def equal_structs(postitle, negtitle, pos_list, neg_list, treeslist):
     #treeslist: [[postarg, pospred], [negtarg, negpred]]
     # totals = [[pos structs, pos clausal], [neg structs, neg clausal]]
     totals = [[0, 0], [0, 0]]
@@ -180,10 +192,14 @@ def equal_structs(pos_list, neg_list, treeslist):
                     totals[i][0] += 1
                 if clausebool == 1:
                     totals[i][1] += 1
+    postitle.extend(["Preserves Identical Tree Structure",
+                    "Preserves Significant Clauses (S, AdvP, RelP)"])
+    negtitle.extend(["Preserves Identical Tree Structure",
+                        "Preserves Significant Clauses (S, AdvP, RelP)"])
 
     return totals[0][0], totals[0][1], totals[1][0], totals[1][1]
 
-def negate_main(neg_list, targtrees, predtrees):
+def negate_main(negtitle, neg_list, targtrees, predtrees):
     # extend(has main clause, negates main clause, negates outside of main clause)
     length = range(len(predtrees))
     mainclauseTOTAL, negatesmainTOTAL, negatesoutsideTOTAL, nomainTOTAL = 0, 0, 0, 0
@@ -219,10 +235,13 @@ def negate_main(neg_list, targtrees, predtrees):
                 nomainTOTAL += 1
                 negbool = 1 if 'not' in predsent else 0
                 neg_list[i].extend([0, 0, negbool])
+    negtitle.extend(["Has Main Clause",
+                    "Negates Main Clause",
+                    "Negates Outside of Main Clause"])
 
     return mainclauseTOTAL, negatesmainTOTAL, negatesoutsideTOTAL, nomainTOTAL
 
-def noAdvp(neg_list, targtrees, predtrees):
+def noAdvp(negtitle, neg_list, targtrees, predtrees):
     negateone = 0
     negatefirst = 0
     negateselsewhere = 0
@@ -242,43 +261,19 @@ def noAdvp(neg_list, targtrees, predtrees):
                 moreclauses += 1
     return negateone, negatefirst, negateselsewhere, oneclause, moreclauses
 
-def pos_csv_writer(pos_list, outfolder):
+def pos_csv_writer(postitle, pos_list, outfolder):
     posbools = os.path.join(outfolder, 'pos_pos.csv')
     with open(posbools, 'w') as boolsfile:
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
-        writer.writerow(["Target Sentence",
-                        "Predicted Sentence",
-                        "Source Length",
-                        "Target Length",
-                        "Prediction Length",
-                        "Correct Transformation",
-                        "Parseable",
-                        "Preserves Identical Tree Structure",
-                        "Preserves Significant Clauses (S, AdvP, RelP)"])
-
+        writer.writerow(postitle)
         for i in range(len(pos_list)):
             writer.writerow(pos_list[i])
     
-def neg_csv_writer(neg_list, outfolder):
+def neg_csv_writer(negtitle, neg_list, outfolder):
     negbools = os.path.join(outfolder, "pos_neg.csv")
     with open(negbools, 'w') as boolsfile:
         writer = csv.writer(boolsfile, delimiter=',', lineterminator='\n')
-        writer.writerow(["Target Sentence",
-                        "Predicted Sentence",
-                        "Source Length",
-                        "Target Length",
-                        "Prediction Length",
-                        "Correct Transformation",
-                        "Parseable",
-                        "Preserves Identical Tree Structure",
-                        "Preserves Significant Clauses (S, AdvP, RelP)",
-                        "Negates Main Clause",
-                        "Has Main Clause",
-                        "Negates Main Clause",
-                        "Negates Outside of Main Clause",
-                        "Has Target Verb",
-                        "Negates Target Verb"])
-
+        writer.writerow(negtitle)
         for i in range(len(neg_list)):
             writer.writerow(neg_list[i])
 
@@ -294,17 +289,17 @@ def write_table(tablelist, tablenames, outfolder):
 def main(resultsfile, outfolder):
     # pos_list: target sent, pred sent, sourcelen, targlen, predlen, correctBOOL
     # templates: total transformations (templateDICT is blank)
-    pos_list, neg_list, poscorrectTOTAL, negcorrectTOTAL = read_file(resultsfile)
+    postitle, negtitle, pos_list, neg_list, poscorrectTOTAL, negcorrectTOTAL = read_file(resultsfile)
     token_precisionlist, token_recallList, category_precisionlist, category_recallList = token_acc(pos_list, neg_list) # returns proportion of correct tokens (pos, neg)
-    treeslist, posparseables, negparseables, allparseables = make_trees(pos_list, neg_list, outfolder) # create trees for all transformations    
-    posstructs, posclausal, negstructs, negclausal = equal_structs(pos_list, neg_list, treeslist) # [srcelen, targlen, predlen, BOOL]    
-    mainclauseTOTAL, negatesmainTOTAL, negatesoutsideTOTAL, nomainTOTAL = negate_main(neg_list, treeslist[1][0], treeslist[1][1]) # [sourcelen, targlen, predlen, BOOL]
-    has_targetTOTAL, negates_targTOTAL = negate_target(neg_list) # returns a list of booleans for negating the target verb
+    treeslist, posparseables, negparseables, allparseables = make_trees(postitle, negtitle, pos_list, neg_list, outfolder) # create trees for all transformations    
+    posstructs, posclausal, negstructs, negclausal = equal_structs(postitle, negtitle, pos_list, neg_list, treeslist) # [srcelen, targlen, predlen, BOOL]    
+    mainclauseTOTAL, negatesmainTOTAL, negatesoutsideTOTAL, nomainTOTAL = negate_main(negtitle, neg_list, treeslist[1][0], treeslist[1][1]) # [sourcelen, targlen, predlen, BOOL]
+    has_targetTOTAL, negates_targTOTAL = negate_target(negtitle, neg_list) # returns a list of booleans for negating the target verb
     if 'noadvp' in argv[1].lower():
-        negateone, negatefirst, negateselsewhere, oneclause, moreclauses = noAdvp(neg_list, treeslist[1][0], treeslist[1][1])
+        negateone, negatefirst, negateselsewhere, oneclause, moreclauses = noAdvp(negtitle, neg_list, treeslist[1][0], treeslist[1][1])
 
-    pos_csv_writer(pos_list, outfolder)
-    neg_csv_writer(neg_list, outfolder)  # writes into a new CSV with columns: targ, pred, boolean values
+    pos_csv_writer(postitle, pos_list, outfolder)
+    neg_csv_writer(negtitle, neg_list, outfolder)  # writes into a new CSV with columns: targ, pred, boolean values
     # Dictionaries
     tablelist = [len(pos_list), len(neg_list), poscorrectTOTAL, negcorrectTOTAL, round(token_precisionlist[0], 2),
             round(token_precisionlist[1], 2), round(token_recallList[0], 2), round(token_recallList[1], 2), round(category_precisionlist[0], 2),
