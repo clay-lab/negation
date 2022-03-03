@@ -306,11 +306,12 @@ def negate(t):
 	main_clause_v[0] = 'nicht ' + main_clause_v[0]
 	
 	return t_copy
-	
+
+"""	
 def test_file(grammar = nicht_grammar, n = 10, filename = 'test.txt'):
-	"""
+	\"""
 	Create a small test file with n pairs of formatted positive and negative sentences
-	"""
+	\"""
 	import re
 	with open(filename, 'w') as out:
 		for i in range(n):
@@ -327,3 +328,6 @@ def test_file(grammar = nicht_grammar, n = 10, filename = 'test.txt'):
 			# Write out the file
 			for string in s:
 				out.write(string)
+"""
+
+create_dataset_json(nicht_grammar, negate, file_prefix='negation_de', train=1000, dev=1000, test=1000)

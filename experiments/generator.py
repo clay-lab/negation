@@ -124,6 +124,8 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable, file_prefix: str 
                     for the file with that label
     output: a file for each argument in splits that contains the specified number of example pairs
     """
+    file_prefix = file_prefix + '_' if file_prefix else ''
+    
     for name, n_examples in splits.items():
         l = []
         for n in range(n_examples):
@@ -131,7 +133,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable, file_prefix: str 
             l += [{'translation': {'src': source, 'prefix': neg, 'tgt': target}}]
         
         if l:
-            with open(file_prefix + '_' + name + '.json', 'w') as f:
+            with open(file_prefix + name + '.json', 'w') as f:
                 for ex in l:
                     json.dump(ex, f, ensure_ascii=False)
                     f.write('\n')
