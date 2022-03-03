@@ -1,0 +1,29 @@
+POS: Viele Studenten sollen das Croissant machen.
+NEG: Viele Studenten sollen das Croissant nicht machen.
+
+POS: Viele Professoren dürfen die Baklava kauen.
+NEG: Viele Professoren dürfen die Baklava nicht kauen.
+
+POS: Viele Zauberer müssen den Strudel essen.
+NEG: Viele Zauberer müssen den Strudel nicht essen.
+
+POS: Viele Zauberer sollen rennen.
+NEG: Viele Zauberer sollen nicht rennen.
+
+POS: Eine Hexe soll feiern.
+NEG: Keine Hexe soll feiern.
+
+POS: Viele Hexen dürfen kichern.
+NEG: Viele Hexen dürfen nicht kichern.
+
+POS: Die Zauberer sollen rennen.
+NEG: Die Zauberer sollen nicht rennen.
+
+POS: Da die Hexe wackeln muss, soll ein Student einen Kuchen machen, den der Student bestreuen muss.
+NEG: Da die Hexe wackeln muss, soll kein Student einen Kuchen machen, den der Student bestreuen muss.
+
+POS: Viele Zauberer sollen kichern.
+NEG: Viele Zauberer sollen nicht kichern.
+
+POS: Ein Student soll wackeln.
+NEG: Kein Student soll wackeln.
