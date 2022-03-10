@@ -4,7 +4,8 @@ from nltk import nonterminals, Nonterminal, Production
 
 import random
 from generator import generate
-from generator import create_file, create_dataset_json
+# from generator import create_file
+from generator import create_dataset_json
 """
 	Create some nonterminals
 

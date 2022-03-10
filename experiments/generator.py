@@ -113,7 +113,8 @@ def create_file (filename, grammar, ex_generator, n=10):
             output_writer.writerow([(pos) + src + ' ' + (neg) + targ])
 
 
-def create_dataset_json(grammar: PCFG, ex_generator: Callable, file_prefix: str = '', **splits: dict[str,int]) -> None:
+def create_dataset_json(grammar: PCFG, ex_generator: Callable, 
+                        file_prefix: str = '', **splits: dict[str,int]) -> None:
     """
     Create a dataset json file that can be read using the datasets module's dataset loader.
     params: grammar: PCFG: a PCFG object
@@ -122,6 +123,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable, file_prefix: str 
             file_prefix: str: an identifier to add to the beginning of the output file names
             splits: a dictionary mapping a string identifying a set label to the number of examples to generate
                     for the file with that label
+                    ex: train = 10000, dev = 1000, test = 10000
     output: a file for each argument in splits that contains the specified number of example pairs
     """
     file_prefix = file_prefix + '_' if file_prefix else ''
