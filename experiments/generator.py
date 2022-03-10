@@ -132,11 +132,19 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
     file_prefix = file_prefix + '_' if file_prefix and not file_prefix.endswith('-') and not file_prefix.endswith('_') else ''
     
     for name, n_examples in splits.items():
+        prefixes = {}
         l = []
         print('Generating examples')
         for n in tqdm(range(n_examples)):
             source, pfx, target = ex_generator(grammar)
+            if not pfx in prefixes: 
+                prefixes[pfx] = 1
+            else:
+                prefixes[pfx] += 1
             l += [{'translation': {'src': source, 'prefix': pfx, 'tgt': target}}]
+        
+        for pfx in prefixes:
+            print(f'{name} prop {pfx} examples: {prefixes[pfx]/n_examples}')
         
         if l:
             with gzip.open(file_prefix + name + '.json.gz', 'wt') as f:
