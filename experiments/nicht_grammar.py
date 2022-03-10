@@ -3,6 +3,7 @@ from nltk import CFG, Tree, PCFG
 from nltk import nonterminals, Nonterminal, Production
 
 import random
+from typing import *
 from generator import generate
 # from generator import create_file
 from generator import create_dataset_json
@@ -202,31 +203,34 @@ nicht_grammar = PCFG.fromstring("""
 """)
 
 
-def negation(grammar):
+def negation(grammar: PCFG) -> Tuple[str]:
 	pos_tree = generate(grammar)
 	source = ' '.join(pos_tree.leaves())
 	source = source[0].upper() + source[1:]
 	source = source.replace(' , ', ', ')
+	source += '.'
 	
 	neg_tree = negate(pos_tree)
 	target = ' '.join(neg_tree.leaves())
 	target = target[0].upper() + target[1:]
 	target = target.replace(' , ', ', ')
+	target += '.'
 
 	return source, 'neg', target
 	
-def positive(grammar):
+def affirmation(grammar: PCFG) -> Tuple[str]:
 	pos_tree = generate(grammar)
 	source = ' '.join(pos_tree.leaves())
 	source = source[0].upper() + source[1:]
 	source = source.replace(' , ', ', ')
+	source += '.'
 
 	return source, 'pos', source
 	
-def generate_random_ex(grammar):
-	return negation(grammar) if random.random() < 0.5 else positive(grammar)
+def neg_or_pos(grammar: PCFG, neg_p: float = 0.5) -> Tuple[str]:
+	return negation(grammar) if random.random() < neg_p else affirmation(grammar)
 	
-def negate(t):
+def negate(t: Tree) -> Tree:
 	# Make a deep copy so we don't mess up the original tree
 	t_copy = t.copy(deep = True)
 	
@@ -334,4 +338,4 @@ def test_file(grammar = nicht_grammar, n = 10, filename = 'test.txt'):
 				out.write(string)
 """
 
-create_dataset_json(nicht_grammar, generate_random_ex, file_prefix='negation_de', train=100000, dev=1000, test=10000)
+create_dataset_json(nicht_grammar, neg_or_pos, file_prefix='de', train=100000, dev=1000, test=10000)

@@ -10,7 +10,7 @@ import random
 
 import csv
 
-from typing import Callable, List
+from typing import *
 
 import json
 
