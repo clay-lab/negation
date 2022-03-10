@@ -117,7 +117,7 @@ def create_file (filename, grammar, ex_generator, n=10):
 
 
 def create_dataset_json(grammar: PCFG, ex_generator: Callable, 
-                        file_prefix: str = '', **splits: dict[str,int]) -> None:
+                        file_prefix: str = '', **splits: Dict[str,int]) -> None:
     """
     Create a dataset json file that can be read using the datasets module's dataset loader.
     params: grammar: PCFG: a PCFG object
