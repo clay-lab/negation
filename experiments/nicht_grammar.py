@@ -204,22 +204,17 @@ nicht_grammar = PCFG.fromstring("""
 
 def negation(grammar):
 	pos_tree = generate(grammar)
-	pos = ' '.join(pos_tree.leaves())
-
-	neg_tree = negate(pos_tree)
-	neg = ' '.join(neg_tree.leaves())
-
-	source = pos
-	target = neg
-	
+	source = ' '.join(pos_tree.leaves())
 	source = source[0].upper() + source[1:]
-	target = target[0].upper() + target[1:]
-	
 	source = source.replace(' , ', ', ')
+	
+	if random.random() < 0.5:
+		return source, 'pos', target
+	
+	neg_tree = negate(pos_tree)
+	target = ' '.join(neg_tree.leaves())
+	target = target[0].upper() + target[1:]
 	target = target.replace(' , ', ', ')
-
-	# (pos) = 'POS'
-	# (neg) = 'NEG'
 
 	return source, 'neg', target
 	
