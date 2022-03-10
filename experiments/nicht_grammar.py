@@ -331,4 +331,4 @@ def test_file(grammar = nicht_grammar, n = 10, filename = 'test.txt'):
 				out.write(string)
 """
 
-create_dataset_json(nicht_grammar, negate, file_prefix='negation_de', train=1000, dev=1000, test=1000)
+create_dataset_json(nicht_grammar, negation, file_prefix='negation_de', train=100000, dev=1000, test=10000)
