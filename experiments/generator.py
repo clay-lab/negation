@@ -132,7 +132,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
         l = []
         for n in range(n_examples):
             source, pfx, target = ex_generator(grammar)
-            l += [{'translation': {'src': source, 'prefix': neg, 'tgt': target}}]
+            l += [{'translation': {'src': source, 'prefix': pfx, 'tgt': target}}]
         
         if l:
             with open(file_prefix + name + '.json', 'w') as f:
