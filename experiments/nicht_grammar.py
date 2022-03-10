@@ -208,15 +208,23 @@ def negation(grammar):
 	source = source[0].upper() + source[1:]
 	source = source.replace(' , ', ', ')
 	
-	if random.random() < 0.5:
-		return source, 'pos', source
-	
 	neg_tree = negate(pos_tree)
 	target = ' '.join(neg_tree.leaves())
 	target = target[0].upper() + target[1:]
 	target = target.replace(' , ', ', ')
 
 	return source, 'neg', target
+	
+def positive(grammar):
+	pos_tree = generate(grammar)
+	source = ' '.join(pos_tree.leaves())
+	source = source[0].upper() + source[1:]
+	source = source.replace(' , ', ', ')
+
+	return source, 'pos', source
+	
+def generate_random_ex(grammar):
+	return negation(grammar) if random.random() < 0.5 else positive(grammar)
 	
 def negate(t):
 	# Make a deep copy so we don't mess up the original tree
@@ -326,4 +334,4 @@ def test_file(grammar = nicht_grammar, n = 10, filename = 'test.txt'):
 				out.write(string)
 """
 
-create_dataset_json(nicht_grammar, negation, file_prefix='negation_de', train=100000, dev=1000, test=10000)
+create_dataset_json(nicht_grammar, generate_random_ex, file_prefix='negation_de', train=100000, dev=1000, test=10000)
