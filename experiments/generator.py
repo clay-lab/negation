@@ -14,6 +14,9 @@ from typing import Callable, List
 
 import json
 
+import gzip
+
+from tqdm import tqdm
 
 
 
@@ -126,17 +129,19 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
                     ex: train = 10000, dev = 1000, test = 10000
     output: a file for each argument in splits that contains the specified number of example pairs
     """
-    file_prefix = file_prefix + '_' if file_prefix else ''
+    file_prefix = file_prefix + '_' if file_prefix and not file_prefix.endswith('-') and not file_prefix.endswith('_') else ''
     
     for name, n_examples in splits.items():
         l = []
-        for n in range(n_examples):
+        print('Generating examples')
+        for n in tqdm(range(n_examples)):
             source, pfx, target = ex_generator(grammar)
             l += [{'translation': {'src': source, 'prefix': pfx, 'tgt': target}}]
         
         if l:
-            with open(file_prefix + name + '.json', 'w') as f:
-                for ex in l:
+            with gzip.open(file_prefix + name + '.json.gz', 'wt') as f:
+                print('Saving examples to ' + file_prefix + name + '.json.gz')
+                for ex in tqdm(l):
                     json.dump(ex, f, ensure_ascii=False)
                     f.write('\n')
             
