@@ -131,7 +131,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
     for name, n_examples in splits.items():
         l = []
         for n in range(n_examples):
-            pos, source, neg, target = ex_generator(grammar)
+            source, pfx, target = ex_generator(grammar)
             l += [{'translation': {'src': source, 'prefix': neg, 'tgt': target}}]
         
         if l:
