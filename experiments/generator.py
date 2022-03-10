@@ -137,10 +137,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
         print('Generating examples')
         for n in tqdm(range(n_examples)):
             source, pfx, target = ex_generator(grammar)
-            if not pfx in prefixes: 
-                prefixes[pfx] = 1
-            else:
-                prefixes[pfx] += 1
+            prefixes[pfx] = 1 if not pfx in prefixes else prefixes[pfx] + 1
             l += [{'translation': {'src': source, 'prefix': pfx, 'tgt': target}}]
         
         for pfx in prefixes:
