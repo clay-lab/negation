@@ -209,7 +209,7 @@ def negation(grammar):
 	source = source.replace(' , ', ', ')
 	
 	if random.random() < 0.5:
-		return source, 'pos', target
+		return source, 'pos', source
 	
 	neg_tree = negate(pos_tree)
 	target = ' '.join(neg_tree.leaves())
