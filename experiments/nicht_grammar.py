@@ -221,7 +221,7 @@ def negation(grammar):
 	# (pos) = 'POS'
 	# (neg) = 'NEG'
 
-	return source, target
+	return source, 'neg', target
 	
 def negate(t):
 	# Make a deep copy so we don't mess up the original tree
