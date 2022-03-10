@@ -218,10 +218,10 @@ def negation(grammar):
 	source = source.replace(' , ', ', ')
 	target = target.replace(' , ', ', ')
 
-	(pos) = 'POS'
-	(neg) = 'NEG'
+	# (pos) = 'POS'
+	# (neg) = 'NEG'
 
-	return (pos), source, (neg), target
+	return source, target
 	
 def negate(t):
 	# Make a deep copy so we don't mess up the original tree
