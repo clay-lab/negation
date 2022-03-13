@@ -144,8 +144,8 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
             print(f'{name} prop {pfx} examples: {prefixes[pfx]/n_examples}')
         
         if l:
+            print('Saving examples to ' + file_prefix + name + '.json.gz')
             with gzip.open(file_prefix + name + '.json.gz', 'wt') as f:
-                print('Saving examples to ' + file_prefix + name + '.json.gz')
                 for ex in tqdm(l):
                     json.dump(ex, f, ensure_ascii=False)
                     f.write('\n')
