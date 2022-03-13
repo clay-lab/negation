@@ -129,7 +129,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
                     ex: train = 10000, dev = 1000, test = 10000
     output: a file for each argument in splits that contains the specified number of example pairs
     """
-    file_prefix = file_prefix + '_' if file_prefix and not file_prefix.endswith('-') and not file_prefix.endswith('_') else ''
+    file_prefix = file_prefix + '_' if file_prefix and not (file_prefix[-1] in ['-', '_']) else ''
     
     for name, n_examples in splits.items():
         prefixes = {}
