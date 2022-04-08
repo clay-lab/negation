@@ -124,7 +124,7 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
             ex_generator: function: a function that creates a pair of sentences and associated tags
                           from the grammar
             file_prefix: str: an identifier to add to the beginning of the output file names
-            splits: a dictionary mapping a string identifying a set label to the number of examples to generate
+            splits: a kwargs/dictionary mapping a string identifying a set label to the number of examples to generate
                     for the file with that label
                     ex: train = 10000, dev = 1000, test = 10000
     output: a file for each argument in splits that contains the specified number of example pairs
@@ -144,8 +144,8 @@ def create_dataset_json(grammar: PCFG, ex_generator: Callable,
             print(f'{name} prop {pfx} examples: {prefixes[pfx]/n_examples}')
         
         if l:
-            print('Saving examples to ' + file_prefix + name + '.json.gz')
-            with gzip.open(file_prefix + name + '.json.gz', 'wt') as f:
+            print('Saving examples to data/' + file_prefix + name + '.json.gz')
+            with gzip.open('data/' + file_prefix + name + '.json.gz', 'wt') as f:
                 for ex in tqdm(l):
                     json.dump(ex, f, ensure_ascii=False)
                     f.write('\n')
